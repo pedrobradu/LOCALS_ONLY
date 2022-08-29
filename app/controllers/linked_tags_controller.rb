@@ -1,0 +1,2 @@
+class LinkedTagsController < ApplicationController
+end
