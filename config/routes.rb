@@ -5,4 +5,14 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+
+  resources :activities, only: [:index, :show] do
+    resources :reviews, only: [:new, :create]
+    #resources :wishlist_itens, only: [:create], tem que nestar em algum lugar
+  end
+
+  resources :wishlists, only: [:new, :create]
+  #resources :linked_tags, only: [:create], tem que nestar em algum lugar
+
+  resources :users, only: [:show]
 end
