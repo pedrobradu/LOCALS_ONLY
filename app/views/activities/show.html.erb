@@ -1,0 +1,10 @@
+<h1><strong>Página da indicação:</strong></h1>
+<div>
+    <p><%= "Título: #{@activity.title}" %></p> 
+    <p><%= "Desrcição: #{@activity.description}" %></p>                
+    <p><%= "Datas: #{@activity.open_date}" %></p>
+    <p><%= "Endereço: #{@activity.activity_address}" %></p>
+    <p><%= "Ranking: #{@activity.ranking}" %></p>
+    <p><%= "Tipo: #{@activity.category}" %></p>
+</div>
+<p><%= link_to "Voltar", activities_path,  class: "btn btn-secondary" %></p>
