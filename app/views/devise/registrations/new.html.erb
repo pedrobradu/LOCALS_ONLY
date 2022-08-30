@@ -28,6 +28,12 @@
                 autofocus: true,
                 input_html: { autocomplete: "birth_date" }%>
   </div>
+  <div class="form-inputs">
+    <% Tag.user_tags.each do |tag|%>
+      <%= check_box_tag "tags[]", tag.id %>
+      <%= label_tag tag.tag_name %>
+    <% end %>
+  </div>
 
   <div class="form-actions">
     <%= f.button :submit, "Sign up" %>
