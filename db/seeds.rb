@@ -8,8 +8,9 @@
 
 Activity.destroy_all
 User.destroy_all
+Tag.destroy_all
 
-user = User.create!(email: "teste@teste.com", password: "123123")
+user = User.create!(email: "teste@teste.com", password: "123123", name: "Pedro", adress: "rua sei la", birth_date: "1993/01/30")
 
 puts 'Criando 3 novas atividades...'
 
@@ -21,3 +22,16 @@ activity3 = Activity.create!(title: "Yoga no parque com Maurício", description:
 puts activity3
 
 puts 'Feito!!'
+
+puts 'Criando 3 novas tags...'
+
+tag1 = Tag.create!(sub_category: "status civil", tag_name: "solteiro", tag_type: "user")
+puts tag1
+tag2 = Tag.create!(sub_category: "status civil", tag_name: "casado", tag_type: "user")
+puts tag2
+tag3 = Tag.create!(sub_category: "status civil", tag_name: "viuvo", tag_type: "user")
+puts tag3
+
+
+puts 'Feito!!'
+
