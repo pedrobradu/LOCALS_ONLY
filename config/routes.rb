@@ -15,4 +15,6 @@ Rails.application.routes.draw do
   #resources :linked_tags, only: [:create], tem que nestar em algum lugar
 
   resources :users, only: [:show]
+
+  
 end
