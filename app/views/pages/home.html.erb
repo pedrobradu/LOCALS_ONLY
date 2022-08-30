@@ -1,5 +1,13 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="container">
+  <h1>Pages#home</h1>
+  <p>Find me in app/views/pages/home.html.erb</p>
+  <h1> LOCALS ONLY NELES!!! BORA TIME!!! </h1>
+</div>
 
-
-<h1> LOCALS ONLY NELES!!! BORA TIME!!! </h1>
+<div class="container">
+  <div class="row">
+    <%= link_to "EAT & DRINK", activities_path(category: "eat")%>
+    <%= link_to "TO DO", activities_path(category: "do") %>
+    <%= link_to "EVENTS", activities_path(category: "event") %>
+  </div>
+</div>
