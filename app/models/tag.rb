@@ -1,3 +1,3 @@
 class Tag < ApplicationRecord
-    has_many :linked_tags
+    belongs_to :tagable, :polymorphic => true
 end
