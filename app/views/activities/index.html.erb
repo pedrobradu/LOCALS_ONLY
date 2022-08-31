@@ -1,4 +1,19 @@
+<%= form_with url: activities_path, method: :get, class: "d-flex" do %>
+  <%= text_field_tag :category,
+    params[:category],
+    class: "form-control",
+    placeholder: "Digite categoria"
+  %>
+  <%= text_field_tag :ranking,
+    params[:ranking],
+    class: "form-control",
+    placeholder: "Digite o ranking"
+  %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+<% end %>
+
 <h1><strong>Lista de indicações:</strong></h1>
+
 
 <% @activities.each do |activity| %>
     <div>
