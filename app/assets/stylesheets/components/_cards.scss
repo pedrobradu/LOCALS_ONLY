@@ -118,3 +118,35 @@
   font-weight: 300;
   // line-height: 1.0;
 }
+
+
+.contenier-wishlist {
+  height: 100%;
+  margin: 150px 350px;
+  border-radius: 5px;
+  background: white;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+
+}
+
+.card-wishlist {
+  // overflow: hidden;
+  // margin-right: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 36px;
+
+}
+
+.card-wishlist-intems {
+  justify-content: space-between;
+  line-height: 2;
+}
+
+
+// width: 100%;img
+//   height: 300px;
+//   border-radius: 10px;
