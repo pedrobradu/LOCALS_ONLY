@@ -14,7 +14,10 @@ class ActivitiesController < ApplicationController
     # @filtered_activities = Activity.where(category: )
   end
 
-  def show
-    @activity = Activity.find(params[:id])
-  end
+    def show
+        @activity = Activity.find(params[:id])
+        @item = WishlistItem.new
+        @user = current_user
+        # @wishlists = Wishlist.all.order(:title)
+    end
 end

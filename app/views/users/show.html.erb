@@ -1,6 +1,21 @@
 <h1><strong>Página do User:</strong></h1>
 
-<%= "Email: #{@user.email}" %>
+ <%= "Email: #{@user.email}" %>
+
+  <p><strong> Wishlist: </strong></p>
+    <% current_user.wishlists.first.wishlist_items.each  do |item| %>
+    <p><strong> Title: </strong><%= item.activity.title %> </p>
+    <p><strong> Category: </strong><%= item.activity.category %></p>
+    <p><strong> Description: </strong><%= item.activity.description%></p>
+
+    <% end  %>
+
+<%#
+ <%= link_to "Delete", wishlist_path(wishlist), data: { turbo_method: :delete } %>
+
 
 
 <%= link_to "Voltar", activities_path,  class: "btn btn-secondary" %>
+
+
+<%# titulo descricoa/ botao para pagina da atividade %>

@@ -1,5 +1,30 @@
-<div class="container">
-  <h1><strong>Página da indicação:</strong></h1>
+<h1><strong>Página da indicação:</strong></h1>
+<div>
+    <p><%= "Título: #{@activity.title}" %></p>
+    <p><%= "Desrcição: #{@activity.description}" %></p>
+    <p><%= "Datas: #{@activity.open_date}" %></p>
+    <p><%= "Endereço: #{@activity.activity_address}" %></p>
+    <p><%= "Ranking: #{@activity.ranking}" %></p>
+    <p><%= "Tipo: #{@activity.category}" %></p>
+</div>
+<p><%= link_to "Voltar", activities_path,  class: "btn btn-secondary" %></p>
+
+         <%# <%= simple_form_for [@activity, @item] do |f| %>
+          <%# <%= f.association :wishlist%>
+          <%# <%= f.submit "Adicionar isso a sua whishlist", class: "btn btn-secondary" %>
+        <%# <% end %>
+<% wishlist_item = WishlistItem.find_by(activity: @activity, wishlist: current_user.wishlists.first)   %>
+  <% if wishlist_item.present? %>
+    <%= link_to wishlist_item_path(wishlist_item), data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to remove #{@activity.title} from your wishlist?"} do %>
+      <i class="animate__animated animate__heartBeat fas fa-heart"></i>
+    <% end %>
+  <% else %>
+    <%= link_to activity_wishlist_items_path(@activity), data: {turbo_method: :post}  do %>
+      <i class="animate__animated animate__heartBeat far fa-heart"></i>
+    <% end %>
+  <% end %>
+<p><%= link_to "Voltar para recomendações", activities_path(category: @activity.category),  class: "btn btn-dark" %></p>
+<p><%= link_to "Voltar página principal", root_path,  class: "btn btn-warning" %></p>
 
   <%# CARD de SHOW %>
   <div class="card-show">

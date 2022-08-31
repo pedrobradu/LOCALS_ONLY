@@ -5,7 +5,6 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-
 Activity.destroy_all
 User.destroy_all
 Tag.destroy_all
@@ -23,6 +22,22 @@ puts activity3
 
 puts 'Feito!!'
 
+wishlist1 = Wishlist.create!(title: "Yoga no parque com Maurício", user_id: user.id)
+puts wishlist1
+
+wishlist1 = Wishlist.create!(title: "Yep le wagon", user_id: user.id)
+puts wishlist1
+
+wishlist2 = Wishlist.create!(title: "Escadaria", user_id: user.id)
+puts wishlist2
+
+wishlist2 = Wishlist.create!(title: "Super lua", user_id: user.id)
+puts wishlist2
+
+
+
+
+#cria uma wishlista na mao
 puts 'Criando 3 novas tags...'
 
 tag1 = Tag.create!(sub_category: "Status Civil", tag_name: "Solteiro", tag_type: "user")
