@@ -25,13 +25,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_30_142549) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "linked_tags", force: :cascade do |t|
-    t.bigint "tag_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["tag_id"], name: "index_linked_tags_on_tag_id"
-  end
-
   create_table "reviews", force: :cascade do |t|
     t.bigint "activity_id", null: false
     t.bigint "user_id", null: false
@@ -82,7 +75,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_30_142549) do
     t.index ["user_id"], name: "index_wishlists_on_user_id"
   end
 
-  add_foreign_key "linked_tags", "tags"
   add_foreign_key "reviews", "activities"
   add_foreign_key "reviews", "users"
   add_foreign_key "wishlist_items", "activities"

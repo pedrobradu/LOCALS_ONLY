@@ -2,8 +2,8 @@
 
 <% @activities.each do |activity| %>
     <div>
-        <p><%= "Título: #{activity.title}" %></p> 
-        <p><%= "Desrcição: #{activity.description}" %></p>                
+        <p><%= "Título: #{activity.title}" %></p>
+        <p><%= "Desrcição: #{activity.description}" %></p>
         <p><%= "Datas: #{activity.open_date}" %></p>
         <p><%= "Endereço: #{activity.activity_address}" %></p>
         <p><%= "Ranking: #{activity.ranking}" %></p>
@@ -11,3 +11,17 @@
         <p><%= link_to "Ver mais", activity_path(activity[:id]), class: "btn btn-primary" %></p>
     </div>
 <% end %>
+
+<%# CARD de INDEX
+<div class="card-index">
+  <img src="https://source.unsplash.com/random/1600x900"/>
+  <div class="card-index-infos">
+    <h2>Restaurante</h2>
+    <h3>Descrição/Tag</h3>
+    <p>Descrição do Restaurantes</p>
+    <h3>Price</h3>
+    <p>$$$</p>
+    <h3>Endereço</h3>
+    <p>R. Jericó, 193</p>
+  </div>
+</div> %>
