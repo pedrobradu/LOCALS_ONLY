@@ -1,9 +1,6 @@
 class UsersController < ApplicationController
   def show
-    @user = User.find(params[:id])
-  end
-
-  def manage
-    #manage_tagables 
+    @user = current_user
+    @wishlists = current_user.wishlists
   end
 end
