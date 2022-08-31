@@ -1,14 +1,29 @@
 <%= form_with url: activities_path, method: :get, class: "d-flex" do %>
+  <div>
   <%= text_field_tag :category,
     params[:category],
     class: "form-control",
     placeholder: "Digite categoria"
   %>
+  </div>
+  <div>
   <%= text_field_tag :ranking,
     params[:ranking],
     class: "form-control",
     placeholder: "Digite o ranking"
   %>
+  </div>
+  <%# <select class="js-example-basic-multiple" name="states[]" multiple="multiple"> %>
+  <%= select_tag :tags, 
+    options_from_collection_for_select(Tag.activity_tags.all, "id", "sub_category"),
+    multiple: true,
+    class: "form-control",
+    # input_html: {multiple: true, class: "multiple-select", data: { controller: 'select2' }},
+    include_blank: true 
+  %>
+  <%# </select> %>
+  
+ 
   <%= submit_tag "Search", class: "btn btn-primary" %>
 <% end %>
 
