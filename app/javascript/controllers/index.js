@@ -9,3 +9,6 @@ application.register("hello", HelloController)
 
 import MapController from "./map_controller"
 application.register("map", MapController)
+
+import TomselectController from "./tomselect_controller"
+application.register("tomselect", TomselectController)
