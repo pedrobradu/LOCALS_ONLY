@@ -5,5 +5,8 @@ class ActivitiesController < ApplicationController
 
     def show
         @activity = Activity.find(params[:id])
+        @item = WishlistItem.new
+        @user = current_user
+        # @wishlists = Wishlist.all.order(:title)
     end
 end
