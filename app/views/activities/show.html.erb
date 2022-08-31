@@ -7,4 +7,5 @@
     <p><%= "Ranking: #{@activity.ranking}" %></p>
     <p><%= "Tipo: #{@activity.category}" %></p>
 </div>
-<p><%= link_to "Voltar", activities_path,  class: "btn btn-secondary" %></p>
+<p><%= link_to "Voltar para recomendações", activities_path(category: @activity.category),  class: "btn btn-dark" %></p>
+<p><%= link_to "Voltar página principal", root_path,  class: "btn btn-warning" %></p>

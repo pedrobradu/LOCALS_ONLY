@@ -9,5 +9,6 @@
         <p><%= "Ranking: #{activity.ranking}" %></p>
         <p><%= "Tipo: #{activity.category}" %></p>
         <p><%= link_to "Ver mais", activity_path(activity[:id]), class: "btn btn-primary" %></p>
+        <p><%= link_to "Voltar página principal", root_path,  class: "btn btn-primary" %></p>
     </div>
 <% end %>
