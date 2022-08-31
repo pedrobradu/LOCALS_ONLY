@@ -9,7 +9,7 @@ Activity.destroy_all
 User.destroy_all
 Tag.destroy_all
 
-user = User.create!(email: "teste@teste.com", password: "123123", name: "Pedro", adress: "rua sei la", birth_date: "1993/01/30")
+user = User.create!(email: "teste@teste.com", password: "123123", name: "Pedro", adress: "rua jericó 197", birth_date: "1993/01/30")
 
 puts 'Criando 3 novas atividades...'
 

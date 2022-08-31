@@ -13,17 +13,6 @@
           <%# <%= f.submit "Adicionar isso a sua whishlist", class: "btn btn-secondary" %>
         <%# <% end %>
 
-<% wishlist_item = WishlistItem.find_by(activity: @activity, wishlist: current_user.wishlists.first)   %>
-  <% if wishlist_item.present? %>
-    <%= link_to wishlist_item_path(wishlist_item), data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to remove #{@activity.title} from your wishlist?"} do %>
-      <i class="animate__animated animate__heartBeat fas fa-heart"></i>
-    <% end %>
-  <% else %>
-    <%= link_to activity_wishlist_items_path(@activity), data: {turbo_method: :post}  do %>
-      <i class="animate__animated animate__heartBeat far fa-heart"></i>
-    <% end %>
-  <% end %>
-
   <%# CARD de SHOW %>
   <div class="card-show">
     <div class="card-show-top">
@@ -32,7 +21,14 @@
         <p>Stars</p>
       </div>
       <div>
-        <a class="btn-yellow" href="#">Adicionar à Wishlist</a>
+        <%# <a class="btn-yellow" href="#">Adicionar à Wishlist</a> %>
+        <% wishlist_item = WishlistItem.find_by(activity: @activity, wishlist: current_user.wishlists.first)   %>
+        <% if wishlist_item.present? %>
+          <%= link_to "Remover da Wishlist",  wishlist_item_path(wishlist_item), class: "btn-delete", data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to remove #{@activity.title} from your wishlist?"} %>
+        <% else %>
+          <%= link_to "Adicionar à Wishlist", activity_wishlist_items_path(@activity), class: "btn-yellow", data: {turbo_method: :post}   %>
+
+        <% end %>
       </div>
     </div>
       <img src="https://source.unsplash.com/random/1600x900"/>

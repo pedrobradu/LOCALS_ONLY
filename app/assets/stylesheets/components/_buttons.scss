@@ -19,6 +19,23 @@
   color: #000;
 }
 
+.btn-delete {
+  color: rgb(255, 255, 255);
+  font-family: 'Poppins';
+  font-size: 14px;
+  font-weight: 400;
+  border-radius: 10px;
+  padding: 10px 50px;
+  text-align: center;
+  background-color: #f42f2f;
+  align-self: center;
+  text-decoration: none;
+}
+.btn-delete:hover {
+  color: #ffffff;
+  background-color: #e96060;
+}
+
 .btn-yellow {
   color: #000;
   font-family: 'Poppins';
