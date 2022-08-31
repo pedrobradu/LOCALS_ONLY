@@ -1,6 +1,16 @@
 .navbar-lewagon {
   // justify-content: space-between;
   background: white;
+  display: flex;
+  justify-content: flex-end;
+  border-bottom: 1px solid rgba(0,0,0,.1);
+}
+
+.navbar-alinhada {
+  display: flex;
+  width: 50%;
+  justify-content: space-between;
+  margin-right: 2em;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -10,13 +20,3 @@
 .navbar-lewagon .navbar-brand img {
   width: 100px;
 }
-
-// GAMBIARRA PRO LOGO CENTRALIZAR
-
-// .container-fluid {
-//   display: flex;
-//   flex-wrap: inherit;
-//   margin-left: 45%;
-//   align-items: center;
-//   justify-content: space-between;
-// }
