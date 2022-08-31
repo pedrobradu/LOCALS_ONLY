@@ -54,22 +54,67 @@
 
 // Cards de SHOW
 .card-show {
-  height: 800px;
+  height: auto;
   width: 50%;
   border-radius: 5px;
   background: white;
   box-shadow: 0 0 5px rgba(0,0,0,0.2);
   padding: 16px;
-  margin: 30px;
+  margin: 20px 20px 20px 0px;
+}
+
+.card-show-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-show img {
+  width: 100%;
+  height: 300px;
+  border-radius: 10px;
 }
 
 .card-show-items {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 20px;
+  align-items: flex-start;
 }
 
-.card-show-items img {
-  width: 100%;
-  height: 300px;
-  border-radius: 10px;
+.card-show-items-info {
+  flex-direction: column;
+  width: 50%;
+}
+
+.card-show h1 {
+  color: #575757;
+  font-size: 24px;
+  font-family: 'Poppins';
+  font-weight: 700;
+  width: fit-content;
+}
+
+.card-show h2 {
+  color: #575757;
+  font-size: 18px;
+  font-family: 'Poppins';
+  font-weight: 700;
+  width: fit-content;
+}
+
+.card-show h3 {
+  color: #575757;
+  font-size: 14px;
+  font-family: 'Poppins';
+  font-weight: 700;
+  line-height: 0.3;
+}
+
+.card-show p {
+  font-size: 12px;
+  color: #575757;
+  font-family: 'Poppins';
+  font-weight: 300;
+  // line-height: 1.0;
 }
