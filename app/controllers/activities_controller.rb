@@ -1,7 +1,17 @@
 class ActivitiesController < ApplicationController
   def index
-    # @activities = Activity.all
-    @activities = Activity.where(category: params[:category])
+    if params[:category].present?
+      @activities = Activity.where(category: params[:category])
+    else
+      @activities = Activity.all
+    end
+
+    if params[:ranking].present?
+      @activities = @activities.where("ranking > ?", params[:ranking])
+    end
+
+    # @filter = Activity.new(params[:activity])
+    # @filtered_activities = Activity.where(category: )
   end
 
   def show
