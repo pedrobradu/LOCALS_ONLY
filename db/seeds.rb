@@ -9,15 +9,15 @@ Activity.destroy_all
 User.destroy_all
 Tag.destroy_all
 
-user = User.create!(email: "teste@teste.com", password: "123123", name: "Pedro", adress: "rua sei la", birth_date: "1993/01/30")
+user = User.create!(email: "teste@teste.com", password: "123123", name: "Pedro", adress: "rua jericó 197", birth_date: "1993/01/30")
 
 puts 'Criando 3 novas atividades...'
 
 activity1 = Activity.create!(title: "Casa de Chá da Carol", description: "O lugar preferido de quem procura um chá bem diferentão.", address: "Rua Jericó, 193, São Paulo", ranking: 2.5, category: "Eat & Drink")
 puts activity1
-activity2 = Activity.create!(title: "Show de Rock da Nath", description: "Todas as noites este é o lugar para os fans de Nath e Nic.", address: "Avenida Paulista, São Paulo", ranking: 4.9, category: "Events")
+activity2 = Activity.create!(title: "Show de Rock da Nath", description: "Todas as noites este é o lugar para os fans de Nath e Nic.", address: "Avenida Paulista, 1578, São Paulo", ranking: 4.9, category: "Events")
 puts activity2
-activity3 = Activity.create!(title: "Yoga no Parque com Maurício", description: "Todos os sábados no Ibira! Venha ficar com zen com o mestre Maurício.", address: "Avenida Brasil, São Paulo", ranking: 4.2 , category: "To Do")
+activity3 = Activity.create!(title: "Yoga no Parque com Maurício", description: "Todos os sábados no Ibira! Venha ficar com zen com o mestre Maurício.", address: "Rua Rodésia, 34, São Paulo", ranking: 4.2 , category: "To Do")
 puts activity3
 
 puts 'Feito!!'
