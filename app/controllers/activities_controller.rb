@@ -10,7 +10,7 @@ class ActivitiesController < ApplicationController
       @activities = @activities.where("ranking > ?", params[:ranking])
     end
 
-    # map(@activities)
+    map(@activities)
 
     # @filter = Activity.new(params[:activity])
     # @filtered_activities = Activity.where(category: )
@@ -20,6 +20,8 @@ class ActivitiesController < ApplicationController
     @activity = Activity.find(params[:id])
     @item = WishlistItem.new
     @user = current_user
+    @marker = [{ lat: @activity.latitude, lng: @activity.longitude }]
+    
     # @wishlists = Wishlist.all.order(:title)
   end
 

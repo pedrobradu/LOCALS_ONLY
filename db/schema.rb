@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_31_162950) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_31_180535) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -18,7 +18,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_31_162950) do
     t.string "category"
     t.string "description"
     t.date "open_date"
-    t.string "activity_address"
+    t.string "address"
     t.string "title"
     t.decimal "ranking"
     t.datetime "created_at", null: false
