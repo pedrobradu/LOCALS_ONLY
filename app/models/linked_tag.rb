@@ -1,5 +1,4 @@
 class LinkedTag < ApplicationRecord
-  belongs_to :tag
-  belongs_to :user
-  belongs_to :activity
+    belongs_to :tag
+    belongs_to :tagable, polymorphic: true
 end

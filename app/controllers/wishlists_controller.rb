@@ -1,10 +1,10 @@
 class WishlistsController < ApplicationController
-    def new
-        @wishlist = Wishlist.new
-    end
+  def new
+    @wishlist = Wishlist.new
+  end
 
     def show
-      
+
     end
 
     def create
@@ -15,10 +15,11 @@ class WishlistsController < ApplicationController
             render :new, status: :unprocessable_entity
         end
     end
+  end
 
-    private
+  private
 
-    def wishlist_params
-      params.require(:wishlist).permit(:title)
-    end
+  def wishlist_params
+    params.require(:wishlist).permit(:title)
+  end
 end
