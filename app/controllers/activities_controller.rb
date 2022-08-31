@@ -13,11 +13,28 @@ class ActivitiesController < ApplicationController
     if params[:tags].present?
       @activities = @activities.joins(:tags).where(tags: params[:tags])
     end
+
+    map(@activities)
+
+    # @filter = Activity.new(params[:activity])
+    # @filtered_activities = Activity.where(category: )
   end
 
-    def show
-      @activity = Activity.find(params[:id])
-      @item = WishlistItem.new
-      @user = current_user
+  def show
+    @activity = Activity.find(params[:id])
+    @item = WishlistItem.new
+    @user = current_user
+    @marker = [{ lat: @activity.latitude, lng: @activity.longitude }]
+    # @wishlists = Wishlist.all.order(:title)
+  end
+
+  def map(activities)
+    @markers = activities.geocoded.map do |activity|
+      {
+        lat: activity.latitude,
+        lng: activity.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { activity: activity })
+      }
     end
+  end
 end

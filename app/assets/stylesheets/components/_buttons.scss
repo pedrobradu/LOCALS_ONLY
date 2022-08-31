@@ -4,16 +4,36 @@
   font-size: 14px;
   font-weight: 400;
   border-radius: 10px;
-  padding: 10px 30px;
+  padding: 10px 20px;
   text-align: center;
   background-color: #FF4A11;
   align-self: center;
   text-decoration: none;
+  width: auto;
+  display: block;
+  white-space: nowrap;
 }
 
 .btn-orange:hover {
   background-color: #FFAD49;
   color: #000;
+}
+
+.btn-delete {
+  color: rgb(255, 255, 255);
+  font-family: 'Poppins';
+  font-size: 14px;
+  font-weight: 400;
+  border-radius: 10px;
+  padding: 10px 50px;
+  text-align: center;
+  background-color: #f42f2f;
+  align-self: center;
+  text-decoration: none;
+}
+.btn-delete:hover {
+  color: #ffffff;
+  background-color: #e96060;
 }
 
 .btn-yellow {
@@ -22,11 +42,13 @@
   font-size: 14px;
   font-weight: 400;
   border-radius: 10px;
-  padding: 10px 50px;
+  padding: 10px 0;
   text-align: center;
   background-color: #FFAD49;
   align-self: center;
   text-decoration: none;
+  width: 15em;
+  display: block;
 }
 
 .btn-yellow:hover {
@@ -40,11 +62,13 @@
   font-size: 14px;
   font-weight: 400;
   border-radius: 10px;
-  padding: 10px 50px;
+  padding: 10px 0;
   text-align: center;
   background-color: #000;
   align-self: center;
   text-decoration: none;
+  width: 15em;
+  display: block;
 }
 
 .btn-black:hover {

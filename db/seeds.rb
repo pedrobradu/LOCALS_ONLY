@@ -9,9 +9,7 @@ Activity.destroy_all
 User.destroy_all
 Tag.destroy_all
 
-user = User.create!(email: "teste@teste.com", password: "123123", name: "Pedro", adress: "rua sei la", birth_date: "1993/01/30")
-
-
+user = User.create!(email: "teste@teste.com", password: "123123", name: "Pedro", adress: "rua jericó 197", birth_date: "1993/01/30")
 
 puts 'Criando 3 novas tags de user...'
 
@@ -35,21 +33,22 @@ puts tag6
 
 puts 'Feito!!'
 
-
-
 puts 'Criando 3 novas atividades...'
 
-activity1 = Activity.create!(title: "Casa de Chá da Carol", description: "O lugar preferido de quem procura um chá bem diferentão.", activity_address: "Rua da Mãe Joana", ranking: 2.5, category: "Eat & Drink")
+activity1 = Activity.create!(title: "Casa de Chá da Carol", description: "O lugar preferido de quem procura um chá bem diferentão.", address: "Rua Jericó, 193, São Paulo", ranking: 2.5, category: "Eat & Drink")
 activity1.tags << [tag4, tag5]
 activity1.save
 puts activity1
-activity2 = Activity.create!(title: "Show de Rock da Nath", description: "Todas as noites este é o lugar para os fans de Nath e Nic.", activity_address: "Rua das Baterias Violentas", ranking: 4.9, category: "Events")
+activity2 = Activity.create!(title: "Show de Rock da Nath", description: "Todas as noites este é o lugar para os fans de Nath e Nic.", address: "Avenida Paulista, 1578, São Paulo", ranking: 4.9, category: "Events")
 activity2.tags << [tag4, tag6]
 activity2.save
 puts activity2
-activity3 = Activity.create!(title: "Yoga no Parque com Maurício", description: "Todos os sábados no Ibira! Venha ficar com zen com o mestre Maurício.", activity_address: "Parque Ibirapuera", ranking: 4.2 , category: "To Do")
+activity3 = Activity.create!(title: "Yoga no Parque com Maurício", description: "Todos os sábados no Ibira! Venha ficar com zen com o mestre Maurício.", address: "Rua Rodésia, 34, São Paulo", ranking: 4.2 , category: "To Do")
 activity3.tags << [tag4, tag5, tag6]
 activity3.save
 puts activity3
 
 puts 'Feito!!'
+
+
+
