@@ -13,22 +13,20 @@
     placeholder: "Digite o ranking"
   %>
   </div>
-  <%# <select class="js-example-basic-multiple" name="states[]" multiple="multiple"> %>
+
   <%= select_tag :tags, 
-    options_from_collection_for_select(Tag.activity_tags.all, "id", "sub_category"),
+    options_from_collection_for_select(Tag.activity_tags.all, "id", "sub_category", params[:tags]),
     multiple: true,
     class: "form-control",
     # input_html: {multiple: true, class: "multiple-select", data: { controller: 'select2' }},
-    include_blank: true 
+    include_blank: true,
+    'data-controller': 'tomselect' 
   %>
-  <%# </select> %>
   
- 
   <%= submit_tag "Search", class: "btn btn-primary" %>
 <% end %>
 
 <h1><strong>Lista de indicações:</strong></h1>
-
 
 <% @activities.each do |activity| %>
     <div>
@@ -38,6 +36,7 @@
         <p><%= "Endereço: #{activity.activity_address}" %></p>
         <p><%= "Ranking: #{activity.ranking}" %></p>
         <p><%= "Tipo: #{activity.category}" %></p>
+        <p><%= "Tags: #{activity.tags.each { |tag| tag[:tag_name] }}"%></p>
         <p><%= link_to "Ver mais", activity_path(activity[:id]), class: "btn btn-primary" %></p>
         <p><%= link_to "Voltar página principal", root_path,  class: "btn btn-primary" %></p>
     </div>

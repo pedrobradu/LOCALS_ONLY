@@ -13,17 +13,11 @@ class ActivitiesController < ApplicationController
     if params[:tags].present?
       @activities = @activities.joins(:tags).where(tags: params[:tags])
     end
-
-    
-
-    # @filter = Activity.new(params[:activity])
-    # @filtered_activities = Activity.where(category: )
   end
 
     def show
       @activity = Activity.find(params[:id])
       @item = WishlistItem.new
       @user = current_user
-      # @wishlists = Wishlist.all.order(:title)
     end
 end
