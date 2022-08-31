@@ -2,7 +2,11 @@
   <h1>Pages#home</h1>
   <h1> LOCALS ONLY NELES!!! BORA TIME!!! </h1>
   <div class="row">
-    <%= link_to "EAT & DRINK", activities_path(category: "Eat & Drink")%>
+    <div class="card-row">
+      <img src="https://source.unsplash.com/random/1600x900"/>
+      <%= link_to "EAT & DRINK", activities_path(category: "Eat & Drink")%>
+      <h1>EAT & DRINK</h1>
+    </div>
     <%= link_to "TO DO", activities_path(category: "To Do") %>
     <%= link_to "EVENTS", activities_path(category: "Events") %>
   </div>

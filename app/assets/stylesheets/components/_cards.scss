@@ -118,3 +118,19 @@
   font-weight: 300;
   // line-height: 1.0;
 }
+// =======================================
+
+// Cards de HOME
+.row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-row {
+  width: 70%;
+  height: 200px;
+}
+.card-row img {
+    object-fit: cover;
+}
