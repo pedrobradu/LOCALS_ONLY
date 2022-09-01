@@ -49,6 +49,3 @@ activity3.save
 puts activity3
 
 puts 'Feito!!'
-
-
-
