@@ -3,21 +3,27 @@
   overflow: hidden;
   margin-right: 0;
   width: 45%;
-  height: 250px;
+  height: auto;
   border-radius: 5px;
   background: white;
   box-shadow: 0 0 5px rgba(0,0,0,0.2);
   display: flex;
-  align-self: baseline;
   padding: 16px;
   margin-bottom: 16px;
+  justify-content: flex-start;
 }
 
 .card-index img {
-  height: 100%;
-  width: 180px;
+  height: auto;
+  width: 40%;
   object-fit: cover;
   border-radius: 5px;
+}
+
+.card-index-infos {
+  padding: 0 16px;
+  display: flex;
+  flex-direction: column;
 }
 
 .card-index-infos h2 {
@@ -45,12 +51,10 @@
   font-weight: 300;
 }
 
-.card-index .card-index-infos {
-  padding: 0 16px 16px 16px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+.card-index-infos p:last-child {
+  margin-bottom: 0;
 }
+
 // ===============================================
 
 // Cards de SHOW
