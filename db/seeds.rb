@@ -54,4 +54,3 @@ puts 'Feito!!'
 
 wishlist = Wishlist.create!(title: "Meus Favoritos:", user_id: "1")
 
-
