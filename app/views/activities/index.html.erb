@@ -11,11 +11,14 @@
       placeholder: "Digite o ranking"
     %>
     <%= select_tag :tags,
+      # option_groups_from_collection_for_select(Tag.all, :activity_tags, :sub_category, :id, :tag_name),
+      # grouped_options_for_select([['Subcategorias',  Tag.activity_tags.collect {|v| [ v.sub_category, v.id ] }],['Tagnames',  Tag.activity_tags.collect {|v| [ v.tag_name, v.id ] }]])
       options_from_collection_for_select(Tag.activity_tags.all, "id", "sub_category", params[:tags]),
       multiple: true,
       class: "form-control",
       # input_html: {multiple: true, class: "multiple-select", data: { controller: 'select2' }},
       include_blank: true,
+      prompt: "Selecione tags...",
       'data-controller': 'tomselect'
     %>
     <%= submit_tag "Search", class: "btn btn-primary" %>
