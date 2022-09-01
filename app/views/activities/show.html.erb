@@ -58,6 +58,28 @@
   </div>
 </div>
 
+<div>
+  <%= simple_form_for([@activity, @review ]) do |f| %>
+    <%= f.input :content %>
+    <%= f.submit "Submit review", class: "btn btn-primary" %>
+  <% end %>
+</div>
+
+<div>
+<p><strong>Reviews:</strong></p>
+<ul class="">
+  <% @activity.reviews.each do |review| %>
+    <%# <%= content_tag :div, id: dom_id(review) do %> 
+      <li class=""><%= review.content %></li>
+      <%= link_to "Delete",
+        review_path(review),
+        data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+      %>
+    <%# <% end %> 
+  <% end %>
+</ul>
+</div>
+
 <div style="width: 100%; height: 600px;"
   data-controller="map"
   data-map-markers-value="<%= @marker.to_json %>"
