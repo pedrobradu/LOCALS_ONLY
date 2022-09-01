@@ -59,25 +59,29 @@
 </div>
 
 <div>
-  <%= simple_form_for([@activity, @review ]) do |f| %>
-    <%= f.input :content %>
-    <%= f.submit "Submit review", class: "btn btn-primary" %>
+  <%# <% if @user.adress COLOCAR UMA LÓGICA QUE MOSTRE SE USER MORA PERTO DAS ATIVIDADES  %> 
+  <% near = Activity.near(@user, 2) %>
+    <% if near.to_a.pluck(:id).include?(@activity.id) %>
+    <%= simple_form_for([@activity, @review], data: {turbo: :false}) do |f| %>
+      <%= f.input :content %>
+      <%= f.submit "Submit review", class: "btn btn-primary" %>
+    <% end %>
   <% end %>
 </div>
 
 <div>
-<p><strong>Reviews:</strong></p>
-<ul class="">
-  <% @activity.reviews.each do |review| %>
-    <%# <%= content_tag :div, id: dom_id(review) do %> 
-      <li class=""><%= review.content %></li>
-      <%= link_to "Delete",
-        review_path(review),
-        data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-      %>
-    <%# <% end %> 
-  <% end %>
-</ul>
+  <p><strong>Reviews:</strong></p>
+  <ul id="reviews" class="">
+    <% @activity.reviews.each do |review| %>
+      <%= content_tag :div, id: dom_id(review) do %>
+        <li class=""><%= review.content %></li>
+        <%= link_to "Delete",
+          review_path(review),
+          data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+        %>
+      <% end %>
+    <% end %>
+  </ul>
 </div>
 
 <div style="width: 100%; height: 600px;"

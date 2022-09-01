@@ -28,6 +28,10 @@ class ActivitiesController < ApplicationController
       lat: @activity.latitude,
       lng: @activity.longitude,
       info_window: render_to_string(partial: "info_window", locals: { activity: @activity })
+    }, {
+      lat: @user.latitude,
+      lng: @user.longitude,
+      # info_window: render_to_string(partial: "info_window", locals: { activity: @activity })
     }]
     @review = Review.new
     # @wishlists = Wishlist.all.order(:title)

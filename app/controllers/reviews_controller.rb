@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-  # include ActionView::RecordIdentifier
+  include ActionView::RecordIdentifier
 
   def new
     @review = Review.new
@@ -11,8 +11,8 @@ class ReviewsController < ApplicationController
     @review.activity = @activity
     @review.user = current_user
     if @review.save
-      # redirect_to activity_path(@activity, anchor: dom_id(@review))
-      redirect_to activity_path(@activity)
+      redirect_to activity_path(@activity, anchor: "reviews")
+      # redirect_to activity_path(@activity)
     else
       render :new, status: :unprocessable_entity
     end

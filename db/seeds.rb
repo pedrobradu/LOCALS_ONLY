@@ -10,7 +10,7 @@ User.destroy_all
 Tag.destroy_all
 Wishlist.destroy_all
 
-user = User.create!(email: "teste@teste.com", password: "123123", name: "Pedro", adress: "rua jericó 197", birth_date: "1993/01/30")
+user1 = User.create!(email: "teste@teste.com", password: "123123", name: "Pedro", address: "Rua Jericó, 193, São Paulo", birth_date: "1993/01/30")
 
 
 puts 'Criando 3 novas tags de user...'
@@ -35,7 +35,7 @@ puts tag6
 
 puts 'Feito!'
 
-puts 'Criando 9 novas atividades...'
+puts 'Criando 10 novas atividades...'
 
 activity1 = Activity.create!(title: "Casa de Chá da Carol", description: "O lugar preferido de quem procura um chá bem diferentão.", address: "Rua Medeiros de Albuquerque, 85, São Paulo", ranking: 2.5, category: "Eat & Drink")
 activity1.tags << [tag4, tag5]
@@ -79,6 +79,11 @@ activity9 = Activity.create!(title: "Aulão de Crossfit", description: "Com o no
 activity9.tags << [tag5]
 activity9.save
 puts activity9
+
+activity10 = Activity.create!(title: "Blue Pub", description: "Pub Irlandês raiz com muito chop e música de qualidade. ", address: " Alameda Ribeirão Preto, 384, Bela Vista, São Paulo", ranking: 4.7, category: "Eat & Drink")
+activity10.tags << [tag6]
+activity10.save
+puts activity10
 
 
 puts 'Feito!'
