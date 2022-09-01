@@ -11,6 +11,7 @@ class WishlistItemsController < ApplicationController
     if @wishlist_item.save
       redirect_to user_path(current_user)
     else
+      raise
       render :new, status: :unprocessable_entity
     end
   end

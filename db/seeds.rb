@@ -8,8 +8,10 @@
 Activity.destroy_all
 User.destroy_all
 Tag.destroy_all
+Wishlist.destroy_all
 
 user = User.create!(email: "teste@teste.com", password: "123123", name: "Pedro", adress: "rua jericó 197", birth_date: "1993/01/30")
+
 
 puts 'Criando 3 novas tags de user...'
 
@@ -49,3 +51,10 @@ activity3.save
 puts activity3
 
 puts 'Feito!!'
+<<<<<<< HEAD
+=======
+
+wishlist = Wishlist.create!(title: "Meus Favoritos:", user_id: "1")
+
+
+>>>>>>> e613515903840a53dc0a01c0b1a5a3fc212c8972
