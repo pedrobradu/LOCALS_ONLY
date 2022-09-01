@@ -21,6 +21,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_31_180535) do
     t.string "address"
     t.string "title"
     t.decimal "ranking"
+    t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.float "latitude"
