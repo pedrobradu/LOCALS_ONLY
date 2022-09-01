@@ -58,6 +58,10 @@
 // ===============================================
 
 // Cards de SHOW
+.container-show {
+  display: flex;
+}
+
 .card-show {
   height: auto;
   width: 50%;
@@ -122,6 +126,8 @@
   font-weight: 300;
   // line-height: 1.0;
 }
+
+
 // =======================================
 
 // Cards de HOME
