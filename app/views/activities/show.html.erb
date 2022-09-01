@@ -6,6 +6,7 @@
     <p><%= "Endereço: #{@activity.address}" %></p>
     <p><%= "Ranking: #{@activity.ranking}" %></p>
     <p><%= "Tipo: #{@activity.category}" %></p>
+    <p><%= "Tags associadas: #{@activity.tags.map { |tag| tag.tag_name }.join(", ")}" %></p>
 </div>
 
          <%# <%= simple_form_for [@activity, @item] do |f| %>
