@@ -13,11 +13,10 @@ Rails.application.routes.draw do
     resources :wishlist_items, only: [:new, :create]
   end
 
+  #resources :linked_tags, only: [:create], tem que nestar em algum lugar
   resources :wishlists, only: [:new, :create, :show]
   resources :wishlist_items, only: [:destroy]
-  #resources :linked_tags, only: [:create], tem que nestar em algum lugar
-
   resources :users, only: [:show]
+  resources :reviews, only: [:destroy]
 
-  
 end
