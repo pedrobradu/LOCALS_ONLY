@@ -5,22 +5,28 @@
  <p><%= "birth date: #{@user.birth_date}" %></p>
 
  </div>
-<div class="contenier-wishlist">
+
  <div class="card-wishlist">
   <div class="card-title">
-  <h2><strong> Wishlist: </strong></h2>
+  <h2><strong> Wishlist </strong></h2>
   </div>
-  <div class="card-wishlist-intems">
+
     <% current_user.wishlists.first.wishlist_items.each  do |item| %>
-        <img src="https://source.unsplash.com/random/1600x900" class="card-img-top" alt="...">
+    <%= link_to  activity_path(item.activity), class: "text-decoration-none" do  %>
+  <div class="card-index-wishlist-intems">
+        <img src="https://source.unsplash.com/random/150x150" class="card-img-top" alt="...">
+    <div class="card-wishlist-infos">
         <p><strong> Title: </strong><%= item.activity.title %> </p>
         <p><strong> Category: </strong><%= item.activity.category %></p>
         <p><strong> Description: </strong><%= item.activity.description%></p>
-        <%= link_to "Acessar activity", activity_path(item.activity), class: "btn-orange "  %>
+         <%# <h1><%= link_to “EAT & DRINK”, activities_path(item.activity)%></h1>
+        <%# <%= link_to "Acessar activity", activity_path(item.activity), class: "btn-orange "  %>
 
-    <% end  %>
     </div>
-  </div>
+    </div>
+    <% end %>
+    <% end %>
+
 </div>
 
 

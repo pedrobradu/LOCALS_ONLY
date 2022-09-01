@@ -176,30 +176,90 @@
 // =========================================
 
 // Cards de WISHLIST
-.contenier-wishlist {
-  height: 100%;
-  margin: 150px 350px;
-  border-radius: 5px;
-  background: white;
-  box-shadow: 0 0 5px rgba(0,0,0,0.2);
 
-}
 
 .card-wishlist {
-  // overflow: hidden;
-  // margin-right: 0;
+  width: 394px;
+  margin-left: 350px;
+  box-sizing: border-box;
+  background: white;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  margin: 0 350px;
+  border: 0.5px solid #AAAAAA;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  margin-top: -150px;
+  margin-bottom: 100px;
+
+}
+
+
+.card-index-wishlist-intems {
+
+  overflow: hidden;
+  margin-right: 0;
+  width: 360px;
+  height: 100%;
+  border-radius: 5px;
+  box-shadow: 0 0 3px rgba(0,0,0,0.2);
+  display: flex;
+  align-self: baseline;
+  padding: 16px 20px;
+  margin-bottom: 16px;
+  margin-top: 20px;
+  margin-left: 4%;
+  justify-content: center;
+
+  text-decoration: none;
+
+
+}
+
+
+.card-index-wishlist-intems:hover {
+  border-style: solid;
+  border-color: rgb(57, 57, 57);
+}
+
+
+
+
+.card-index-wishlist-intems .card-wishlist-infos {
+
+  padding: 0 6px 6px 16px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 60px 36px;
-}
-
-.card-wishlist-intems {
   justify-content: space-between;
-  line-height: 2;
+
+
 }
 
-// width: 100%;img
-//   height: 300px;
-//   border-radius: 10px;
+.card-img-top {
+
+  height: 100%;
+  width: 380px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.card-wishlist p {
+  margin-bottom: -5px;
+  margin-top: 6px;
+  font-size: 12px;
+  color: #575757;
+  font-family: 'Poppins';
+  // line-height: 1.0;
+}
+
+
+.card-title {
+  padding: 10px 10px 10px 10px;
+  margin: 10px 10px 10px 10px; ;
+  text-align: center;
+  margin-bottom: 40px;
+  background-color: #FFAD49;
+  border-radius: 5px;
+}
+// =========================================
+
+// Cards de user
