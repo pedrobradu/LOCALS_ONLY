@@ -1,8 +1,13 @@
 // Cards do INDEX
+.card-master {
+  display: flex;
+  flex-direction: column;
+}
+
 .card-index {
   overflow: hidden;
   margin-right: 0;
-  width: 45%;
+  width: 100%;
   height: auto;
   border-radius: 5px;
   background: white;
@@ -203,3 +208,7 @@
 // width: 100%;img
 //   height: 300px;
 //   border-radius: 10px;
+
+.map {
+  border-radius: 5px;
+}
