@@ -10,6 +10,10 @@ class ActivitiesController < ApplicationController
       @activities = @activities.where("ranking > ?", params[:ranking])
     end
 
+    if params[:tags].present?
+      @activities = @activities.joins(:tags).where(tags: params[:tags])
+    end
+
     map(@activities)
 
     # @filter = Activity.new(params[:activity])

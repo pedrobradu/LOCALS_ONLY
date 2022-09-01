@@ -8,7 +8,16 @@
     <%= text_field_tag :ranking,
       params[:ranking],
       class: "form-control",
-      placeholder: "Digite o ranking" %>
+      placeholder: "Digite o ranking"
+    %>
+    <%= select_tag :tags,
+      options_from_collection_for_select(Tag.activity_tags.all, "id", "sub_category", params[:tags]),
+      multiple: true,
+      class: "form-control",
+      # input_html: {multiple: true, class: "multiple-select", data: { controller: 'select2' }},
+      include_blank: true,
+      'data-controller': 'tomselect'
+    %>
     <%= submit_tag "Search", class: "btn btn-primary" %>
   <% end %>
 <h1><strong>Lista de indicações:</strong></h1>
