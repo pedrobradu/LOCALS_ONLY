@@ -51,10 +51,6 @@ activity3.save
 puts activity3
 
 puts 'Feito!!'
-<<<<<<< HEAD
-=======
 
 wishlist = Wishlist.create!(title: "Meus Favoritos:", user_id: "1")
 
-
->>>>>>> e613515903840a53dc0a01c0b1a5a3fc212c8972
