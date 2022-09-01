@@ -61,23 +61,24 @@
 
     <div class="card-review">
       <div class="card-review-input">
-          <%= simple_form_for([@activity, @review]) do |f| %>
-          <%= f.input :content %>
-          <%= f.submit "Submit review", class: "btn btn-primary" %>
-        <% end %>
+          <% near = Activity.near(@user, 2) %>
+            <% if near.to_a.pluck(:id).include?(@activity.id) %>
+            <%= simple_form_for([@activity, @review], data: {turbo: :false}) do |f| %>
+              <%= f.input :content %>
+              <%= f.submit "Submit review", class: "btn btn-primary" %>
+            <% end %>
+          <% end %>
       </div>
 
       <div class="card-review-results">
         <h3><strong>Reviews:</strong></h3>
-          <ul class="">
+          <ul id="reviews" class="">
             <% @activity.reviews.each do |review| %>
-              <%# <%= content_tag :div, id: dom_id(review) do %>
                 <li class=""><%= review.content %></li>
                 <%= link_to "Delete",
                   review_path(review),
                   data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
                 %>
-              <%# <% end %>
             <% end %>
           </ul>
       </div>
