@@ -25,6 +25,7 @@ class ActivitiesController < ApplicationController
     @item = WishlistItem.new
     @user = current_user
     @marker = [{ lat: @activity.latitude, lng: @activity.longitude }]
+    @review = Review.new
     # @wishlists = Wishlist.all.order(:title)
   end
 
