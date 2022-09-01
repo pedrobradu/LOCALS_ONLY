@@ -7,6 +7,7 @@ class CreateActivities < ActiveRecord::Migration[7.0]
       t.string :activity_address
       t.string :title
       t.decimal :ranking
+      t.string :image
 
       t.timestamps
     end
