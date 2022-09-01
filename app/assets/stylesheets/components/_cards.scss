@@ -118,8 +118,29 @@
   font-weight: 300;
   // line-height: 1.0;
 }
+// =======================================
 
+// Cards de HOME
+.row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
+.card-row {
+  width: 70%;
+  height: 200px;
+}
+
+.card-row img {
+  // max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+// =========================================
+
+// Cards de WISHLIST
 .contenier-wishlist {
   height: 100%;
   margin: 150px 350px;
@@ -132,20 +153,17 @@
 .card-wishlist {
   // overflow: hidden;
   // margin-right: 0;
-
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 60px 36px;
-
 }
 
 .card-wishlist-intems {
   justify-content: space-between;
   line-height: 2;
 }
-
 
 // width: 100%;img
 //   height: 300px;
