@@ -65,7 +65,7 @@ activity6.tags << [tag5]
 activity6.save
 puts activity6
 
-activity7 = Activity.create!(title: "Cannoleria do Lucas", description: "O melhor da Itália apenas alguns passos de você!", address: "Rua Original, 173, São Paulo", ranking: 4.7, category: "Eat & Drink")
+activity7 = Activity.create!(title: "Cannoleria do Lucas", description: "O melhor da Itália apenas alguns passos de você!", address: "Rua Original, 173, São Paulo", ranking: 4.7, category: "Eat & Drink", image: "https://images.pexels.com/photos/7474126/pexels-photo-7474126.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")
 activity7.tags << [tag4, tag5]
 activity7.save
 puts activity7
@@ -79,7 +79,6 @@ activity9 = Activity.create!(title: "Aulão de Crossfit", description: "Com o no
 activity9.tags << [tag5]
 activity9.save
 puts activity9
-
 
 puts 'Feito!'
 
