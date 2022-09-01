@@ -26,16 +26,16 @@ puts 'Feito!!'
 
 puts 'Criando 3 novas tags de activity...'
 
-tag4 = Tag.create!(sub_category: "Bar", tag_name: "Romantico", tag_type: "activity")
+tag4 = Tag.create!(sub_category: "Bar", tag_name: "Romântico", tag_type: "activity")
 puts tag4
 tag5 = Tag.create!(sub_category: "Ambiente", tag_name: "Aberto", tag_type: "activity")
 puts tag5
 tag6 = Tag.create!(sub_category: "Horário", tag_name: "Noite", tag_type: "activity")
 puts tag6
 
-puts 'Feito!!'
+puts 'Feito!'
 
-puts 'Criando 3 novas atividades...'
+puts 'Criando 9 novas atividades...'
 
 activity1 = Activity.create!(title: "Casa de Chá da Carol", description: "O lugar preferido de quem procura um chá bem diferentão.", address: "Rua Jericó, 193, São Paulo", ranking: 2.5, category: "Eat & Drink")
 activity1.tags << [tag4, tag5]
@@ -50,7 +50,37 @@ activity3.tags << [tag4, tag5, tag6]
 activity3.save
 puts activity3
 
-puts 'Feito!!'
+activity4 = Activity.create!(title: "Pão de Queijo do Pedrinho", description: "Pra quem gosta do melhor da roça, uai!", address: "Rua Purpurina, 170, São Paulo", ranking: 4.5 , category: "Eat & Drink")
+activity4.tags << [tag5]
+activity4.save
+puts activity4
+
+activity5 = Activity.create!(title: "Ritual Adoradores Manon", description: "Para quem vota no 17.", address: "Rua Rodésia, 34, São Paulo", ranking: 1.0 , category: "Events")
+activity5.tags << [tag6]
+activity5.save
+puts activity5
+
+activity6 = Activity.create!(title: "Festa dos Madalerners", description: "Pra quem vive no Beco do Batman.", address: "Rua Medeiros de Albuquerque, 85, São Paulo", ranking: 4.0, category: "To Do")
+activity6.tags << [tag5]
+activity6.save
+puts activity6
+
+activity7 = Activity.create!(title: "Cannoleria do Lucas", description: "Restaurante que o Lucas virou sócio.", address: "Rua Original, 173, São Paulo", ranking: 4.2 , category: "Eat & Drink")
+activity7.tags << [tag4, tag5, tag6]
+activity7.save
+puts activity7
+
+activity8 = Activity.create!(title: "evento", description: "oi", address: "Rua Rodésia, 34, São Paulo", ranking: 4.2 , category: "Events")
+activity8.tags << [tag4, tag5, tag6]
+activity8.save
+puts activity8
+
+activity9 = Activity.create!(title: "role", description: "oi", address: "Rua Rodésia, 34, São Paulo", ranking: 4.2 , category: "To Do")
+activity9.tags << [tag4, tag5, tag6]
+activity9.save
+puts activity9
+
+
+puts 'Feito!'
 
 wishlist = Wishlist.create!(title: "Meus Favoritos:", user_id: "1")
-

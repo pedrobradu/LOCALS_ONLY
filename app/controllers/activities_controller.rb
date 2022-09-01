@@ -24,7 +24,11 @@ class ActivitiesController < ApplicationController
     @activity = Activity.find(params[:id])
     @item = WishlistItem.new
     @user = current_user
-    @marker = [{ lat: @activity.latitude, lng: @activity.longitude }]
+    @marker = [{
+      lat: @activity.latitude,
+      lng: @activity.longitude,
+      info_window: render_to_string(partial: "info_window", locals: { activity: @activity })
+    }]
     # @wishlists = Wishlist.all.order(:title)
   end
 
