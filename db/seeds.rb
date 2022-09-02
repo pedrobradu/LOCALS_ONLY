@@ -40,7 +40,7 @@ a_tag6 = Tag.create!(sub_category: "Bar", tag_name: "Café", tag_type: "activity
 a_tag7 = Tag.create!(sub_category: "Estilo", tag_name: "Amigos", tag_type: "activity")
 a_tag8 = Tag.create!(sub_category: "Estilo", tag_name: "Romântico", tag_type: "activity")
 a_tag9 = Tag.create!(sub_category: "Estilo", tag_name: "Família", tag_type: "activity")
-a_tag10 = Tag.create!(sub_category: "Estilo", tag_name: "Pet-friendely", tag_type: "activity")
+a_tag10 = Tag.create!(sub_category: "Estilo", tag_name: "Pet-friendly", tag_type: "activity")
 a_tag11 = Tag.create!(sub_category: "Música", tag_name: "Rock", tag_type: "activity")
 a_tag12 = Tag.create!(sub_category: "Música", tag_name: "Sertanejo", tag_type: "activity")
 a_tag13 = Tag.create!(sub_category: "Música", tag_name: "Eletrônica", tag_type: "activity")
@@ -66,7 +66,7 @@ activity3 = Activity.create!(title: "Yoga no Parque com Maurício", description:
 activity3.tags << [a_tag16]
 activity3.save
 
-activity4 = Activity.create!(title: "Tribunal do Pedrinho", description: "", address: "Rua Purpurina, 170, São Paulo", ranking: 4.5, category: "Eat & Drink", image: "https://images.pexels.com/photos/2491273/pexels-photo-2491273.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")
+activity4 = Activity.create!(title: "Tribunal do Pedrinho", description: "Comida boa demais, direto de Vitória!", address: "Rua Purpurina, 170, São Paulo", ranking: 4.5, category: "Eat & Drink", image: "https://images.pexels.com/photos/2491273/pexels-photo-2491273.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")
 activity4.tags << [a_tag3, a_tag4, a_tag9]
 activity4.save
 
@@ -90,7 +90,7 @@ activity9 = Activity.create!(title: "Aulão de Crossfit", description: "Com o no
 activity9.tags << [a_tag17]
 activity9.save
 
-activity10 = Activity.create!(title: "Blue Pub", description: "Pub Irlandês raiz com muito chop e música de qualidade. ", address: " Alameda Ribeirão Preto, 384, Bela Vista, São Paulo", ranking: 4.7, category: "Eat & Drink")
+activity10 = Activity.create!(title: "Pub Azul", description: "Pub Irlandês raiz com muito chop e música de qualidade.", address: "Alameda Ribeirão Preto, 384, Bela Vista, São Paulo", ranking: 4.7, category: "Eat & Drink", image: "https://images.pexels.com/photos/159291/beer-machine-alcohol-brewery-159291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")
 activity10.tags << [a_tag11, a_tag4]
 activity10.save
 
