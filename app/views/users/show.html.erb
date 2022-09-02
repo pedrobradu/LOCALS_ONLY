@@ -2,7 +2,7 @@
  <div class="card-user" >
   <img src="https://source.unsplash.com/random/250x250" class="card-img-top" alt="...">
  <h3 style="background-image: url(<%= asset_path 'image_perfil-07.svg' %>);"></h3>
- <h2><strong><%= "#{@user.address}" %></strong></h2>
+ <h2><strong> Vila Madalena</strong></h2>
  <p><strong> Name: </strong><%= "#{@user.name}" %> </p>
  <p><strong> birth date: </strong><%= "#{@user.birth_date}" %> </p>
  </div>
@@ -22,12 +22,13 @@
         <p><strong> Description: </strong><%= item.activity.description%></p>
         <div>
         <% wishlist_item = WishlistItem.find_by(activity: @activity, wishlist: current_user.wishlists.first) %>
-        <%= link_to "X",  wishlist_item_path(item), class: "bnt-user-delete",
-        data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to remove #{item.activity.title } from your wishlist?"} %>
+        <%= link_to  wishlist_item_path(item),
+        data: {turbo_method: :delete, turbo_confirm: "Tem certeza que você deseja remover #{item.activity.title } da sua wishlist?"} do %>
+          <i class="fa-regular fa-trash-can"></i>
+        <% end %>
         </div>
-
-         <%# <h1><%= link_to “EAT & DRINK”, activities_path(item.activity)%></h1>
-        <%# <%= link_to "Acessar activity", activity_path(item.activity), class: "btn-orange "  %>
+          <%# <%= link_to wishlist_path(@festival.wishlists.where(user:current_user).first),method: :delete do %>
+          <%# <i class="animate__animated animate__heartBeat fas fa-heart"></i> %>
 
     </div>
     </div>
