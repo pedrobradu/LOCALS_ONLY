@@ -64,8 +64,8 @@
           <% near = Activity.near(@user, 2) %>
             <% if near.to_a.pluck(:id).include?(@activity.id) %>
             <%= simple_form_for([@activity, @review], data: {turbo: :false}) do |f| %>
-              <%= f.input :content %>
-              <%= f.submit "Submeter Review", class: "btn-black" %>
+              <%= f.input :content, label: "Sua dica:" %>
+              <%= f.submit "Submeter Review", class: "btn btn-primary" %>
             <% end %>
           <% end %>
       </div>
