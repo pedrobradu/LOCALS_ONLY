@@ -133,6 +133,35 @@
   // line-height: 1.0;
 }
 
+.review-cards-all {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.review-cards {
+  width: 100%;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  padding: 16px;
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.review-cards p {
+  font-size: 12px;
+  color: #575757;
+  font-family: 'Poppins';
+  font-weight: 300;
+  // line-height: 1.0;
+}
 
 // =======================================
 
@@ -282,9 +311,6 @@
 //   height: 300px;
 //   border-radius: 10px;
 
-.map {
-  border-radius: 5px;
-}
 
 .card-img-top {
 
