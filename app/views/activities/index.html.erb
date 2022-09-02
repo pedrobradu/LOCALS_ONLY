@@ -11,9 +11,8 @@
       placeholder: "Digite o ranking"
     %>
     <%= select_tag :tags,
-      # option_groups_from_collection_for_select(Tag.all, :activity_tags, :sub_category, :id, :tag_name),
-      # grouped_options_for_select([['Subcategorias',  Tag.activity_tags.collect {|v| [ v.sub_category, v.id ] }],['Tagnames',  Tag.activity_tags.collect {|v| [ v.tag_name, v.id ] }]])
-      options_from_collection_for_select(Tag.activity_tags.all, "id", "sub_category", params[:tags]),
+      # options_from_collection_for_select(Tag.activity_tags, "id", "sub_category", params[:tags]),
+      grouped_options_for_select(Tag::ACTIVITYTAGS),
       multiple: true,
       class: "form-control",
       # input_html: {multiple: true, class: "multiple-select", data: { controller: 'select2' }},
@@ -38,10 +37,12 @@
             <%# <p><%= "#{activity.open_date}" %>
             <h3><%= "Endereço:" %></h3>
             <p><%= "#{activity.address}" %></p>
-            <%# <h3><%= "Ranking:" %>
-            <%# <p><%= "#{activity.ranking}" %>
             <h3><%= "Tipo:" %></h3>
             <p><%= "#{activity.category}" %></p>
+            <h3><%= "Tags Associadas:" %></h3>
+            <p><%= "#{activity.tags.map { |tag| tag.tag_name }.join(", ")}" %></p>
+            <h3><%= "Ranking:" %>
+            <p><%= "#{activity.ranking}" %>
           </div>
           <div><p><%= link_to "Ver mais", activity_path(activity), class: "btn-orange" %></p></div>
         </div>
