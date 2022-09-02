@@ -11,7 +11,7 @@
       placeholder: "Digite o ranking"
     %>
     <%= select_tag :tags,
-      # options_from_collection_for_select(Tag.activity_tags, "id", "sub_category", params[:tags]),
+      # options_from_collection_for_select(Tag.activity_tags, "id", "tag_name", params[:tags]),
       grouped_options_for_select(Tag::ACTIVITYTAGS),
       multiple: true,
       class: "form-control",

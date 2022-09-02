@@ -4,14 +4,14 @@ class Tag < ApplicationRecord
 
     ACTIVITYTAGS = [
         ["Restaurante", 
-            [["Japonês"], ["Italiano"], ["Churrasco"]]],
+            [["Japonês", "10"], ["Italiano", "11"], ["Churrasco", "12"]]],
         ["Bar",
-            [["Cerveja"], ["Drinks"], ["Café"]]],
+            [["Cerveja", "13"], ["Drinks", "14"], ["Café", "15"]]],
         ["Estilo",
-            [["Amigos"], ["Romantico"], ["Família"], ["Pet-Friendely"]]],
+            [["Amigos", "16"], ["Romantico", "17"], ["Família", "18"], ["Pet-Friendely", "19"]]],
         ["Música",
-            [["Rock"], ["Sertanejo"], ["Eletrônica"]]],
+            [["Rock", "20"], ["Sertanejo", "21"], ["Eletrônica", "22"]]],
         ["Ambiente",
-            [["Dança"], ["Trilha"], ["Yoga"], ["Musculação"], ["Palestra"]]]
+            [["Dança", "23"], ["Trilha", "24"], ["Yoga", "25"], ["Musculação", "26"], ["Palestra", "27"]]]
         ]
 end
