@@ -1,9 +1,10 @@
-<h1><strong>Página do User:</strong></h1>
- <div class="card-user">
- <h3><%= "Adress: #{@user.adress}" %></h3>
- <p><%= "Name: #{@user.name}" %></p>
- <p><%= "birth date: #{@user.birth_date}" %></p>
-
+<div class="container d-flex">
+ <div class="card-user" >
+  <img src="https://source.unsplash.com/random/250x250" class="card-img-top" alt="...">
+ <h3 style="background-image: url(<%= asset_path 'image_perfil-07.svg' %>);"></h3>
+ <h2><strong><%= " #{@user.adress}" %></strong></h2>
+ <p><strong> Name: </strong><%= "#{@user.name}" %> </p>
+ <p><strong> birth date: </strong><%= "#{@user.birth_date}" %> </p>
  </div>
 
  <div class="card-wishlist">
@@ -27,6 +28,7 @@
     <% end %>
     <% end %>
 
+</div>
 </div>
 
 
