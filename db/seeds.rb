@@ -66,7 +66,7 @@ activity3 = Activity.create!(title: "Yoga no Parque com Maurício", description:
 activity3.tags << [a_tag16]
 activity3.save
 
-activity4 = Activity.create!(title: "Churrascada do Pedrinho", description: "O melhor churrasco direto de Vitória, uai!", address: "Rua Purpurina, 170, São Paulo", ranking: 4.5, category: "Eat & Drink", image: "https://images.pexels.com/photos/2491273/pexels-photo-2491273.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")
+activity4 = Activity.create!(title: "Tribunal do Pedrinho", description: "", address: "Rua Purpurina, 170, São Paulo", ranking: 4.5, category: "Eat & Drink", image: "https://images.pexels.com/photos/2491273/pexels-photo-2491273.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")
 activity4.tags << [a_tag3, a_tag4, a_tag9]
 activity4.save
 
