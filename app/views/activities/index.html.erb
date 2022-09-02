@@ -26,10 +26,12 @@
 
   <div class="container-index">
     <div class="card-master">
-      <% @activities.each do |activity| %>
-        <div class="card-index">
-          <%# <img src="https://source.unsplash.com/random/1600x900"/> %>
-          <img src= <%= "#{activity.image}" %>/>
+      
+=======
+    <% @activities.each do |activity| %>
+      <div class="card-index">
+        <%# <img src="https://source.unsplash.com/random/1600x900"/> %>
+        <img src= <%= "#{activity.image}" %>/>
           <div class="card-index-infos">
             <h3><%= "Título:" %></h3>
             <p><%= "#{activity.title}" %></p>
