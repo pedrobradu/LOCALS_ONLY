@@ -141,7 +141,7 @@
   border-radius: 5px;
   box-shadow: 0 0 5px rgba(0,0,0,0.2);
   padding: 16px;
-  margin-bottom: 16px;
+  margin: 16px 0;
 }
 
 .review-cards {
@@ -399,4 +399,11 @@
   // padding-left: 30px;
   // padding-right: 60px;
   // margin-left: 20px;
+}
+
+.index-title {
+  font-family: 'Poppins';
+  font-weight: 700;
+  color: #575757;
+  padding: 16px;
 }
