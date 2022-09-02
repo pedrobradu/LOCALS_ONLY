@@ -4,5 +4,11 @@
 }
 
 .container-all {
- min-height: 100vh;
+ min-height: 72vh;
+//  margin-bottom: 100px;
+}
+
+.container-show {
+  display: flex;
+  gap: 16px
 }

@@ -4,14 +4,13 @@
  <h3 style="background-image: url(<%= asset_path 'image_perfil-07.svg' %>);"></h3>
  <h2><strong> Vila Madalena</strong></h2>
  <p><strong> Name: </strong><%= "#{@user.name}" %> </p>
- <p><strong> birth date: </strong><%= "#{@user.birth_date}" %> </p>
+ <p><strong> Data de Nascimento: </strong><%= "#{@user.birth_date}" %> </p>
  </div>
 
- <div class="card-wishlist">
-  <div class="card-title">
-  <h2> <%= "#{@wishlist.title}" %></h2>
-  </div>
-
+  <div class="card-wishlist">
+    <div class="card-title">
+      <h2> <%= "#{@wishlist.title}" %></h2>
+    </div>
     <% current_user.wishlists.first.wishlist_items.each  do |item| %>
     <%= link_to  activity_path(item.activity), class: "text-decoration-none" do  %>
   <div class="card-index-wishlist-intems">
@@ -33,13 +32,8 @@
     </div>
     </div>
     <% end %>
-    <% end %>
+  </div>
 
-</div>
-</div>
+    <p><%= link_to "Voltar para recomendações", activities_path, class: "btn-yellow" %></p>
 
-
-
-<div>
-<%= link_to "Voltar", activities_path,  class: "btn btn-secondary" %>
 </div>

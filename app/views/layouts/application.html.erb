@@ -14,12 +14,12 @@
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.js"></script>
   </head>
 
-  <body>
-    <div class="container-all">
+  <body data-controller="home-footer">
+    <%# <div class="container-all" data-home-footer-target="container"> %>
       <%= render "shared/navbar" %>
       <%= render "shared/flashes" %>
       <%= yield %>
+    <%# </div> %>
       <%= render "shared/footer" %>
-    </div>
   </body>
 </html>

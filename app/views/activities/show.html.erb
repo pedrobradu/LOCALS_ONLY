@@ -32,8 +32,8 @@
           <p><%= "#{@activity.title}" %></p>
           <h3><%= "Descrição:" %></h3>
           <p><%= "#{@activity.description}" %></p>
-          <h3><%= "Datas:" %></h3>
-          <p><%= "#{@activity.open_date}" %></p>
+          <%# <h3>= "Datas:"</h3> %>
+          <%# <p>= "#{@activity.open_date}"</p> %>
           <h3><%= "Endereço:" %></h3>
           <p><%= "#{@activity.address}" %></p>
           <h3><%= "Ranking:" %></h3>
@@ -43,9 +43,9 @@
           <h3><%= "Tags Associadas:" %></h3>
           <p><%= "#{@activity.tags.map { |tag| tag.tag_name }.join(", ")}" %></p>
         </div>
-        <div>
+        <%# <div>
           <a class="btn-black" href="#">Escrever review</a>
-        </div>
+        </div> %>
       </div>
     </div>
 
@@ -64,23 +64,25 @@
           <% near = Activity.near(@user, 2) %>
             <% if near.to_a.pluck(:id).include?(@activity.id) %>
             <%= simple_form_for([@activity, @review], data: {turbo: :false}) do |f| %>
-              <%= f.input :content %>
+              <%= f.input :content, label: "Sua dica:" %>
               <%= f.submit "Submeter Review", class: "btn btn-primary" %>
             <% end %>
           <% end %>
       </div>
 
-      <div class="card-review-results">
+      <div class="review-cards-all">
         <h3><strong>Reviews:</strong></h3>
-          <ul id="reviews" class="">
             <% @activity.reviews.each do |review| %>
-                <li class=""><%= review.content %></li>
-                <%= link_to "Delete",
-                  review_path(review),
-                  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-                %>
+          <div class="review-cards">
+              <div><%= review.content %></div>
+              <%# <li class="">= review.content</li> %>
+              <div><%= link_to "Delete",
+                review_path(review),
+                data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
+                class: "btn-orange"
+              %></div>
+          </div>
             <% end %>
-          </ul>
       </div>
     </div>
 </div>
