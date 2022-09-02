@@ -6,3 +6,8 @@
 .container-all {
  min-height: 100vh;
 }
+
+.container-show {
+  display: flex;
+  gap: 16px
+}
