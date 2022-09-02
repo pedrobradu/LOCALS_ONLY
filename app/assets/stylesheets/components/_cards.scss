@@ -189,16 +189,16 @@
 
 .card-wishlist {
   width: 394px;
-  margin-left: 350px;
+  // margin-left: 550px;
   box-sizing: border-box;
   background: white;
   box-shadow: 0 0 5px rgba(0,0,0,0.2);
-  margin: 0 350px;
+  // margin: 0 350px;
   border: 0.5px solid #AAAAAA;
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
-  margin-top: -150px;
-  margin-bottom: 100px;
+  // margin-top: -150px;
+  margin-bottom: 160px;
 
 }
 
@@ -207,8 +207,8 @@
 
   overflow: hidden;
   margin-right: 0;
-  width: 360px;
-  height: 100%;
+  width: 90%;
+  // height: 100%;
   border-radius: 5px;
   box-shadow: 0 0 3px rgba(0,0,0,0.2);
   display: flex;
@@ -217,9 +217,15 @@
   margin-bottom: 16px;
   margin-top: 20px;
   margin-left: 4%;
-  justify-content: center;
-
   text-decoration: none;
+
+  img {
+    height: 150px;
+    width: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+
+  }
 
 
 }
@@ -234,22 +240,12 @@
 
 
 .card-index-wishlist-intems .card-wishlist-infos {
-
   padding: 0 6px 6px 16px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
-
 }
 
-.card-img-top {
-
-  height: 100%;
-  width: 380px;
-  object-fit: cover;
-  border-radius: 5px;
-}
 
 .card-wishlist p {
   margin-bottom: -5px;
@@ -278,4 +274,82 @@
 
 .map {
   border-radius: 5px;
+}
+
+//  HEAD
+// width: 100%;img
+//   height: 300px;
+//   border-radius: 10px;
+
+.map {
+  border-radius: 5px;
+}
+
+.card-img-top {
+
+  height: 100%;
+  width: 380px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.card-wishlist p {
+  margin-bottom: -5px;
+  margin-top: 6px;
+  font-size: 12px;
+  color: #575757;
+  font-family: 'Poppins';
+  // line-height: 1.0;
+}
+
+
+.card-title {
+  padding: 10px 10px 10px 10px;
+  margin: 10px 10px 10px 10px; ;
+  text-align: center;
+  margin-bottom: 40px;
+  background-color: #FFAD49;
+  border-radius: 5px;
+}
+// =========================================
+
+// Cards de user
+
+.card-user {
+  font-size: 22px;
+  color: #575757;
+  font-family: 'Poppins';
+  display: flex;
+  flex-direction: column;
+  margin-right: 120px;
+
+  h3 {
+    background-repeat: no-repeat;
+    width: 410px;
+    height: 140px;
+
+    }
+
+    h2 {
+    color: #fff;
+    font-size: 32px;
+    font-weight: 500px;
+    margin-top: 345px;
+    position: absolute;
+    margin-left: 110px;
+    font: bold;
+    }
+
+
+
+  img {
+    width: 410px;
+    height: 273px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+
+  }
+  // padding-left: 30px;
+  // padding-right: 60px;
+  // margin-left: 20px;
 }
