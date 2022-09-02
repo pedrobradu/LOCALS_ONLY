@@ -1,11 +1,11 @@
 <div class="container d-flex">
-  <div class="card-user" >
-    <img src="https://source.unsplash.com/random/250x250" class="card-img-top" alt="...">
-    <h3 style="background-image: url(<%= asset_path 'image_perfil-07.svg' %>);"></h3>
-    <h2><strong><%= "#{@user.address}" %></strong></h2>
-    <p><strong> Name: </strong><%= "#{@user.name}" %> </p>
-    <p><strong> birth date: </strong><%= "#{@user.birth_date}" %> </p>
-  </div>
+ <div class="card-user" >
+  <img src="https://source.unsplash.com/random/250x250" class="card-img-top" alt="...">
+ <h3 style="background-image: url(<%= asset_path 'image_perfil-07.svg' %>);"></h3>
+ <h2><strong><%= " #{@user.adress}" %></strong></h2>
+ <p><strong> Name: </strong><%= "#{@user.name}" %> </p>
+ <p><strong> Data de Nascimento: </strong><%= "#{@user.birth_date}" %> </p>
+ </div>
 
   <div class="card-wishlist">
     <div class="card-title">
@@ -35,5 +35,3 @@
     <p><%= link_to "Voltar para recomendações", activities_path, class: "btn-yellow" %></p>
 
 </div>
-
-
