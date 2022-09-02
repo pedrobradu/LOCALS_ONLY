@@ -14,6 +14,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def create
     super
     create_tags
+    # current_user.wishlists << Wishlist.create  
   end
   
   def create_tags
