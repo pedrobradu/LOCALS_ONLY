@@ -10,7 +10,7 @@
     <div class="card-show">
       <div class="card-show-top">
         <div>
-          <h1>Cuscuz da Irina</h1>
+          <h1><%= "#{@activity.title}" %></h1>
           <p>Stars</p>
         </div>
         <div>
@@ -24,7 +24,7 @@
         </div>
     </div>
 
-      <img src="https://source.unsplash.com/random/1600x900"/>
+      <img src= <%="#{@activity.image}"%>/>
 
       <div class="card-show-items">
         <div class="card-show-items-info">
@@ -65,7 +65,7 @@
             <% if near.to_a.pluck(:id).include?(@activity.id) %>
             <%= simple_form_for([@activity, @review], data: {turbo: :false}) do |f| %>
               <%= f.input :content %>
-              <%= f.submit "Submit review", class: "btn btn-primary" %>
+              <%= f.submit "Submeter Review", class: "btn btn-primary" %>
             <% end %>
           <% end %>
       </div>
