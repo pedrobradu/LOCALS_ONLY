@@ -222,10 +222,9 @@
   // margin-left: 550px;
   box-sizing: border-box;
   background: white;
-  box-shadow: 0 0 5px rgba(0,0,0,0.2);
   // margin: 0 350px;
   border: 0.5px solid #AAAAAA;
-  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
   border-radius: 10px;
   // margin-top: -150px;
   margin-bottom: 160px;
@@ -275,6 +274,19 @@
   flex-direction: column;
   justify-content: space-between;
 }
+
+.card-wishlist i {
+ position: absolute;
+ color: #7d7d7d;
+ margin-bottom: 80px;
+ margin-left: 145px;
+}
+
+
+.card-wishlist i:hover {
+
+  color: #e71515;
+ }
 
 
 .card-wishlist p {
@@ -331,18 +343,26 @@
 
 
 .card-title {
+
   padding: 10px 10px 10px 10px;
   margin: 10px 10px 10px 10px; ;
   text-align: center;
   margin-bottom: 40px;
   background-color: #FFAD49;
   border-radius: 5px;
+
+}
+
+.card-title h2 {
+  font-family: 'Poppins';
+  font-weight: 600;
 }
 // =========================================
 
 // Cards de user
 
 .card-user {
+
   font-size: 22px;
   color: #575757;
   font-family: 'Poppins';
@@ -358,13 +378,13 @@
     }
 
     h2 {
+    font-family: 'Poppins';
     color: #fff;
     font-size: 32px;
-    font-weight: 500px;
     margin-top: 345px;
     position: absolute;
-    margin-left: 110px;
-    font: bold;
+    margin-left: 90px;
+
     }
 
 
