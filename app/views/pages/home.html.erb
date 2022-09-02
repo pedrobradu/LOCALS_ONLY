@@ -1,28 +1,30 @@
-<div class="container">
+<div class="container-all">
+  <div class="container">
 
-  <div class="row">
-    <div class="card-row">
-      <%= image_tag "restaurant.jpg" %>
-      <div class="home-card-title">
-        <h1><%= link_to "EAT & DRINK", activities_path(category: "Eat & Drink")%></h1>
+    <div class="row">
+      <div class="card-row">
+        <%= image_tag "restaurant.jpg" %>
+        <div class="home-card-title">
+          <h1><%= link_to "EAT & DRINK", activities_path(category: "Eat & Drink")%></h1>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="row">
-    <div class="card-row">
-      <%= image_tag "bike.jpg" %>
-      <div class="home-card-title">
-        <h1><%= link_to "TO DO", activities_path(category: "To Do") %></h1>
+    <div class="row">
+      <div class="card-row">
+        <%= image_tag "bike.jpg" %>
+        <div class="home-card-title">
+          <h1><%= link_to "TO DO", activities_path(category: "To Do") %></h1>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="row">
-    <div class="card-row">
-      <%= image_tag "event.jpg" %>
-      <div class="home-card-title">
-        <h1><%= link_to "EVENTS", activities_path(category: "Events") %></h1>
+    <div class="row">
+      <div class="card-row">
+        <%= image_tag "event.jpg" %>
+        <div class="home-card-title">
+          <h1><%= link_to "EVENTS", activities_path(category: "Events") %></h1>
+        </div>
       </div>
     </div>
   </div>
