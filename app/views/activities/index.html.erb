@@ -1,39 +1,49 @@
+<div class="index-title"><h1><strong>Melhores Indicações</strong></h1></div>
+
 <div class="container">
+    <%= form_with url: activities_path, method: :get, class: "d-flex" do %>
 
-  <%= form_with url: activities_path, method: :get, class: "d-flex" do %>
+  <div class="container-field">
+      <%# <%= select_tag :category,
+        options_for_select(["Comer & Beber", "O Que Fazer", "Eventos"]),
+        class: "form-control",
+        prompt: "Seleciona a categoria"
+      %>
+      <div class="field">
+        <select name="category" id="id" class="form-control" >
+          <option value="" disabled selected hidden>Escolha uma categoria</option>
+          <option value="Comer & Beber">Comer & Beber</option>
+          <option value="O Que Fazer">O Que Fazer</option>
+          <option value="Eventos">Eventos</option>
+        </select>
+      </div>
 
-    <%# <%= select_tag :category,
-      options_for_select(["Comer & Beber", "O Que Fazer", "Eventos"]),
-      class: "form-control",
-      prompt: "Seleciona a categoria"
-    %>
+      <div class="field">
+      <%= text_field_tag :ranking,
+        params[:ranking],
+        class: "form-control",
+        placeholder: "Digite o ranking"
+      %>
+      </div>
 
-    <select name="category" id="id" class="form-control" >
-      <option value="" disabled selected hidden>Escolha uma categoria</option>
-      <option value="Comer & Beber">Comer & Beber</option>
-      <option value="O Que Fazer">O Que Fazer</option>
-      <option value="Eventos">Eventos</option>
-    </select>
+      <div class="field">
+      <%= select_tag :tags,
+        # options_from_collection_for_select(Tag.activity_tags, "id", "tag_name", params[:tags]),
+        # grouped_options_for_select(Tag::ACTIVITYTAGS),
+        grouped_options_for_select(@tag_hash),
+        multiple: true,
+        class: "form-control",
+        include_blank: true,
+        prompt: "Selecione tags",
+        'data-controller': 'tomselect'
+      %>
+      </div>
 
-    <%= text_field_tag :ranking,
-      params[:ranking],
-      class: "form-control",
-      placeholder: "Digite o ranking"
-    %>
-
-    <%= select_tag :tags,
-      # options_from_collection_for_select(Tag.activity_tags, "id", "tag_name", params[:tags]),
-      # grouped_options_for_select(Tag::ACTIVITYTAGS),
-      grouped_options_for_select(@tag_hash),
-      multiple: true,
-      class: "form-control",
-      include_blank: true,
-      prompt: "Selecione tags",
-      'data-controller': 'tomselect'
-    %>
-    <%= submit_tag "Procurar", class: "btn btn-dark" %>
-  <% end %>
-  <div class="index-title"><h1><strong>Lista de indicações:</strong></h1></div>
+      <div>
+      <%= submit_tag "Procurar", class: "btn-black" %>
+    <% end %>
+    </div>
+  </div>
 
   <div class="container-index">
     <div class="card-master">
