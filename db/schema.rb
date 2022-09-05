@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_01_185457) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_04_223944) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -28,6 +28,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_01_185457) do
     t.float "longitude"
   end
 
+  create_table "chatrooms", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "linked_tags", force: :cascade do |t|
     t.bigint "tag_id", null: false
     t.string "tagable_type", null: false
@@ -36,6 +42,16 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_01_185457) do
     t.datetime "updated_at", null: false
     t.index ["tag_id"], name: "index_linked_tags_on_tag_id"
     t.index ["tagable_type", "tagable_id"], name: "index_linked_tags_on_tagable"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.string "content"
+    t.bigint "chatroom_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["chatroom_id"], name: "index_messages_on_chatroom_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -70,6 +86,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_01_185457) do
     t.date "birth_date"
     t.float "latitude"
     t.float "longitude"
+    t.string "nickname"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -92,6 +109,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_01_185457) do
   end
 
   add_foreign_key "linked_tags", "tags"
+  add_foreign_key "messages", "chatrooms"
+  add_foreign_key "messages", "users"
   add_foreign_key "reviews", "activities"
   add_foreign_key "reviews", "users"
   add_foreign_key "wishlist_items", "activities"
