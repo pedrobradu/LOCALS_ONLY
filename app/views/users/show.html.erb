@@ -4,9 +4,9 @@
   <%# <%= image_tag "pedro.jpeg" %>
   <h3 style="background-image: url(<%= asset_path 'image_perfil-07.svg' %>);"></h3>
   <%# <h2><strong><%= " #{@user.address}" %> <%#</strong></h2> %>
-  <h2><strong> Vila Madalena</strong></h2>
-  <p><strong> Name: </strong><%= "#{@user.name}" %> </p>
-  <p><strong> Data de Nascimento: </strong><%= "#{@user.birth_date}" %> </p>
+  <h2><strong>Vila Madalena</strong></h2>
+  <p><strong>Name:</strong><%= "#{@user.name}" %> </p>
+  <p><strong>Data de Nascimento:</strong><%= "#{@user.birth_date}" %> </p>
   <p><%= link_to "Voltar para recomendações", activities_path, class: "btn-yellow" %></p>
  </div>
 
@@ -19,9 +19,9 @@
         <div class="card-index-wishlist-intems">
         <img src="<%= "#{ item.activity.image }" %>" class="card-img-top" alt="...">
           <div class="card-wishlist-infos">
-              <p><strong> Title: </strong><%= item.activity.title %> </p>
-              <p><strong> Category: </strong><%= item.activity.category %></p>
-              <p><strong> Description: </strong><%= item.activity.description%></p>
+              <p><strong>Título:</strong><%= item.activity.title %> </p>
+              <p><strong>Categoria:</strong><%= item.activity.category %></p>
+              <p><strong>Descrição:</strong><%= item.activity.description%></p>
               <div>
                 <% wishlist_item = WishlistItem.find_by(activity: @activity, wishlist: current_user.wishlists.first) %>
                 <%= link_to  wishlist_item_path(item),
@@ -37,6 +37,4 @@
       <% end %>
     <% end %>
   </div>
-
-
 </div>
