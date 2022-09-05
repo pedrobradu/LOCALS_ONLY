@@ -1,15 +1,18 @@
 <div class="container">
 
   <%= form_with url: activities_path, method: :get, class: "d-flex" do %>
-    <%= text_field_tag :category,
-      params[:category],
+   <%= select_tag :category,
+      options_for_select(["Comer & Beber", "O Que Fazer", "Eventos"]),
       class: "form-control",
-      placeholder: "Digite categoria" %>
+      prompt: "Selecione a categoria"
+    %>
+
     <%= text_field_tag :ranking,
       params[:ranking],
       class: "form-control",
       placeholder: "Digite o ranking"
     %>
+
     <%= select_tag :tags,
       # options_from_collection_for_select(Tag.activity_tags, "id", "tag_name", params[:tags]),
       # grouped_options_for_select(Tag::ACTIVITYTAGS),
@@ -18,7 +21,7 @@
       class: "form-control",
       # input_html: {multiple: true, class: "multiple-select", data: { controller: 'select2' }},
       include_blank: true,
-      prompt: "Selecione tags...",
+      prompt: "Selecione tags",
       'data-controller': 'tomselect'
     %>
     <%= submit_tag "Search", class: "btn btn-primary" %>
