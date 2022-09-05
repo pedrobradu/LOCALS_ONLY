@@ -8,7 +8,7 @@
   overflow: hidden;
   margin-right: 0;
   width: 100%;
-  height: auto;
+  height: 300px;
   border-radius: 5px;
   background: white;
   box-shadow: 0 0 5px rgba(0,0,0,0.2);
@@ -30,9 +30,16 @@
   display: flex;
   flex-direction: column;
   margin-top: 8px;
+  gap: 4px;
 }
 
-.card-index-infos h2 {
+.infos-lines {
+  display: flex;
+  // align-items: flex-end;
+  flex-wrap: wrap;
+}
+
+.infos-lines h2 {
   color: #575757;
   font-size: 18px;
   font-family: 'Poppins';
@@ -42,26 +49,61 @@
   width: fit-content;
 }
 
-.card-index-infos h3 {
+.infos-lines h3 {
   color: #575757;
   font-size: 14px;
   font-family: 'Poppins';
   font-weight: 400;
-  line-height: 0.3;
-  padding-top: 8px;
+  margin: 0;
+  white-space: nowrap;
+  margin-right: 4px;
+  // line-height: 0.3;
+  // padding-top: 8px;
 }
 
-.card-index-infos p {
+.infos-lines p {
   font-size: 12px;
   color: #575757;
   font-family: 'Poppins';
   font-weight: 300;
 }
 
-.card-index-infos p:last-child {
-  margin-bottom: 0;
+.infos-lines p:last-child {
+  margin-bottom: 8px;
   // margin-top: 16px;
 }
+
+
+// .card-index-infos h2 {
+//   color: #575757;
+//   font-size: 18px;
+//   font-family: 'Poppins';
+//   font-weight: 700;
+//   // margin-bottom: 15px;
+//   // padding-top: 10px;
+//   width: fit-content;
+// }
+
+// .card-index-infos h3 {
+//   color: #575757;
+//   font-size: 14px;
+//   font-family: 'Poppins';
+//   font-weight: 400;
+//   line-height: 0.3;
+//   padding-top: 8px;
+// }
+
+// .card-index-infos p {
+//   font-size: 12px;
+//   color: #575757;
+//   font-family: 'Poppins';
+//   font-weight: 300;
+// }
+
+// .card-index-infos p:last-child {
+//   margin-bottom: 0;
+//   // margin-top: 16px;
+// }
 
 // ===============================================
 
@@ -79,7 +121,7 @@
 .card-show-top {
   display: flex;
   justify-content: space-between;
-
+  margin: 8px 0;
 }
 
 .card-show img {
@@ -183,6 +225,7 @@
   width: 100%;
   height: 100%;
   border-radius: 10px;
+  object-fit: cover;
 }
 
 .home-card-title {
