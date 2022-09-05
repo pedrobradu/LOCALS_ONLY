@@ -37,16 +37,18 @@ class ActivitiesController < ApplicationController
       lng: -46.650014746017646,
       info_window: render_to_string(partial: "user_info_window")
     }]
-
-    @review = Review.new
-    # @wishlists = Wishlist.all.order(:title)
-
+    
     # CÓDIGO PRA MOSTRAR O MARKER DE ACORDO COM ENDEREÇO DO USER NO CADASTRO!
     # {
     #   lat: @user.latitude,
     #   lng: @user.longitude,
     #   # info_window: render_to_string(partial: "info_window", locals: { activity: @activity })
     # }
+    
+    @review = Review.new
+    # @wishlists = Wishlist.all.order(:title)
+    @checkin = Checkin.find_by(activity_id: @activity, user_id: current_user)
+
   end
 
   def map(activities)

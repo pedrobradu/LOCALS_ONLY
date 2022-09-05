@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_04_223944) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_05_150905) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -32,6 +32,16 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_04_223944) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "checkins", force: :cascade do |t|
+    t.integer "count", default: 0
+    t.bigint "user_id", null: false
+    t.bigint "activity_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["activity_id"], name: "index_checkins_on_activity_id"
+    t.index ["user_id"], name: "index_checkins_on_user_id"
   end
 
   create_table "linked_tags", force: :cascade do |t|
@@ -108,6 +118,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_04_223944) do
     t.index ["user_id"], name: "index_wishlists_on_user_id"
   end
 
+  add_foreign_key "checkins", "activities"
+  add_foreign_key "checkins", "users"
   add_foreign_key "linked_tags", "tags"
   add_foreign_key "messages", "chatrooms"
   add_foreign_key "messages", "users"
