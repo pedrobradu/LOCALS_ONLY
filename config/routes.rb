@@ -8,10 +8,11 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
 
-    resources :activities, only: [:index, :show] do
+  resources :activities, only: [:index, :show] do
     resources :reviews, only: [:new, :create]
     resources :wishlist_items, only: [:new, :create]
     resources :users, only: [:destroy]
+    resources :checkins, only: [:create]
   end
 
   #resources :linked_tags, only: [:create], tem que nestar em algum lugar
@@ -19,6 +20,7 @@ Rails.application.routes.draw do
   resources :wishlist_items, only: [:destroy]
   resources :users, only: [:show, :destroy]
   resources :reviews, only: [:destroy]
+  resources :checkins, only: [:update]
 
   resources :chatrooms, only: :show do
     resources :messages, only: :create
