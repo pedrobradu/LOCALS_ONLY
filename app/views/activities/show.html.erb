@@ -41,8 +41,8 @@
           <%# <p>= "#{@activity.open_date}"</p> %>
           <h3><%= "Endereço:" %></h3>
           <p><%= "#{@activity.address}" %></p>
-          <h3><%= "Ranking:" %></h3>
-          <p><%= "#{@activity.ranking}" %></p>
+          <h3><%= "Rating:" %></h3>
+          <p><%= "#{@average}" %></p>
           <h3><%= "Tipo:" %></h3>
           <p><%= "#{@activity.category}" %></p>
           <h3><%= "Tags Associadas:" %></h3>
@@ -71,7 +71,9 @@
             <% if near.to_a.pluck(:id).include?(@activity.id) %>
             <%= simple_form_for([@activity, @review], data: {turbo: :false}) do |f| %>
               <%= f.input :content, label: "Sua dica:" %>
+              <%= f.input :rating, collection: (1..5).to_a, label: "Rate your experience", input_html: {data: {controller: "star-rating"}} %>
               <%= f.submit "Submeter Review", class: "btn-black" %>
+
             <% end %>
           <% end %>
       </div>
@@ -80,7 +82,15 @@
         <h3><strong>Reviews:</strong></h3>
             <% @activity.reviews.each do |review| %>
           <div class="review-cards">
-              <div><%= review.content %></div>
+              <div class="d-flex align-content-between flex-wrap">
+              <div class=""><% review.rating.times do %>
+               <i class="fa-solid fa-star"></i>
+                <% end %>
+              <div class=""><%= review.content %></div>
+              <%= review.created_at.strftime("%d/%m/%Y %H:%M") %>
+
+              </div>
+              </div>
               <%# <li class="">= review.content</li> %>
               <div><%= link_to "Delete",
                 review_path(review),

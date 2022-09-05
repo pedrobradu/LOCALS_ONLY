@@ -7,4 +7,13 @@ class Activity < ApplicationRecord
 
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
+
+  def average
+    if reviews.present?
+      (reviews.sum(:rating) / reviews.count.to_f).round(1)
+    else
+      "Sem Reviews"
+    end
+
+  end
 end

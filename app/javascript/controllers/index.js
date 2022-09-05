@@ -16,5 +16,8 @@ application.register("home-footer", HomeFooterController)
 import MapController from "./map_controller"
 application.register("map", MapController)
 
+import StarRatingController from "./star_rating_controller"
+application.register("star-rating", StarRatingController)
+
 import TomselectController from "./tomselect_controller"
 application.register("tomselect", TomselectController)
