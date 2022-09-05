@@ -32,19 +32,19 @@
         <%# <img src="https://source.unsplash.com/random/1600x900"/> %>
         <img src= <%= "#{activity.image}" %>/>
           <div class="card-index-infos">
-            <h3><%= "Título:" %></h3>
+            <h3><strong><%= "Título:" %></strong></h3>
             <p><%= "#{activity.title}" %></p>
-            <h3><%= "Descrição:" %></h3>
+            <h3><strong><%= "Descrição:" %></strong></h3>
             <p><%= "#{activity.description}" %></p>
             <%# <h3><%= "Datas:" %>
             <%# <p><%= "#{activity.open_date}" %>
-            <h3><%= "Endereço:" %></h3>
+            <h3><strong><%= "Endereço:" %></strong></h3>
             <p><%= "#{activity.address}" %></p>
-            <h3><%= "Tipo:" %></h3>
+            <h3><strong><%= "Tipo:" %></strong></h3>
             <p><%= "#{activity.category}" %></p>
-            <h3><%= "Tags Associadas:" %></h3>
+            <h3><strong><%= "Tags Associadas:" %></strong></h3>
             <p><%= "#{activity.tags.map { |tag| tag.tag_name }.join(", ")}" %></p>
-            <h3><%= "Ranking:" %></h3>
+            <h3><strong><%= "Ranking:" %></strong></h3>
             <p><%= "#{activity.ranking}" %></p>
           </div>
           <div>
