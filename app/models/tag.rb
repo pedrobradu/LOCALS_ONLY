@@ -1,4 +1,7 @@
 class Tag < ApplicationRecord
+
+  has_many :linked_tags, dependent: :destroy
+
   scope :user_tags, -> { where(tag_type: "user") }
   scope :activity_tags, -> { where(tag_type: "activity") }
 
