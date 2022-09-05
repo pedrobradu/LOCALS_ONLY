@@ -5,6 +5,7 @@ class ReviewsController < ApplicationController
     @review = Review.new
   end
 
+
   def create
     @activity = Activity.find(params[:activity_id])
     @review = Review.new(review_params)
@@ -14,6 +15,8 @@ class ReviewsController < ApplicationController
       redirect_to activity_path(@activity, anchor: "reviews")
       # redirect_to activity_path(@activity)
     else
+      flash[:alert] = "Something went wrong."
+      render :new
       render :new, status: :unprocessable_entity
     end
   end
@@ -27,6 +30,6 @@ class ReviewsController < ApplicationController
   private
 
   def review_params
-    params.require(:review).permit(:content, :value)
+    params.require(:review).permit(:content, :value, :rating)
   end
 end

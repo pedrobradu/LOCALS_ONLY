@@ -80,6 +80,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_05_201951) do
     t.decimal "value"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "rating"
     t.index ["activity_id"], name: "index_reviews_on_activity_id"
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end

@@ -2,5 +2,5 @@ class Review < ApplicationRecord
   belongs_to :activity
   belongs_to :user
 
-  validates :content, presence: true
+  validates :content, :rating, presence: true
 end
