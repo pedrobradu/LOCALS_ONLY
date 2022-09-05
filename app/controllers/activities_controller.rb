@@ -12,9 +12,8 @@ class ActivitiesController < ApplicationController
 
     if params[:tags].present?
       @activities = @activities.joins(:tags).where(tags: params[:tags])
-      raise
     end
-    
+
     map(@activities)
 
     activity_tags
