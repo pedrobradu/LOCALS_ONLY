@@ -5,12 +5,12 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-Activity.destroy_all
-User.destroy_all
 Tag.destroy_all
 Wishlist.destroy_all
 LinkedTag.destroy_all
 Chatroom.destroy_all
+Activity.destroy_all
+User.destroy_all
 
 
 Chatroom.create(name: "general")
@@ -106,6 +106,7 @@ puts 'Feito!'
 
 puts 'Criando Wishlist...'
 
-wishlist = Wishlist.create!(title: "Meus Favoritos:", user_id: "1")
+Wishlist.create!(title: "Meus Favoritos:", user_id: user1.id)
+Wishlist.create!(title: "Meus Favoritos:", user_id: user2.id)
 
 puts 'Feito!'

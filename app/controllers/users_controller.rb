@@ -1,9 +1,8 @@
 class UsersController < ApplicationController
   def show
-    @user = current_user
-    @wishlists = current_user.wishlists
-    @wishlist = Wishlist.find_by(user: current_user)
-    @chatroom = Chatroom.first
+    @user = User.find(params[:id])
+    @wishlists = @user.wishlists
+    @wishlist = Wishlist.find_by(user: @user)
   end
 
 end
