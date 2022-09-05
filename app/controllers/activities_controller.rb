@@ -37,6 +37,7 @@ class ActivitiesController < ApplicationController
     }]
     @review = Review.new
     # @wishlists = Wishlist.all.order(:title)
+    @checkin = Checkin.find_by(activity_id: @activity, user_id: current_user)
   end
 
   def map(activities)
