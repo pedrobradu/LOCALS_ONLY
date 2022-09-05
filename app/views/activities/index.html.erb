@@ -24,7 +24,7 @@
       prompt: "Selecione tags",
       'data-controller': 'tomselect'
     %>
-    <%= submit_tag "Search", class: "btn btn-primary" %>
+    <%= submit_tag "Procurar", class: "btn btn-dark" %>
   <% end %>
   <div class="index-title"><h1><strong>Lista de indicações:</strong></h1></div>
 
@@ -36,8 +36,7 @@
         <img src= <%= "#{activity.image}" %>/>
           <div class="card-index-infos">
             <div class="infos-lines">
-              <h3><strong><%= "Título:" %></strong></h3>
-              <p><%= "#{activity.title}" %></p>
+              <h2><strong><%= "#{activity.title}" %></strong></h2>
             </div>
             <%# <h3><strong>= "Descrição:"</strong></h3> %>
             <%# <p>= "#{activity.description}"</p> %>
