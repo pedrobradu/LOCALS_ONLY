@@ -12,3 +12,15 @@
   display: flex;
   gap: 16px
 }
+
+.container-field {
+  display: flex;
+  margin-bottom: 30px;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.field {
+  width: 350px;
+  border-radius: 5px;
+}

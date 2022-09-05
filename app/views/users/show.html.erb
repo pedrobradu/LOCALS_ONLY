@@ -8,6 +8,7 @@
   <p><strong>Name:</strong><%= "#{@user.name}" %> </p>
   <p><strong>Data de Nascimento:</strong><%= "#{@user.birth_date}" %> </p>
   <p><%= link_to "Voltar para recomendações", activities_path, class: "btn-yellow" %></p>
+  <p><%= link_to "Ir para chat", chatroom_path(@chatroom), class: "btn-yellow" %></p>
  </div>
 
   <div class="card-wishlist">

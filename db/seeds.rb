@@ -10,6 +10,10 @@ User.destroy_all
 Tag.destroy_all
 Wishlist.destroy_all
 LinkedTag.destroy_all
+Chatroom.destroy_all
+
+
+Chatroom.create(name: "general")
 
 puts 'Criando 9 novas tags de user...'
 
@@ -25,9 +29,13 @@ u_tag9 = Tag.create!(sub_category: "Estilo", tag_name: "Natureza", tag_type: "us
 
 puts 'Feito!!'
 
-user1 = User.create!(nickname: "Pedro", email: "teste@teste.com", password: "123123", name: "Pedro", address: "Rua Jericó, 193, São Paulo", birth_date: "1993/01/30")
+user1 = User.create!(nickname: "Pedro", email: "teste@teste.com", password: "123123", name: "Pedro", address: "Rua Paulistânia, 215, São Paulo", birth_date: "1993/01/30")
 user1.tags << [u_tag1, u_tag4, u_tag8]
 user1.save
+
+user2 = User.create!(nickname: "Carol", email: "carol@teste.com", password: "123123", name: "Carol", address: "Rua Jericó, 193, São Paulo", birth_date: "1993/10/30")
+user2.tags << [u_tag2, u_tag4, u_tag8]
+user2.save
 
 puts 'Criando 15 novas tags de activity...'
 
@@ -54,7 +62,7 @@ puts 'Feito!'
 
 puts 'Criando 10 novas atividades...'
 
-activity1 = Activity.create!(title: "Casa de Chá da Carol", description: "O lugar preferido de quem procura um chá bem diferentão.", address: "Rua Medeiros de Albuquerque, 85, São Paulo", ranking: 2.5, category: "Comer & Beber", image: "https://images.pexels.com/photos/4974504/pexels-photo-4974504.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")
+activity1 = Activity.create!(title: "Casa de Chá da Carol", description: "O lugar preferido de quem procura um chá bem diferentão.", address: "Rua Medeiros de Albuquerque, 85, São Paulo", ranking: 2.5, category: "Comer & Beber", image: "https://images.pexels.com/photos/2666986/pexels-photo-2666986.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")
 activity1.tags << [a_tag6, a_tag8]
 activity1.save
 
