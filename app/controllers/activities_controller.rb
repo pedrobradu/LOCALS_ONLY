@@ -18,6 +18,7 @@ class ActivitiesController < ApplicationController
 
     activity_tags
 
+  
     # @filter = Activity.new(params[:activity])
     # @filtered_activities = Activity.where(category: )
   end
@@ -37,6 +38,8 @@ class ActivitiesController < ApplicationController
     }]
     @review = Review.new
     # @wishlists = Wishlist.all.order(:title)
+
+    @average = (@activity.reviews.sum(:rating) / @activity.reviews.count.to_f).round(1)
   end
 
   def map(activities)
