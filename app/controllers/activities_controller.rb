@@ -51,6 +51,7 @@ class ActivitiesController < ApplicationController
 
     @best_users = User.joins(:checkins).where(checkins: { activity_id: @activity.id } ).order(count: :desc)
 
+
   end
 
   def map(activities)
