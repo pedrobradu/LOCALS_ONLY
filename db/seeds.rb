@@ -62,7 +62,7 @@ puts 'Feito!'
 
 puts 'Criando 10 novas atividades...'
 
-activity1 = Activity.create!(title: "Casa de Chá da Carol", description: "O lugar preferido de quem procura um chá bem diferentão.", address: "Rua Medeiros de Albuquerque, 85, São Paulo", ranking: 2.5, category: "Comer & Beber", image: "https://images.pexels.com/photos/4974504/pexels-photo-4974504.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")
+activity1 = Activity.create!(title: "Casa de Chá da Carol", description: "O lugar preferido de quem procura um chá bem diferentão.", address: "Rua Medeiros de Albuquerque, 85, São Paulo", ranking: 2.5, category: "Comer & Beber", image: "https://images.pexels.com/photos/2666986/pexels-photo-2666986.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")
 activity1.tags << [a_tag6, a_tag8]
 activity1.save
 
