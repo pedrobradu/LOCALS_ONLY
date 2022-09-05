@@ -1,6 +1,7 @@
 class Activity < ApplicationRecord
   has_many :wishlist_itens, dependent: :destroy
   has_many :reviews, dependent: :destroy
+  has_many :checkins
 
   include Tagable
 
