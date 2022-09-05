@@ -1,7 +1,11 @@
 .banner {
-  background: image-url('banner.svg');
-  background-size: cover;
-  background-repeat: no-repeat;
+  // background: image-url('banner.svg');
+  // background-size: cover;
+  // background-repeat: no-repeat;
   height: 40vh;
-  width: auto;
+  width: 100%;
+  left: 0;
+  top: 12%;
+  position: absolute;
+  z-index: -1;
 }
