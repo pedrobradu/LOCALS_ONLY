@@ -30,9 +30,12 @@ class ActivitiesController < ApplicationController
       lat: @activity.latitude,
       lng: @activity.longitude,
       info_window: render_to_string(partial: "info_window", locals: { activity: @activity })
-    }, {
+    }]
+
+    @user_marker = [{
       lat: -23.570184635866426,
       lng: -46.650014746017646,
+      info_window: render_to_string(partial: "user_info_window")
     }]
 
     @review = Review.new
