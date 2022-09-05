@@ -49,6 +49,8 @@ class ActivitiesController < ApplicationController
     # @wishlists = Wishlist.all.order(:title)
     @checkin = Checkin.find_by(activity_id: @activity, user_id: current_user)
 
+    @best_users = User.joins(:checkins).where(checkins: { activity_id: @activity.id } ).order(count: :desc)
+
   end
 
   def map(activities)
