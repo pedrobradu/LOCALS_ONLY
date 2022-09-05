@@ -54,43 +54,43 @@ puts 'Feito!'
 
 puts 'Criando 10 novas atividades...'
 
-activity1 = Activity.create!(title: "Casa de Chá da Carol", description: "O lugar preferido de quem procura um chá bem diferentão.", address: "Rua Medeiros de Albuquerque, 85, São Paulo", ranking: 2.5, category: "Eat & Drink", image: "https://images.pexels.com/photos/4974504/pexels-photo-4974504.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")
+activity1 = Activity.create!(title: "Casa de Chá da Carol", description: "O lugar preferido de quem procura um chá bem diferentão.", address: "Rua Medeiros de Albuquerque, 85, São Paulo", ranking: 2.5, category: "Comer & Beber", image: "https://images.pexels.com/photos/4974504/pexels-photo-4974504.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")
 activity1.tags << [a_tag6, a_tag8]
 activity1.save
 
-activity2 = Activity.create!(title: "Show de Rock da Nath", description: "Todas as noites este é o lugar para os fans de Nath e Nic.", address: "Rua Harmonia, 337, São Paulo", ranking: 4.9, category: "Events", image: "https://images.pexels.com/photos/7239916/pexels-photo-7239916.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")
+activity2 = Activity.create!(title: "Show de Rock da Nath", description: "Todas as noites este é o lugar para os fans de Nath e Nic.", address: "Rua Harmonia, 337, São Paulo", ranking: 4.9, category: "Eventos", image: "https://images.pexels.com/photos/7239916/pexels-photo-7239916.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")
 activity2.tags << [a_tag11, a_tag7]
 activity2.save
 
-activity3 = Activity.create!(title: "Yoga no Parque com Maurício", description: "Todos os sábados! Venha ficar com zen com o mestre Maurício.", address: "Rua Rodésia, 34, São Paulo", ranking: 4.2, category: "To Do", image: "https://images.pexels.com/photos/3822621/pexels-photo-3822621.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")
+activity3 = Activity.create!(title: "Yoga no Parque com Maurício", description: "Todos os sábados! Venha ficar com zen com o mestre Maurício.", address: "Rua Rodésia, 34, São Paulo", ranking: 4.2, category: "O Que Fazer", image: "https://images.pexels.com/photos/3822621/pexels-photo-3822621.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")
 activity3.tags << [a_tag16]
 activity3.save
 
-activity4 = Activity.create!(title: "Tribunal do Pedrinho", description: "Comida boa demais, direto de Vitória!", address: "Rua Purpurina, 170, São Paulo", ranking: 4.5, category: "Eat & Drink", image: "https://images.pexels.com/photos/2491273/pexels-photo-2491273.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")
+activity4 = Activity.create!(title: "Tribunal do Pedrinho", description: "Comida boa demais, direto de Vitória!", address: "Rua Purpurina, 170, São Paulo", ranking: 4.5, category: "Comer & Beber", image: "https://images.pexels.com/photos/2491273/pexels-photo-2491273.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")
 activity4.tags << [a_tag3, a_tag4, a_tag9]
 activity4.save
 
-activity5 = Activity.create!(title: "Festa do Mars", description: "Vai rolar muito exploding kittens.", address: "Rua Rodésia, 34, São Paulo", ranking: 1.0, category: "Events", image: "https://images.pexels.com/photos/1706018/pexels-photo-1706018.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")
+activity5 = Activity.create!(title: "Festa do Mars", description: "Vai rolar muito exploding kittens.", address: "Rua Rodésia, 34, São Paulo", ranking: 1.0, category: "Eventos", image: "https://images.pexels.com/photos/1706018/pexels-photo-1706018.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")
 activity5.tags << [a_tag7, a_tag5, a_tag13, a_tag14]
 activity5.save
 
-activity6 = Activity.create!(title: "DemoDay dos Lindos", description: "Apresentação dos projetos do Batch #944!", address: "Rua Jericó, 193, São Paulo", ranking: 4.0, category: "To Do", image: "https://images.pexels.com/photos/276452/pexels-photo-276452.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")
+activity6 = Activity.create!(title: "DemoDay dos Lindos", description: "Apresentação dos projetos do Batch #944!", address: "Rua Jericó, 193, São Paulo", ranking: 4.0, category: "O Que Fazer", image: "https://images.pexels.com/photos/276452/pexels-photo-276452.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")
 activity6.tags << [a_tag18]
 activity6.save
 
-activity7 = Activity.create!(title: "Cannoleria do Lucas", description: "O melhor da Itália apenas alguns passos de você!", address: "Rua Original, 173, São Paulo", ranking: 4.7, category: "Eat & Drink", image: "https://images.pexels.com/photos/7474126/pexels-photo-7474126.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")
+activity7 = Activity.create!(title: "Cannoleria do Lucas", description: "O melhor da Itália apenas alguns passos de você!", address: "Rua Original, 173, São Paulo", ranking: 4.7, category: "Comer & Beber", image: "https://images.pexels.com/photos/7474126/pexels-photo-7474126.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")
 activity7.tags << [a_tag2, a_tag7, a_tag9]
 activity7.save
 
-activity8 = Activity.create!(title: "Batalha dos TikTokers", description: "Pra quem coordenação e nada pra fazer.", address: "Rua Jericó, 15, São Paulo", ranking: 3.7, category: "Events", image: "https://images.pexels.com/photos/2467768/pexels-photo-2467768.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")
+activity8 = Activity.create!(title: "Batalha dos TikTokers", description: "Pra quem coordenação e nada pra fazer.", address: "Rua Jericó, 15, São Paulo", ranking: 3.7, category: "Eventos", image: "https://images.pexels.com/photos/2467768/pexels-photo-2467768.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")
 activity8.tags << [a_tag14]
 activity8.save
 
-activity9 = Activity.create!(title: "Aulão de Crossfit", description: "Com o nosso crossfiteiro Aurélio.", address: "Rua Wisard, 138, São Paulo", ranking: 4.2, category: "To Do", image: "https://images.pexels.com/photos/3289711/pexels-photo-3289711.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")
+activity9 = Activity.create!(title: "Aulão de Crossfit", description: "Com o nosso crossfiteiro Aurélio.", address: "Rua Wisard, 138, São Paulo", ranking: 4.2, category: "O Que Fazer", image: "https://images.pexels.com/photos/3289711/pexels-photo-3289711.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")
 activity9.tags << [a_tag17]
 activity9.save
 
-activity10 = Activity.create!(title: "Pub Azul", description: "Pub Irlandês raiz com muito chop e música de qualidade.", address: "Alameda Ribeirão Preto, 384, Bela Vista, São Paulo", ranking: 4.7, category: "Eat & Drink", image: "https://images.pexels.com/photos/159291/beer-machine-alcohol-brewery-159291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")
+activity10 = Activity.create!(title: "Pub Azul", description: "Pub Irlandês raiz com muito chop e música de qualidade.", address: "Alameda Ribeirão Preto, 384, Bela Vista, São Paulo", ranking: 4.7, category: "Comer & Beber", image: "https://images.pexels.com/photos/159291/beer-machine-alcohol-brewery-159291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")
 activity10.tags << [a_tag11, a_tag4]
 activity10.save
 
