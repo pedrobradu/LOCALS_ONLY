@@ -18,6 +18,7 @@ class ActivitiesController < ApplicationController
 
     activity_tags
 
+  
     # @filter = Activity.new(params[:activity])
     # @filtered_activities = Activity.where(category: )
   end
@@ -37,17 +38,22 @@ class ActivitiesController < ApplicationController
       lng: -46.650014746017646,
       info_window: render_to_string(partial: "user_info_window")
     }]
-    
+
     # CÓDIGO PRA MOSTRAR O MARKER DE ACORDO COM ENDEREÇO DO USER NO CADASTRO!
     # {
     #   lat: @user.latitude,
     #   lng: @user.longitude,
     #   # info_window: render_to_string(partial: "info_window", locals: { activity: @activity })
     # }
-    
+
     @review = Review.new
     # @wishlists = Wishlist.all.order(:title)
+
+    @average = (@activity.reviews.sum(:rating) / @activity.reviews.count.to_f).round(1)
     @checkin = Checkin.find_by(activity_id: @activity, user_id: current_user)
+
+    @best_users = User.joins(:checkins).where(checkins: { activity_id: @activity.id } ).order(count: :desc)
+
 
   end
 

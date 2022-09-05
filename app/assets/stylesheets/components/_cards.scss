@@ -18,6 +18,20 @@
   justify-content: flex-start;
 }
 
+// .card-index {
+//   overflow: hidden;
+//   margin-right: 0;
+//   width: 100%;
+//   height: 300px;
+//   border-radius: 5px;
+//   background: white;
+//   box-shadow: 0 0 5px rgba(0,0,0,0.2);
+//   display: flex;
+//   padding: 16px;
+//   margin-bottom: 16px;
+//   justify-content: flex-start;
+// }
+
 .card-index img {
   height: auto;
   width: 40%;
@@ -195,6 +209,10 @@
   margin-bottom: 16px;
   display: flex;
   justify-content: space-between;
+
+  i {
+    color: #FFAD49;
+  }
 }
 
 .review-cards p {
@@ -298,8 +316,6 @@
     border-radius: 5px;
 
   }
-
-
 }
 
 
@@ -361,12 +377,6 @@
   border-radius: 5px;
   box-shadow: 0 0 5px rgba(0,0,0,0.2);
 }
-
-//  HEAD
-// width: 100%;img
-//   height: 300px;
-//   border-radius: 10px;
-
 
 .card-img-top {
 
@@ -445,8 +455,8 @@
 
 .index-title {
   font-family: 'Poppins';
-  font-weight: 700;
+  font-weight: 200;
   color: #575757;
   padding: 16px;
+  text-align: center;
 }
-
