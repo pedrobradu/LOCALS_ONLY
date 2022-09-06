@@ -12,7 +12,7 @@
     <p><strong>Name: </strong><%= "#{@user.name}" %> </p>
     <p><strong>Data de Nascimento: </strong><%= "#{@user.birth_date.strftime('%d/%m/%y')}" %> </p>
     <p><%= link_to "Voltar para recomendações", activities_path, class: "btn-yellow d-inline-block" %></p>
-    <p><%= link_to "Ir para chat", chatroom_path({user_id: @user.id}), class: "btn-yellow d-inline-block" %></p>
+    <p><%= link_to "Enviar menssagem", chatroom_path({user_id: @user.id}), class: "btn-yellow d-inline-block" if @user.id != current_user.id %></p>
   </div>
  </div>
 
@@ -45,10 +45,12 @@
   </div>
 
   <div>
+    <% if @user.id == current_user.id %>
       <h3><strong>Conversas em andamento:</strong></h3>
-        <% @chatrooms.each do |chatroom| %>
-          <p><strong>Chat:</strong><%= chatroom.name %> </p>
-          <p><%= link_to "Ver mensagens", chatroom_path(chatroom, {user_id: chatroom.users.where.not(id: current_user.id).first.id}), class: "btn-yellow" %></p>
-        <% end %>
-    </div>
+      <% @chatrooms.each do |chatroom| %>
+        <p><strong>Chat:</strong><%= chatroom.name %> </p>
+        <p><%= link_to "Ver mensagens", chatroom_path(chatroom, {user_id: chatroom.users.where.not(id: current_user.id).first.id}), class: "btn-yellow" %></p>
+      <% end %>
+    <% end %>
+  </div>
 </div>
