@@ -10,7 +10,7 @@
 
   <div class="profile-content">
     <p><strong>Name: </strong><%= "#{@user.name}" %> </p>
-    <p><strong>Data de Nascimento: </strong><%= "#{@user.birth_date}" %> </p>
+    <p><strong>Data de Nascimento: </strong><%= "#{@user.birth_date.strftime('%d/%m/%y')}" %> </p>
     <p><%= link_to "Voltar para recomendações", activities_path, class: "btn-yellow d-inline-block" %></p>
     <p><%= link_to "Ir para chat", chatroom_path({user_id: @user.id}), class: "btn-yellow d-inline-block" %></p>
   </div>
