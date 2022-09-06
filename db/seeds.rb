@@ -5,12 +5,12 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-Activity.destroy_all
-User.destroy_all
 Tag.destroy_all
 Wishlist.destroy_all
 LinkedTag.destroy_all
 Chatroom.destroy_all
+Activity.destroy_all
+User.destroy_all
 
 
 Chatroom.create(name: "general")
@@ -29,11 +29,11 @@ u_tag9 = Tag.create!(sub_category: "Estilo", tag_name: "Natureza", tag_type: "us
 
 puts 'Feito!!'
 
-user1 = User.create!(nickname: "Pedro", email: "teste@teste.com", password: "123123", name: "Pedro", address: "Rua Paulistânia, 215, São Paulo", birth_date: "1993/01/30")
+user1 = User.create!(nickname: "Wagner", email: "teste@teste.com", password: "123123", name: "Wagner", address: "Rua Paulistânia, 215, São Paulo", birth_date: "1993/01/30", image: "wagner.jpg", state: "Rio de Janeiro")
 user1.tags << [u_tag1, u_tag4, u_tag8]
 user1.save
 
-user2 = User.create!(nickname: "Carol", email: "carol@teste.com", password: "123123", name: "Carol", address: "Rua Jericó, 193, São Paulo", birth_date: "1993/10/30")
+user2 = User.create!(nickname: "Carol", email: "carol@teste.com", password: "123123", name: "Carol", address: "Rua João Moura, 2370, São Paulo", birth_date: "1992/04/04", image: "carol.jpg", state: "São Paulo")
 user2.tags << [u_tag2, u_tag4, u_tag8]
 user2.save
 
@@ -106,6 +106,7 @@ puts 'Feito!'
 
 puts 'Criando Wishlist...'
 
-wishlist = Wishlist.create!(title: "Meus Favoritos:", user_id: "1")
+Wishlist.create!(title: "Meus Favoritos:", user_id: user1.id)
+Wishlist.create!(title: "Meus Favoritos:", user_id: user2.id)
 
 puts 'Feito!'

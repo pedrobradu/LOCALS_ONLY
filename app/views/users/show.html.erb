@@ -1,14 +1,19 @@
-<div class="container d-flex">
+<div class="container d-flex mt-auto">
  <div class="card-user" >
-  <img src="https://source.unsplash.com/random/250x250" class="card-img-top" alt="...">
-  <%# <%= image_tag "pedro.jpeg" %>
-  <h3 style="background-image: url(<%= asset_path 'image_perfil-07.svg' %>);"></h3>
-  <%# <h2><strong><%= " #{@user.address}" %> <%#</strong></h2> %>
-  <h2><strong>Vila Madalena</strong></h2>
-  <p><strong>Name:</strong><%= "#{@user.name}" %> </p>
-  <p><strong>Data de Nascimento:</strong><%= "#{@user.birth_date}" %> </p>
-  <p><%= link_to "Voltar para recomendações", activities_path, class: "btn-yellow" %></p>
-  <p><%= link_to "Ir para chat", chatroom_path(@chatroom), class: "btn-yellow" %></p>
+  <div class="profile-title" style="background-image: url(<%= asset_path 'image_perfil-07.svg' %>);">
+    <%# <h2><strong><%= " #{@user.address}" %> <%#</strong></h2> %>
+    <h2><strong><%="#{@user.state}" %></strong></h2>
+  </div>
+  
+  <%# <img src="https://source.unsplash.com/random/250x250" class="card-img-top" alt="..."> %>
+  <%= image_tag @user.image %>
+
+  <div class="profile-content">
+    <p><strong>Name: </strong><%= "#{@user.name}" %> </p>
+    <p><strong>Data de Nascimento: </strong><%= "#{@user.birth_date}" %> </p>
+    <p><%= link_to "Voltar para recomendações", activities_path, class: "btn-yellow d-inline-block" %></p>
+    <p><%= link_to "Ir para chat", chatroom_path({user_id: @user.id}), class: "btn-yellow d-inline-block" %></p>
+  </div>
  </div>
 
   <div class="card-wishlist">
@@ -16,13 +21,13 @@
       <h2> <%= "#{@wishlist.title}" %></h2>
     </div>
     <% current_user.wishlists.first.wishlist_items.each  do |item| %>
-      <%= link_to  activity_path(item.activity), class: "text-decoration-none" do  %>
+      <%= link_to activity_path(item.activity), class: "text-decoration-none" do  %>
         <div class="card-index-wishlist-intems">
         <img src="<%= "#{ item.activity.image }" %>" class="card-img-top" alt="...">
           <div class="card-wishlist-infos">
-              <p><strong>Título:</strong><%= item.activity.title %> </p>
-              <p><strong>Categoria:</strong><%= item.activity.category %></p>
-              <p><strong>Descrição:</strong><%= item.activity.description%></p>
+              <p><strong>Título: </strong><%= item.activity.title %> </p>
+              <p><strong>Categoria: </strong><%= item.activity.category %></p>
+              <p><strong>Descrição: </strong><%= item.activity.description%></p>
               <div>
                 <% wishlist_item = WishlistItem.find_by(activity: @activity, wishlist: current_user.wishlists.first) %>
                 <%= link_to  wishlist_item_path(item),

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_05_150905) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_05_201951) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -26,6 +26,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_05_150905) do
     t.datetime "updated_at", null: false
     t.float "latitude"
     t.float "longitude"
+  end
+
+  create_table "chat_memberships", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "chatroom_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["chatroom_id"], name: "index_chat_memberships_on_chatroom_id"
+    t.index ["user_id"], name: "index_chat_memberships_on_user_id"
   end
 
   create_table "chatrooms", force: :cascade do |t|
@@ -95,6 +104,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_05_150905) do
     t.string "name"
     t.string "address"
     t.date "birth_date"
+    t.string "image"
+    t.string "state"
     t.float "latitude"
     t.float "longitude"
     t.string "nickname"
@@ -119,6 +130,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_05_150905) do
     t.index ["user_id"], name: "index_wishlists_on_user_id"
   end
 
+  add_foreign_key "chat_memberships", "chatrooms"
+  add_foreign_key "chat_memberships", "users"
   add_foreign_key "checkins", "activities"
   add_foreign_key "checkins", "users"
   add_foreign_key "linked_tags", "tags"
