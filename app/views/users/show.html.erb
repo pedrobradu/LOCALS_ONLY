@@ -1,28 +1,33 @@
-<div class="container d-flex">
+<div class="container d-flex mt-auto">
  <div class="card-user" >
+  <div class="profile-title" style="background-image: url(<%= asset_path 'image_perfil-07.svg' %>);">
+    <%# <h2><strong><%= " #{@user.address}" %> <%#</strong></h2> %>
+    <h2><strong><%="#{@user.state}" %></strong></h2>
+  </div>
+
   <%# <img src="https://source.unsplash.com/random/250x250" class="card-img-top" alt="..."> %>
-  <%= image_tag "wagner.jpg" %>
-  <h3 style="background-image: url(<%= asset_path 'image_perfil-07.svg' %>);"></h3>
-  <%# <h2><strong><%= " #{@user.address}" %> <%#</strong></h2> %>
-  <h2><strong>Rio de Janeiro</strong></h2>
-  <p><strong>Name: </strong><%= "#{@user.name}" %> </p>
-  <p><strong>Data de Nascimento: </strong><%= "#{@user.birth_date}" %> </p>
-  <p><%= link_to "Voltar para recomendações", activities_path, class: "btn-yellow" %></p>
-  <p><%= link_to "Ir para chat", chatroom_path({user_id: @user.id}), class: "btn-yellow" %></p>
+  <%= image_tag @user.image if @user.image.present? %>
+
+  <div class="profile-content">
+    <p><strong>Name: </strong><%= "#{@user.name}" %> </p>
+    <p><strong>Data de Nascimento: </strong><%= "#{@user.birth_date.strftime('%d/%m/%y')}" %> </p>
+    <p><%= link_to "Voltar para recomendações", activities_path, class: "btn-yellow d-inline-block" %></p>
+    <p><%= link_to "Ir para chat", chatroom_path({user_id: @user.id}), class: "btn-yellow d-inline-block" %></p>
+  </div>
  </div>
 
   <div class="card-wishlist">
     <div class="card-title">
       <h2> <%= "#{@wishlist.title}" %></h2>
     </div>
-    <% current_user.wishlists.first.wishlist_items.each  do |item| %>
+    <% @user.wishlists.first.wishlist_items.each  do |item| %>
       <%= link_to activity_path(item.activity), class: "text-decoration-none" do  %>
         <div class="card-index-wishlist-intems">
         <img src="<%= "#{ item.activity.image }" %>" class="card-img-top" alt="...">
           <div class="card-wishlist-infos">
-              <p><strong>Título:</strong><%= item.activity.title %> </p>
-              <p><strong>Categoria:</strong><%= item.activity.category %></p>
-              <p><strong>Descrição:</strong><%= item.activity.description%></p>
+              <p><strong>Título: </strong><%= item.activity.title %> </p>
+              <p><strong>Categoria: </strong><%= item.activity.category %></p>
+              <p><strong>Descrição: </strong><%= item.activity.description%></p>
               <div>
                 <% wishlist_item = WishlistItem.find_by(activity: @activity, wishlist: current_user.wishlists.first) %>
                 <%= link_to  wishlist_item_path(item),
@@ -38,4 +43,12 @@
       <% end %>
     <% end %>
   </div>
+
+  <div>
+      <h3><strong>Conversas em andamento:</strong></h3>
+        <% @chatrooms.each do |chatroom| %>
+          <p><strong>Chat:</strong><%= chatroom.name %> </p>
+          <p><%= link_to "Ver mensagens", chatroom_path(chatroom, {user_id: chatroom.users.where.not(id: current_user.id).first.id}), class: "btn-yellow" %></p>
+        <% end %>
+    </div>
 </div>
