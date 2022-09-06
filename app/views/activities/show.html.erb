@@ -80,6 +80,7 @@
         prompt: "Selecione tags",
         'data-controller': 'tomselect'
       %>
+
               <%= f.submit "Submeter Review", class: "btn-black" %>
 
             <% end %>
@@ -111,22 +112,30 @@
       </div>
     </div>
 
-    <div>
+    <div class="contenier-ranking">
+      <div class="card-ranking-title">
       <h3><strong>Ranking de melhores usuários:</strong></h3>
-        <% @best_users.each do |user| %>
-          <h3><%= "Nome:" %></h3>
-          <%= user.name %>
-          <h3><%= "Nº de Checkins:" %></h3>
-          <%= Checkin.find_by(activity_id: @activity.id, user_id: user.id).count %>
-          <h3><%= "Nº de Reviews:" %></h3>
-          <%= Review.where(activity_id: @activity.id, user_id: user.id).pluck(:id).count %>
-          <h3><%= "Compatibilidade:" %></h3>
-          <% array1 = user.tags.pluck(:id) %>
-          <% array2 = current_user.tags.pluck(:id) %>
-          <% same = array1.select { |elem| array2.include?(elem)} %>
-          <% compatible = (same.count.to_f/array2.count) %>
-          <%= "#{compatible * 100}%" %>
-          <p><%= link_to "Ver perfil", user_path(user), class: "btn-black" %></p>
+      </div>
+      <% @best_users.each do |user| %>
+        <%= link_to user_path(user), class: "text-decoration-none" do%>
+          <div class="card-index-wishlist-intems">
+            <%= image_tag user.image if user.image.present? %>
+            <div class="card-wishlist-infos">
+              <p><strong>Name: </strong><%= user.name %> </p>
+              <p><strong>Nº de Checkins: </strong> <%= Checkin.find_by(activity_id: @activity.id, user_id: user.id).count %></p>
+              <p><strong>Nº de Reviews: </strong> <%= Review.where(activity_id: @activity.id, user_id: user.id).pluck(:id).count %></p>
+              <p>
+                <strong>Compatibilidade: </strong>
+                <% array1 = user.tags.pluck(:id) %>
+                <% array2 = current_user.tags.pluck(:id) %>
+                <% same = array1.select { |elem| array2.include?(elem)} %>
+                <% compatible = (same.count.to_f/array2.count) %>
+                <%= "#{compatible * 100}%" %>
+              </p>
+            </div>
+          </div>
         <% end %>
+      <% end %>
     </div>
+  </div>
 </div>

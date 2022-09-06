@@ -476,3 +476,69 @@
   padding: 16px;
   text-align: center;
 }
+
+// =========================================
+
+// Cards de ranking
+
+.contenier-ranking {
+  width: 450px;
+  // margin-left: 550px;
+  box-sizing: border-box;
+  background: white;
+  // margin: 0 350px;
+  border: 0.5px solid #AAAAAA;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  border-radius: 10px;
+  // margin-top: -150px;
+  margin-bottom: 160px;
+
+  img {
+    height: 150px;
+    width: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+
+  }
+
+   p {
+    margin-bottom: -5px;
+    margin-top: 6px;
+    font-size: 15px;
+    color: #575757;
+    font-family: 'Poppins';
+    // line-height: 1.0;
+  }
+
+
+}
+
+.card-ranking-title {
+  color: #fff;
+  padding: 10px 10px 10px 10px;
+  margin: 10px 10px 10px 10px; ;
+  text-align: center;
+  margin-bottom: 40px;
+  background-color: #141312;
+  border-radius: 5px;
+}
+
+.card-infos-ranking {
+  overflow: hidden;
+  margin-right: 0;
+  width: 90%;
+  height: 100%;
+  border-radius: 5px;
+  box-shadow: 0 0 3px rgba(0,0,0,0.2);
+  display: flex;
+  align-self: baseline;
+  padding: 16px 20px;
+  margin-bottom: 16px;
+  margin-top: 20px;
+  margin-left: 5.5%;
+}
+
+.card-btn-black {
+  justify-content: center;
+
+}
