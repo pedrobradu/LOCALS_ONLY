@@ -42,10 +42,12 @@
           <p><%= "#{@activity.top_tags.map { |tag| tag.tag_name }.join(", ")}" %></p>
         </div>
         <div>
-          <% if @checkin.blank? %>
-            <%= link_to "Fazer Checkin", activity_checkins_path(@activity), data: {turbo_method: :post}, class: "btn-orange" %>
-          <% else %>
-            <%= link_to "Fazer Checkin", checkin_path(@checkin), data: {turbo_method: :patch}, class: "btn-orange" %>
+          <% if @near.to_a.pluck(:id).include?(@activity.id) %>
+            <% if @checkin.blank? %>
+              <%= link_to "Fazer Checkin", activity_checkins_path(@activity), data: {turbo_method: :post}, class: "btn-orange" %>
+            <% else %>
+              <%= link_to "Fazer Checkin", checkin_path(@checkin), data: {turbo_method: :patch}, class: "btn-orange" %>
+            <% end %>
           <% end %>
         </div>
         <%# <div>
@@ -67,21 +69,19 @@
 
     <div class="card-review">
       <div class="card-review-input">
-          <% near = Activity.near(current_user, 2) %>
-            <% if near.to_a.pluck(:id).include?(@activity.id) %>
+          <% if @near.to_a.pluck(:id).include?(@activity.id) %>
             <%= simple_form_for([@activity, @review], data: {turbo: :false}) do |f| %>
               <%= f.input :content, label: "Sua dica:" %>
               <%= f.input :rating, collection: (1..5).to_a, label: "Avalie a sua experiência", input_html: {data: {controller: "star-rating"}} %>
-            <%= select_tag :tags,
-        grouped_options_for_select(@tag_hash),
-        multiple: true,
-        class: "form-control",
-        include_blank: true,
-        prompt: "Selecione tags",
-        'data-controller': 'tomselect'
-      %>
+              <%= select_tag :tags,
+                grouped_options_for_select(@tag_hash),
+                multiple: true,
+                class: "form-control",
+                include_blank: true,
+                prompt: "Selecione tags",
+                'data-controller': 'tomselect'
+              %>
               <%= f.submit "Submeter Review", class: "btn-black" %>
-
             <% end %>
           <% end %>
       </div>

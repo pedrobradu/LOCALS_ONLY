@@ -29,7 +29,7 @@ u_tag9 = Tag.create!(sub_category: "Estilo", tag_name: "Natureza", tag_type: "us
 
 puts 'Feito!!'
 
-user1 = User.create!(nickname: "Wagner", email: "teste@teste.com", password: "123123", name: "Wagner Nogueira", address: "Rua Paulistânia, 215, São Paulo", birth_date: "1993/01/30", image: "wagner.jpg", state: "Rio de Janeiro")
+user1 = User.create!(nickname: "Wagner", email: "teste@teste.com", password: "123123", name: "Wagner Nogueira", address: "Rua João Lira, 39, Rio de Janeiro", birth_date: "1993/01/30", image: "wagner.jpg", state: "Rio de Janeiro")
 user1.tags << [u_tag1, u_tag4, u_tag8]
 user1.save
 
