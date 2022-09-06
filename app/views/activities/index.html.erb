@@ -69,11 +69,11 @@
             </div>
             <div class="infos-lines">
               <h3><strong><%= "Tags Associadas:" %></strong></h3>
-              <p><%= "#{activity.tags.map { |tag| tag.tag_name }.join(", ")}" %></p>
+              <p><%= "#{activity.top_tags.map { |tag| tag.tag_name }.join(", ")}" %></p>
             </div>
             <div class="infos-lines">
              <h3><strong><%= "Rating:" %></strong></h3>
-            <p><%=  activity.average %></p>
+              <p><%= activity.reviews.any? ?  "#{activity.average}" : "Sem reviews" %></p>
             </div>
             <div>
               <p><%= link_to "Ver mais", activity_path(activity), class: "btn-orange" %></p>

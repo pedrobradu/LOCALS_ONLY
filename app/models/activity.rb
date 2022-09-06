@@ -11,9 +11,11 @@ class Activity < ApplicationRecord
   def average
     if reviews.present?
       (reviews.sum(:rating) / reviews.count.to_f).round(1)
-    else
-      "Sem Reviews"
     end
+  end
+
+  def top_tags
+    tags.group(:id).order("count_id DESC").limit(3).count(:id).map { |tag, _count| Tag.find(tag) }
 
   end
 end

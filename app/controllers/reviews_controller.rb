@@ -12,12 +12,13 @@ class ReviewsController < ApplicationController
     @review.activity = @activity
     @review.user = current_user
     if @review.save
+      @activity.tags << Tag.find(params[:tags])
+      @activity.save
       redirect_to activity_path(@activity, anchor: "reviews")
       # redirect_to activity_path(@activity)
     else
       flash[:alert] = "Something went wrong."
-      render :new
-      render :new, status: :unprocessable_entity
+      redirect_to @activity, status: :unprocessable_entity
     end
   end
 
