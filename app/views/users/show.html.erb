@@ -4,13 +4,13 @@
     <%# <h2><strong><%= " #{@user.address}" %> <%#</strong></h2> %>
     <h2><strong><%="#{@user.state}" %></strong></h2>
   </div>
-  
+
   <%# <img src="https://source.unsplash.com/random/250x250" class="card-img-top" alt="..."> %>
   <%= image_tag @user.image %>
 
   <div class="profile-content">
     <p><strong>Name: </strong><%= "#{@user.name}" %> </p>
-    <p><strong>Data de Nascimento: </strong><%= "#{@user.birth_date}" %> </p>
+    <p><strong>Data de Nascimento: </strong><%= "#{@user.birth_date.strftime('%d/%m/%y')}" %></p>
     <p><%= link_to "Voltar para recomendações", activities_path, class: "btn-yellow d-inline-block" %></p>
     <p><%= link_to "Ir para chat", chatroom_path({user_id: @user.id}), class: "btn-yellow d-inline-block" %></p>
   </div>
