@@ -16,7 +16,7 @@ class ActivitiesController < ApplicationController
 
     map(@activities)
 
-    activity_tags
+    activity_tags(Tag.all)
 
 
     # @filter = Activity.new(params[:activity])
@@ -26,7 +26,6 @@ class ActivitiesController < ApplicationController
   def show
     @activity = Activity.find(params[:id])
     @item = WishlistItem.new
-    @user = current_user
     @marker = [{
       lat: @activity.latitude,
       lng: @activity.longitude,
@@ -49,10 +48,11 @@ class ActivitiesController < ApplicationController
     @review = Review.new
     # @wishlists = Wishlist.all.order(:title)
 
-    @average = (@activity.reviews.sum(:rating) / @activity.reviews.count.to_f).round(1)
     @checkin = Checkin.find_by(activity_id: @activity, user_id: current_user)
 
     @best_users = User.joins(:checkins).where(checkins: { activity_id: @activity.id } ).order(count: :desc)
+
+    activity_tags(Tag.all)
 
 
   end
@@ -67,12 +67,11 @@ class ActivitiesController < ApplicationController
     end
   end
 
-  def activity_tags
+  def activity_tags(tags)
     #pegar todas as instancias de tag
     #iterar nas tags e fazer uma array com a sub_categoria sem colocar repetidas
     #pegar a sub_categoria de tag e transformar na key principal dentro de uma hash
     #iterar sobre as tags e jogar as tag_names dentro da key que tiverem a mesma sub_categoria
-    tags = Tag.all
     @tag_hash = {}
     array_sub = tags.activity_tags.pluck(:sub_category).uniq.sort
     array_sub.each do |sub|

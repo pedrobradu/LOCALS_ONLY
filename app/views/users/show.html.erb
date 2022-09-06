@@ -6,11 +6,11 @@
   </div>
 
   <%# <img src="https://source.unsplash.com/random/250x250" class="card-img-top" alt="..."> %>
-  <%= image_tag @user.image %>
+  <%= image_tag @user.image if @user.image.present? %>
 
   <div class="profile-content">
     <p><strong>Name: </strong><%= "#{@user.name}" %> </p>
-    <p><strong>Data de Nascimento: </strong><%= "#{@user.birth_date.strftime('%d/%m/%y')}" %></p>
+    <p><strong>Data de Nascimento: </strong><%= "#{@user.birth_date}" %> </p>
     <p><%= link_to "Voltar para recomendações", activities_path, class: "btn-yellow d-inline-block" %></p>
     <p><%= link_to "Ir para chat", chatroom_path({user_id: @user.id}), class: "btn-yellow d-inline-block" %></p>
   </div>
@@ -20,7 +20,7 @@
     <div class="card-title">
       <h2> <%= "#{@wishlist.title}" %></h2>
     </div>
-    <% current_user.wishlists.first.wishlist_items.each  do |item| %>
+    <% @user.wishlists.first.wishlist_items.each  do |item| %>
       <%= link_to activity_path(item.activity), class: "text-decoration-none" do  %>
         <div class="card-index-wishlist-intems">
         <img src="<%= "#{ item.activity.image }" %>" class="card-img-top" alt="...">
@@ -43,4 +43,14 @@
       <% end %>
     <% end %>
   </div>
+
+  <div>
+      <h3><strong>Conversas em andamento:</strong></h3>
+        <% @chatrooms.each do |chatroom| %>
+          <p><strong>Chat:</strong><%= chatroom.name %> </p>
+          <%# <% chatroom.users do |user|%>
+            <p><%= link_to "Ver mensagens", chatroom_path(chatroom, {user_id: @user.id}), class: "btn-yellow" %></p>
+          <%# <% end %>
+        <% end %>
+    </div>
 </div>
