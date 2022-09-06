@@ -22,13 +22,6 @@
               <%= link_to "Adicionar à Wishlist", activity_wishlist_items_path(@activity), class: "btn-yellow", data: {turbo_method: :post}   %>
             <% end %>
         </div>
-        <div>
-          <% if @checkin.blank? %>
-            <%= link_to "Fazer Checkin", activity_checkins_path(@activity), data: {turbo_method: :post}, class: "btn-yellow" %>
-          <% else %>
-            <%= link_to "Fazer Checkin", checkin_path(@checkin), data: {turbo_method: :patch}, class: "btn-yellow" %>
-          <% end %>
-        </div>
     </div>
 
       <img src= <%="#{@activity.image}"%>/>
@@ -47,6 +40,13 @@
           <p><%= "#{@activity.category}" %></p>
           <h3><%= "Tags Associadas:" %></h3>
           <p><%= "#{@activity.top_tags.map { |tag| tag.tag_name }.join(", ")}" %></p>
+        </div>
+        <div>
+          <% if @checkin.blank? %>
+            <%= link_to "Fazer Checkin", activity_checkins_path(@activity), data: {turbo_method: :post}, class: "btn-orange" %>
+          <% else %>
+            <%= link_to "Fazer Checkin", checkin_path(@checkin), data: {turbo_method: :patch}, class: "btn-orange" %>
+          <% end %>
         </div>
         <%# <div>
           <a class="btn-black" href="#">Escrever review</a>
