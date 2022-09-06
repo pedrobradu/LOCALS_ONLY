@@ -52,30 +52,28 @@
         <%# <img src="https://source.unsplash.com/random/1600x900"/> %>
         <img src= <%= "#{activity.image}" %>/>
           <div class="card-index-infos">
-            <div class="card-index-infos-text">
-              <div class="infos-lines">
-                <h2><strong><%= "#{activity.title}" %></strong></h2>
-              </div>
-              <%# <h3><strong>= "Descrição:"</strong></h3> %>
-              <%# <p>= "#{activity.description}"</p> %>
-              <%# <h3><%= "Datas:" %>
-              <%# <p><%= "#{activity.open_date}" %>
-              <div class="infos-lines">
-                <h3><strong><%= "Endereço:" %></strong></h3>
-                <p><%= "#{activity.address}" %></p>
-              </div>
-              <div class="infos-lines">
-                <h3><strong><%= "Tipo:" %></strong></h3>
-                <p><%= "#{activity.category}" %></p>
-              </div>
-              <div class="infos-lines">
-                <h3><strong><%= "Tags Associadas:" %></strong></h3>
-                <p><%= "#{activity.tags.map { |tag| tag.tag_name }.join(", ")}" %></p>
-              </div>
-              <div class="infos-lines">
-              <h3><strong><%= "Rating:" %></strong></h3>
-              <p><%=  activity.average %></p>
-              </div>
+            <div class="infos-lines">
+              <h2><strong><%= "#{activity.title}" %></strong></h2>
+            </div>
+            <%# <h3><strong>= "Descrição:"</strong></h3> %>
+            <%# <p>= "#{activity.description}"</p> %>
+            <%# <h3><%= "Datas:" %>
+            <%# <p><%= "#{activity.open_date}" %>
+            <div class="infos-lines">
+              <h3><strong><%= "Endereço:" %></strong></h3>
+              <p><%= "#{activity.address}" %></p>
+            </div>
+            <div class="infos-lines">
+              <h3><strong><%= "Tipo:" %></strong></h3>
+              <p><%= "#{activity.category}" %></p>
+            </div>
+            <div class="infos-lines">
+              <h3><strong><%= "Tags Associadas:" %></strong></h3>
+              <p><%= "#{activity.top_tags.map { |tag| tag.tag_name }.join(", ")}" %></p>
+            </div>
+            <div class="infos-lines">
+             <h3><strong><%= "Rating:" %></strong></h3>
+              <p><%= activity.reviews.any? ?  "#{activity.average}" : "Sem reviews" %></p>
             </div>
             <div>
               <p><%= link_to "Ver mais", activity_path(activity), class: "btn-orange" %></p>

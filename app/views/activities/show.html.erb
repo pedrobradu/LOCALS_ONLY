@@ -42,11 +42,11 @@
           <h3><%= "Endereço:" %></h3>
           <p><%= "#{@activity.address}" %></p>
           <h3><%= "Rating:" %></h3>
-          <p><%= "#{@average}" %></p>
+          <p><%= @activity.reviews.any? ?  "#{@activity.average}" : "Sem reviews" %></p>
           <h3><%= "Tipo:" %></h3>
           <p><%= "#{@activity.category}" %></p>
           <h3><%= "Tags Associadas:" %></h3>
-          <p><%= "#{@activity.tags.map { |tag| tag.tag_name }.join(", ")}" %></p>
+          <p><%= "#{@activity.top_tags.map { |tag| tag.tag_name }.join(", ")}" %></p>
         </div>
         <%# <div>
           <a class="btn-black" href="#">Escrever review</a>
@@ -67,11 +67,19 @@
 
     <div class="card-review">
       <div class="card-review-input">
-          <% near = Activity.near(@user, 2) %>
+          <% near = Activity.near(current_user, 2) %>
             <% if near.to_a.pluck(:id).include?(@activity.id) %>
             <%= simple_form_for([@activity, @review], data: {turbo: :false}) do |f| %>
               <%= f.input :content, label: "Sua dica:" %>
               <%= f.input :rating, collection: (1..5).to_a, label: "Rate your experience", input_html: {data: {controller: "star-rating"}} %>
+            <%= select_tag :tags,
+        grouped_options_for_select(@tag_hash),
+        multiple: true,
+        class: "form-control",
+        include_blank: true,
+        prompt: "Selecione tags",
+        'data-controller': 'tomselect'
+      %>
               <%= f.submit "Submeter Review", class: "btn-black" %>
 
             <% end %>
@@ -87,7 +95,8 @@
                <i class="fa-solid fa-star"></i>
                 <% end %>
               <div class=""><%= review.content %></div>
-              <%= review.created_at.strftime("%d/%m/%Y %H:%M") %>
+              <h6><strong><%= "#{current_user.name} -" %></strong> <%= review.created_at.strftime("%d/%m/%Y %H:%M") %></h6>
+
 
               </div>
               </div>
