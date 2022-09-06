@@ -79,4 +79,4 @@ end
 
 gem "geocoder"
 
-gem "redis"
+gem "redis", "~> 4.8.0"
