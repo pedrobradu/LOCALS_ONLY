@@ -37,9 +37,9 @@
                         input_html: { autocomplete: "birth_date" }%>
           </div>
 
-          <div class="form-inputs">
+          <div class="input-display-inline">
             <% Tag.user_tags.each do |tag|%>
-              <%= check_box_tag "tags[]", tag.id %>
+              <%= check_box_tag tag.tag_name, tag.id, false, class: "hide-checkbox"%>
               <%= label_tag tag.tag_name %>
             <% end %>
           </div>

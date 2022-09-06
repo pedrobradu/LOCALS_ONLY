@@ -7,3 +7,32 @@
   padding: 16px;
   margin: 40px 0;
 }
+
+.input-display-inline {
+  display: inline-block; 
+}
+
+.hide-checkbox {
+  position: absolute;
+  transform: scale(0);
+}
+
+.hide-checkbox + label {
+  color: #000;
+  font-family: 'Poppins';
+  font-size: 14px;
+  font-weight: 400;
+  border-radius: 10px;
+  padding: 10px 20px;
+  text-align: center;
+  background-color: #FFAD49;
+  align-self: center;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.hide-checkbox:checked + label {
+  background-color: #000;
+  color: #FFAD49;
+}
