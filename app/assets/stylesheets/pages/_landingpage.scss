@@ -1,0 +1,36 @@
+.container-home {
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  padding: 0 0 40px 40px;
+}
+
+.bg-img {
+  background: image-url('girls-landing01.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+// .entry {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: left;
+//   justify-content: left;
+//   // height: 100vh;
+//   width: auto;
+
+.entry-info {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  width: 300px;
+
+  h1 {
+    font-size: 60px;
+    font-family: 'Poppins';
+    font-weight: 700;
+    color: #fff;
+    white-space: nowrap;
+  }
+}

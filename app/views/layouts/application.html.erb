@@ -17,10 +17,10 @@
 
   <body data-controller="home-footer">
     <%# <div class="container-all" data-home-footer-target="container"> %>
-      <%= render "shared/navbar" %>
+      <%= render "shared/navbar" unless @skip_navbar %>
       <%= render "shared/flashes" %>
       <%= yield %>
     <%# </div> %>
-      <%= render "shared/footer" %>
+      <%= render "shared/footer" unless @skip_footer %>
   </body>
 </html>
