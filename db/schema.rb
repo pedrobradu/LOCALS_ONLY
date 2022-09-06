@@ -105,6 +105,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_05_201951) do
     t.string "address"
     t.date "birth_date"
     t.string "image"
+    t.string "state"
     t.float "latitude"
     t.float "longitude"
     t.string "nickname"
