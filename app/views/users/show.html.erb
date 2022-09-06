@@ -48,9 +48,7 @@
       <h3><strong>Conversas em andamento:</strong></h3>
         <% @chatrooms.each do |chatroom| %>
           <p><strong>Chat:</strong><%= chatroom.name %> </p>
-          <%# <% chatroom.users do |user|%>
-            <p><%= link_to "Ver mensagens", chatroom_path(chatroom, {user_id: @user.id}), class: "btn-yellow" %></p>
-          <%# <% end %>
+          <p><%= link_to "Ver mensagens", chatroom_path(chatroom, {user_id: chatroom.users.where.not(id: current_user.id).first.id}), class: "btn-yellow" %></p>
         <% end %>
     </div>
 </div>
