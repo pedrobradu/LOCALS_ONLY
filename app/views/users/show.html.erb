@@ -1,12 +1,12 @@
 <div class="container d-flex">
  <div class="card-user" >
-  <img src="https://source.unsplash.com/random/250x250" class="card-img-top" alt="...">
-  <%# <%= image_tag "pedro.jpeg" %>
+  <%# <img src="https://source.unsplash.com/random/250x250" class="card-img-top" alt="..."> %>
+  <%= image_tag "wagner.jpg" %>
   <h3 style="background-image: url(<%= asset_path 'image_perfil-07.svg' %>);"></h3>
   <%# <h2><strong><%= " #{@user.address}" %> <%#</strong></h2> %>
-  <h2><strong>Vila Madalena</strong></h2>
-  <p><strong>Name:</strong><%= "#{@user.name}" %> </p>
-  <p><strong>Data de Nascimento:</strong><%= "#{@user.birth_date}" %> </p>
+  <h2><strong>Rio de Janeiro</strong></h2>
+  <p><strong>Name: </strong><%= "#{@user.name}" %> </p>
+  <p><strong>Data de Nascimento: </strong><%= "#{@user.birth_date}" %> </p>
   <p><%= link_to "Voltar para recomendações", activities_path, class: "btn-yellow" %></p>
   <p><%= link_to "Ir para chat", chatroom_path({user_id: @user.id}), class: "btn-yellow" %></p>
  </div>
@@ -16,7 +16,7 @@
       <h2> <%= "#{@wishlist.title}" %></h2>
     </div>
     <% current_user.wishlists.first.wishlist_items.each  do |item| %>
-      <%= link_to  activity_path(item.activity), class: "text-decoration-none" do  %>
+      <%= link_to activity_path(item.activity), class: "text-decoration-none" do  %>
         <div class="card-index-wishlist-intems">
         <img src="<%= "#{ item.activity.image }" %>" class="card-img-top" alt="...">
           <div class="card-wishlist-infos">
