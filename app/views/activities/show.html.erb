@@ -126,6 +126,7 @@
           <% same = array1.select { |elem| array2.include?(elem)} %>
           <% compatible = (same.count.to_f/array2.count) %>
           <%= "#{compatible * 100}%" %>
+          <p><%= link_to "Ver perfil", user_path(user), class: "btn-black" %></p>
         <% end %>
     </div>
 </div>
