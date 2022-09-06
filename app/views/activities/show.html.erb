@@ -43,9 +43,9 @@
         </div>
         <div>
           <% if @checkin.blank? %>
-            <%= link_to "Fazer Checkin", activity_checkins_path(@activity), data: {turbo_method: :post}, class: "btn-orange" %>
+            <%= link_to "Fazer Check-in", activity_checkins_path(@activity), data: {turbo_method: :post}, class: "btn-orange" %>
           <% else %>
-            <%= link_to "Fazer Checkin", checkin_path(@checkin), data: {turbo_method: :patch}, class: "btn-orange" %>
+            <%= link_to "Fazer Check-in", checkin_path(@checkin), data: {turbo_method: :patch}, class: "btn-orange" %>
           <% end %>
         </div>
         <%# <div>
