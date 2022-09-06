@@ -1,5 +1,10 @@
-<div class="container d-flex">
+<div class="container d-flex mt-auto">
  <div class="card-user" >
+  <div class="profile-title" style="background-image: url(<%= asset_path 'image_perfil-07.svg' %>);">
+    <%# <h2><strong><%= " #{@user.address}" %> <%#</strong></h2> %>
+    <h2><strong><%="#{@user.state}" %></strong></h2>
+  </div>
+  
   <%# <img src="https://source.unsplash.com/random/250x250" class="card-img-top" alt="..."> %>
   <%= image_tag @user.image if @user.image.present? %>
   <h3 style="background-image: url(<%= asset_path 'image_perfil-07.svg' %>);"></h3>
@@ -20,9 +25,9 @@
         <div class="card-index-wishlist-intems">
         <img src="<%= "#{ item.activity.image }" %>" class="card-img-top" alt="...">
           <div class="card-wishlist-infos">
-              <p><strong>Título:</strong><%= item.activity.title %> </p>
-              <p><strong>Categoria:</strong><%= item.activity.category %></p>
-              <p><strong>Descrição:</strong><%= item.activity.description%></p>
+              <p><strong>Título: </strong><%= item.activity.title %> </p>
+              <p><strong>Categoria: </strong><%= item.activity.category %></p>
+              <p><strong>Descrição: </strong><%= item.activity.description%></p>
               <div>
                 <% wishlist_item = WishlistItem.find_by(activity: @activity, wishlist: current_user.wishlists.first) %>
                 <%= link_to  wishlist_item_path(item),
