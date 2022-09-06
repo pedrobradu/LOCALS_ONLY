@@ -5,6 +5,7 @@ class PagesController < ApplicationController
   end
 
   def landingpage
-    
+    @skip_footer = true
+    @skip_navbar = true
   end
 end
