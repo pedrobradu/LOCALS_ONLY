@@ -113,8 +113,8 @@ activity5.save
 
 activity6 = Activity.create!(title: "Curso de Barista", description: "Ministrado pelo mestre Juca Esmanhoto.", address: "Rua Girassol, 273, São Paulo", ranking: 4.0, category: "O Que Fazer")
 activity6.photo.attach(
-  io: File.open(Rails.root.join('app/assets/images/cafe.jpg')),
-  filename: 'cafe.jpg',
+  io: File.open(Rails.root.join('app/assets/images/juca.jpg')),
+  filename: 'juca.jpg',
   content_type: 'image/png'
 )
 activity6.tags << [a_tag18, a_tag6]
