@@ -29,7 +29,7 @@
       <% @user.wishlists.first.wishlist_items.each  do |item| %>
         <%= link_to activity_path(item.activity), class: "text-decoration-none" do  %>
           <div class="card-index-wishlist-intems">
-          <img src="<%= "#{ item.activity.image }" %>" class="card-img-top" alt="...">
+              <%= cl_image_tag item.activity.photo.key %>
             <div class="card-wishlist-infos">
                 <p><strong>Título: </strong><%= item.activity.title %> </p>
                 <p><strong>Categoria: </strong><%= item.activity.category %></p>
@@ -68,7 +68,7 @@
     <% else %>
       <div>
         <%= image_tag "mensagem.svg", class: "message-image" %>
-      </div>  
+      </div>
     <% end %>
     <div class="">
       <p><%= link_to "Enviar menssagem", chatroom_path({user_id: @user.id}), class: "btn-yellow d-inline-block mt-5 w-100" if @user.id != current_user.id %></p>
