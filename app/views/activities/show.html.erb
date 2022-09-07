@@ -24,7 +24,11 @@
         </div>
     </div>
 
-      <img src= <%="#{@activity.image}"%>/>
+        <% if @activity.photo.attached? %>
+          <%= cl_image_tag @activity.photo.key %>
+        <% else %>
+           <%= image_tag @activity.image %>
+        <% end %>
 
       <div class="card-show-items">
         <div class="card-show-items-info">
