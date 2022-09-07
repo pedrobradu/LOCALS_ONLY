@@ -8,8 +8,10 @@
   margin: 40px 0;
 }
 
-.input-display-inline {
-  display: inline-block; 
+.new-checkbox {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 16px;
 }
 
 .hide-checkbox {
