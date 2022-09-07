@@ -48,7 +48,7 @@ class ActivitiesController < ApplicationController
     @review = Review.new
     # @wishlists = Wishlist.all.order(:title)
 
-    @near = Activity.near(current_user, 60)
+    @near = Activity.near(current_user, 2)
 
     @checkin = Checkin.find_by(activity_id: @activity, user_id: current_user)
 

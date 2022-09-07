@@ -121,7 +121,7 @@
             <%# <%= image_tag user.image if user.image.present? %>
             <%= cl_image_tag activity.photo.key %>
             <div class="card-wishlist-infos">
-              <p><strong>Name: </strong><%= user.name %> </p>
+              <p><strong>Nome: </strong><%= user.name %> </p>
               <p><strong>Nº de Checkins: </strong> <%= Checkin.find_by(activity_id: @activity.id, user_id: user.id).count %></p>
               <p><strong>Nº de Reviews: </strong> <%= Review.where(activity_id: @activity.id, user_id: user.id).pluck(:id).count %></p>
               <p>
