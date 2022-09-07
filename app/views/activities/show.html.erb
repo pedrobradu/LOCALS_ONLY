@@ -60,7 +60,7 @@
       </div>
     </div>
 
-     <div class="map" style="width: 50%; height: 600px;"
+     <div class="map" style="width: 50%; height: 697px;"
         data-controller="map"
         data-map-markers-value="<%= @marker.to_json %>"
         data-map-user-value="<%= @user_marker.to_json %>"
@@ -88,7 +88,7 @@
   <div class="d-flex">
       <div class="big-contenier">
         <div class="review-cards-all">
-          <h3><strong>Reviews:</strong></h3>
+          <h3>Reviews:</h3>
           <% @activity.reviews.each do |review| %>
             <div class="review-cards">
               <div class="d-flex align-content-between flex-wrap flex-column">
@@ -113,7 +113,7 @@
 
     <div class="contenier-ranking">
       <div class="card-ranking-title">
-        <h3><strong>Ranking de melhores usuários:</strong></h3>
+        <h5>Ranking de Melhores Usuários:</h5>
       </div>
       <% @best_users.each do |user| %>
         <%= link_to user_path(user), class: "text-decoration-none" do%>
