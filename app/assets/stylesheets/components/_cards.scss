@@ -239,6 +239,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 .card-row {
@@ -246,6 +251,22 @@
   height: 200px;
   position: relative;
   margin: 8px 0;
+  // transition-delay: 2s;
+  transition:all 0.5s ease-in-out;
+  // transition-timing-function: all ease-in-out;
+}
+
+.card-row:hover {
+  width: 900px;
+  font-size: larger;
+  color: #FFAD49;
+  transform: scaleX(1.05);
+  // transition: 1s;
+  // transition-duration: 2s;
+  // transition-timing-function: all ease-in-out;
+  h1:hover{
+    color: #FFAD49;
+  }
 }
 
 .card-row img {
@@ -267,6 +288,12 @@
   font-size: 4.5em;
   font-weight: 900;
   white-space: nowrap;
+
+    color: #fff;
+    // &:hover {
+    //   color: #FFAC5A;
+    // }
+
 }
 
 .home-card-title a {
