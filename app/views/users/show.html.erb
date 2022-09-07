@@ -6,7 +6,13 @@
   </div>
 
   <%# <img src="https://source.unsplash.com/random/250x250" class="card-img-top" alt="..."> %>
-  <%= image_tag @user.image if @user.image.present? %>
+  <%# <%= image_tag @user.image if @user.image.present? %>
+
+    <% if @user.photo.attached? %>
+      <%= cl_image_tag @user.photo.key %>
+    <% else %>
+        <%= image_tag @user.image %>
+    <% end %>
 
   <div class="profile-content">
     <p><strong>Name: </strong><%= "#{@user.name}" %> </p>
