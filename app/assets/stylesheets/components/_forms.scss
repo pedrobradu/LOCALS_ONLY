@@ -23,7 +23,7 @@
   .btn-yellow {
     width: 7em;
   }
-  
+
   .btn-black {
     margin-top: 0;
     width: 7em;
@@ -64,4 +64,8 @@
 .hide-checkbox:checked + label {
   background-color: #000;
   color: #FFAD49;
+}
+
+.ts-wrapper.form-control {
+  height: 46px;
 }
