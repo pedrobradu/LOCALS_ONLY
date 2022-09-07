@@ -1,6 +1,12 @@
 <div class="index-title mt-4"><h1><strong>Melhores Indicações</strong></h1></div>
 
 <div class="container mt-2 mb-4">
+
+<<<<<<< HEAD
+<div class="container mt-2 mb-4">
+=======
+<div class="container my-2">
+>>>>>>> master
     <%= form_with url: activities_path, method: :get, class: "d-flex" do %>
 
   <div class="container-field">
@@ -22,7 +28,7 @@
       <%= text_field_tag :ranking,
         params[:ranking],
         class: "form-control",
-        placeholder: "Digite o ranking"
+        placeholder: "Indicações acima de:"
       %>
       </div>
 
