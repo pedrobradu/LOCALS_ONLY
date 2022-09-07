@@ -63,8 +63,8 @@
               </div>
                 <div class="new-checkbox">
                   <% Tag.user_tags.each do |tag|%>
-                      <%= check_box_tag tag.tag_name, tag.id, false, class: "hide-checkbox"%>
-                      <%= label_tag tag.tag_name %>
+                      <%= check_box_tag "tags[]", tag.id, false, id: tag.id, class: "hide-checkbox"%>
+                      <%= label_tag tag.id, tag.tag_name %>
                   <% end %>
                 </div>
               <div class="form-actions mt-5">
