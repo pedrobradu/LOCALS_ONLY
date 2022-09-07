@@ -1,65 +1,80 @@
-<div class="container">
-  <div class = "row justify-content-center mt-5">
-    <div class = "col-6">
-      <div class = "">
-        <div class = "text-center mb-5">
-          <h2>Sign up</h2>
-        </div>
-        <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: { turbo: :false }) do |f| %>
-          <%= f.error_notification %>
-
-          <div class="form-inputs">
-            <%= f.input :email,
-                        required: true,
-                        autofocus: true,
-                        input_html: { autocomplete: "email" }%>
-            <%= f.input :password,
-                        required: true,
-                        hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                        input_html: { autocomplete: "new-password" } %>
-            <%= f.input :password_confirmation,
-                        required: true,
-                        input_html: { autocomplete: "new-password" } %>
-            <%= f.input :name,
-                        required: true,
-                        autofocus: true,
-                        input_html: { autocomplete: "name" } %>
-            <%= f.input :address,
-                        required: true,
-                        autofocus: true,
-                        input_html: { autocomplete: "address" }%>
-            <%= f.input :state,
-                        required: true,
-                        autofocus: true,
-                        input_html: { autocomplete: "state" }%>
-            <%= f.input :birth_date,
-                        as: :date,
-                        start_year: Date.today.year - 90,
-                        end_year: Date.today.year - 12,
-                        required: true,
-                        autofocus: true,
-                        input_html: { autocomplete: "birth_date" }%>
-          </div>
-
-          <div class="input-display-inline">
-            <% Tag.user_tags.each do |tag|%>
-              <%= check_box_tag tag.tag_name, tag.id, false, class: "hide-checkbox"%>
-              <%= label_tag tag.tag_name %>
-            <% end %>
-          </div>
-
-          <div class="div">
-            <%= f.input :photo, as: :file %>
-          </div>
-
-          <div class="form-actions">
-            <%= f.button :submit, "Sign up" %>
-          </div>
-        <% end %>
-        <div class="">
-          <%= render "devise/shared/links" %>
-        </div>
-      </div>
+<div class="container-signup">
+  <div class="container">
+    <div class = "text-center my-3" id="h2">
+      <h2>Sign up</h2>
     </div>
+    <%# <div class = "mt-5 d-flex justify-content-between"> %>
+        
+      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: { turbo: :false }) do |f| %>
+        <%= f.error_notification %>
+
+        <div class="d-flex justify-content-around">
+
+          <div class="col-5">
+            <div class="form-wrap">
+              <div class="form-inputs">
+                <%= f.input :email,
+                            required: true,
+                            autofocus: true,
+                            input_html: { autocomplete: "email" }%>
+                <%= f.input :password,
+                            label: "Senha",
+                            required: true,
+                            hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                            input_html: { autocomplete: "new-password" } %>
+                <%= f.input :password_confirmation,
+                            label: "Confirme a senha",
+                            required: true,
+                            input_html: { autocomplete: "new-password" } %>
+                <%= f.input :name,
+                            label: "Nome",
+                            required: true,
+                            autofocus: true,
+                            input_html: { autocomplete: "name" } %>
+                <%= f.input :address,
+                            label: "Endereço",
+                            required: true,
+                            autofocus: true,
+                            input_html: { autocomplete: "address" }%>
+                <%= f.input :state,
+                            label: "Estado",
+                            required: true,
+                            autofocus: true,
+                            input_html: { autocomplete: "address" }%>
+                <%= f.input :birth_date,
+                            label: "Data de nascimento",
+                            as: :date,
+                            start_year: Date.today.year - 90,
+                            end_year: Date.today.year - 12,
+                            required: true,
+                            autofocus: true,
+                            input_html: { autocomplete: "birth_date" }%>
+                <%= f.input :photo, 
+                            label: "Imagem de perfil",
+                            as: :file %>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-5">
+            <div class="form-wrap p-3">
+              <div class = "mb-5">
+                <h2>Monte seu perfil:</h2>
+              </div>
+                <div class="new-checkbox">
+                  <% Tag.user_tags.each do |tag|%>
+                      <%= check_box_tag tag.tag_name, tag.id, false, class: "hide-checkbox"%>
+                      <%= label_tag tag.tag_name %>
+                  <% end %>
+                </div>
+              <div class="form-actions mt-5">
+                <%= f.button :submit, "Sign up", class: "btn-black d-inline-block w-100" %>
+              </div>
+            </div> 
+          </div>  
+        </div>
+      <% end %>
+    <%# </div>   %>
   </div>
 </div>
+

@@ -1,6 +1,6 @@
 <div class="container">
 <%# <div class="banner"></div> %>
-<%= image_tag "banner.svg", class: "banner" %>
+<%= image_tag "map.jpg", class: "banner" %>
   <%# style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)"> %>
 
   <div class="row justify-content-center mt-5">
@@ -13,22 +13,28 @@
           <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), data: {turbo: false}) do |f| %>
             <div class="">
               <%= f.input :email,
+                          label: "Email",
                           required: false,
                           autofocus: true,
                           input_html: { autocomplete: "email" } %>
               <%= f.input :password,
+                          label: "Senha",
                           required: false,
                           input_html: { autocomplete: "current-password" } %>
-              <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+              <%= f.input :remember_me,
+                          label: "Lembrar login",
+                          as: :boolean if devise_mapping.rememberable? %>
             </div>
 
-            <div class="">
-              <%= f.button :submit, "Log in", class: "btn btn-primary" %>
+            <div class="login-buttons">
+              <div><%= f.button :submit, "Log in", class: "btn-yellow" %></div>
+              <p>Novo usuário</p>
+              <div><%= render "devise/shared/links" %></div>
+              <%#= link_to "Sign up", new_user_registration_path(@user), class: "btn-black" %>
             </div>
           <% end %>
-          <div class="">
-            <%= render "devise/shared/links" %>
-          </div>
+          <%# <div class="">
+          </div> %>
         </div>
       </div>
     </div>
