@@ -190,12 +190,12 @@
 .review-cards-all {
   display: flex;
   flex-direction: column;
-  width: auto;
+  width: 800px;
+  // margin-left: 55px;
   height: auto;
   border-radius: 5px;
   box-shadow: 0 0 5px rgba(0,0,0,0.2);
   padding: 16px;
-  margin: 16px 0;
 }
 
 .review-cards {
@@ -300,7 +300,7 @@
   padding: 16px 20px;
   margin-bottom: 16px;
   margin-top: 20px;
-  margin-left: 4%;
+  margin-left: 5%;
   text-decoration: none;
 
   img {
@@ -473,11 +473,10 @@
 
 .contenier-ranking {
   width: 450px;
-  // margin-left: 550px;
+  margin-left: 50px;
   box-sizing: border-box;
   background: white;
   // margin: 0 350px;
-  border: 0.5px solid #AAAAAA;
   box-shadow: 0 0 5px rgba(0,0,0,0.2);
   border-radius: 10px;
   // margin-top: -150px;

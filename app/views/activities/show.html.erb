@@ -24,7 +24,11 @@
         </div>
     </div>
 
-      <img src= <%="#{@activity.image}"%>/>
+        <% if @activity.photo.attached? %>
+          <%= cl_image_tag @activity.photo.key %>
+        <% else %>
+           <%= image_tag @activity.image %>
+        <% end %>
 
       <div class="card-show-items">
         <div class="card-show-items-info">
@@ -67,53 +71,49 @@
     <p><%= link_to "Voltar para recomendações", activities_path(category: @activity.category), class: "btn-yellow" %></p>
     <p><%= link_to "Voltar página principal", home_path, class: "btn-black" %></p>
 
-    <div class="card-review">
-      <div class="card-review-input">
-          <% if @near.to_a.pluck(:id).include?(@activity.id) %>
-            <%= simple_form_for([@activity, @review], data: {turbo: :false}) do |f| %>
-              <%= f.input :content, label: "Sua dica:" %>
-              <%= f.input :rating, collection: (1..5).to_a, label: "Avalie a sua experiência", input_html: {data: {controller: "star-rating"}} %>
-              <%= select_tag :tags,
-                grouped_options_for_select(@tag_hash),
-                multiple: true,
-                class: "form-control",
-                include_blank: true,
-                prompt: "Selecione tags",
-                'data-controller': 'tomselect'
-              %>
-              <%= f.submit "Submeter Review", class: "btn-black" %>
+<div class="card-review">
+        <div class="card-review-input">
+          <% near = Activity.near(current_user, 2) %>
+            <% if near.to_a.pluck(:id).include?(@activity.id) %>
+              <%= simple_form_for([@activity, @review], data: {turbo: :false}) do |f| %>
+                <%= f.input :content, label: "Sua dica:" %>
+                <%= f.input :rating, collection: (1..5).to_a, label: "Avalie a sua experiência", input_html: {data: {controller: "star-rating"}} %>
+                <%= select_tag :tags, grouped_options_for_select(@tag_hash), multiple: true, class: "form-control", include_blank: true, prompt: "Selecione tags", 'data-controller': 'tomselect'%>
+                <%= f.submit "Submeter Review", class: "btn-black" %>
+              <% end %>
             <% end %>
+         </div>
+        </div>
+  <br>
+  <div class="d-flex">
+      <div class="big-contenier">
+        <div class="review-cards-all">
+          <h3><strong>Reviews:</strong></h3>
+          <% @activity.reviews.each do |review| %>
+            <div class="review-cards">
+              <div class="d-flex align-content-between flex-wrap flex-column">
+                <div>
+                  <% review.rating.times do %>
+                    <i class="fa-solid fa-star"></i>
+                  <% end %>
+                </div>
+                <div class=""><%= review.content %></div>
+                <h6><strong><%= "#{current_user.name} -" %></strong> <%= review.created_at.strftime("%d/%m/%Y %H:%M") %></h6>
+              </div>
+                <%# <li class="">= review.content</li> %>
+              <%# <div><%= link_to "Delete",review_path(review),data: {turbo_method: :delete, turbo_confirm: "Você tem certeza?"}, class: "btn-orange" %>
+
+              <%= link_to review_path(review),  data: {turbo_method: :delete, turbo_confirm: "Tem certeza que você deseja remover?"} do %>
+                  <i class="fa-regular fa-trash-can"></i>
+                  <% end %>
+            </div>
           <% end %>
+        </div>
       </div>
-
-      <div class="review-cards-all">
-        <h3><strong>Reviews:</strong></h3>
-            <% @activity.reviews.each do |review| %>
-          <div class="review-cards">
-              <div class="d-flex align-content-between flex-wrap">
-              <div class=""><% review.rating.times do %>
-               <i class="fa-solid fa-star"></i>
-                <% end %>
-              <div class=""><%= review.content %></div>
-              <h6><strong><%= "#{current_user.name} -" %></strong> <%= review.created_at.strftime("%d/%m/%Y %H:%M") %></h6>
-
-
-              </div>
-              </div>
-              <%# <li class="">= review.content</li> %>
-              <div><%= link_to "Delete",
-                review_path(review),
-                data: {turbo_method: :delete, turbo_confirm: "Você tem certeza?"},
-                class: "btn-orange"
-              %></div>
-          </div>
-            <% end %>
-      </div>
-    </div>
 
     <div class="contenier-ranking">
       <div class="card-ranking-title">
-      <h3><strong>Ranking de melhores usuários:</strong></h3>
+        <h3><strong>Ranking de melhores usuários:</strong></h3>
       </div>
       <% @best_users.each do |user| %>
         <%= link_to user_path(user), class: "text-decoration-none" do%>
@@ -135,6 +135,8 @@
           </div>
         <% end %>
       <% end %>
-    </div>
+
+     </div>
+
   </div>
 </div>
