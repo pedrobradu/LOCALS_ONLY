@@ -6,11 +6,13 @@
   flex-direction: column;
   justify-content: space-between;
   flex-grow: 1;
+  border-radius: 5px;
 
   h1 {
     border-bottom: 1px solid $gray-200;
     margin-bottom: 0;
     padding: 1rem;
+    font-family: 'Poppins';
   }
 
   .messages {
@@ -28,3 +30,32 @@
     }
   }
 }
+.btn-black-chatroom {
+
+  color: #000;
+  font-family: 'Poppins';
+  font-size: 14px;
+  font-weight: 400;
+  border-radius: 10px;
+  padding: 10px 0;
+  text-align: center;
+  background-color: #FFAD49;
+  align-self: center;
+  text-decoration: none;
+
+  width: 12em;
+
+}
+
+.btn-black-chatroom:hover {
+  background-color: #000;
+  color: #FFAD49;
+
+}
+.form-control {
+  width: 98%;
+  margin-top: 15px;
+  line-height: 2;
+}
+
+
