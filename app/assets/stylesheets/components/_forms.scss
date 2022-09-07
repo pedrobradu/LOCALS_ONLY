@@ -5,7 +5,34 @@
   background: white;
   box-shadow: 0 0 5px rgba(0,0,0,0.2);
   padding: 16px;
-  margin: 40px 0;
+  // margin: 40px 0;
+}
+
+.login-buttons {
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  margin-bottom: 0;
+  gap: 8px;
+
+  p {
+    margin: 0;
+  }
+
+  .btn-yellow {
+    width: 7em;
+  }
+  
+  .btn-black {
+    margin-top: 0;
+    width: 7em;
+  }
+
+  .forgot-password {
+    text-decoration: none;
+    color: #000;
+  }
 }
 
 .new-checkbox {
