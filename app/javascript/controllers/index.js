@@ -21,3 +21,6 @@ application.register("star-rating", StarRatingController)
 
 import TomselectController from "./tomselect_controller"
 application.register("tomselect", TomselectController)
+
+import TypedJsController from "./typed_js_controller"
+application.register("typed-js", TypedJsController)
