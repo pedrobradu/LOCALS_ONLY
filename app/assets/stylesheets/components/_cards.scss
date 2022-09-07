@@ -190,12 +190,20 @@
 .review-cards-all {
   display: flex;
   flex-direction: column;
-  width: auto;
+  width: 800px;
+  // margin-left: 55px;
   height: auto;
   border-radius: 5px;
   box-shadow: 0 0 5px rgba(0,0,0,0.2);
   padding: 16px;
-  margin: 16px 0;
+
+  h3 {
+    font-family: 'Poppins';
+    font-weight: 700;
+    font-size: 26px;
+  }
+
+
 }
 
 .review-cards {
@@ -215,6 +223,13 @@
   font-family: 'Poppins';
   font-weight: 300;
   // line-height: 1.0;
+}
+
+.card-review-input {
+  border-radius: 5px;
+  background: white;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  padding: 36px;
 }
 
 // =======================================
@@ -300,7 +315,7 @@
   padding: 16px 20px;
   margin-bottom: 16px;
   margin-top: 20px;
-  margin-left: 4%;
+  margin-left: 5%;
   text-decoration: none;
 
   img {
@@ -473,11 +488,10 @@
 
 .contenier-ranking {
   width: 450px;
-  // margin-left: 550px;
+  margin-left: 50px;
   box-sizing: border-box;
   background: white;
   // margin: 0 350px;
-  border: 0.5px solid #AAAAAA;
   box-shadow: 0 0 5px rgba(0,0,0,0.2);
   border-radius: 10px;
   // margin-top: -150px;
@@ -511,6 +525,15 @@
   margin-bottom: 40px;
   background-color: #141312;
   border-radius: 5px;
+
+  h5 {
+    font-family: 'Poppins';
+    font-weight: 400;
+    font-size: 26px;
+    color: #fff;
+  }
+
+
 }
 
 .card-infos-ranking {
