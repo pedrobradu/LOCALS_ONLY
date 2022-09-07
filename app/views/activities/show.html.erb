@@ -97,7 +97,7 @@
                 <% end %>
               </div>
               <div class=""><%= review.content %></div>
-              <h6><strong><%= "#{current_user.name} -" %></strong> <%= review.created_at.strftime("%d/%m/%Y %H:%M") %></h6>
+              <h6><strong><%= "#{review.user.name} -" %></strong> <%= review.created_at.strftime("%d/%m/%Y %H:%M") %></h6>
             </div>
               <%# <li class="">= review.content</li> %>
             <%# <div><%= link_to "Delete",review_path(review),data: {turbo_method: :delete, turbo_confirm: "Você tem certeza?"}, class: "btn-orange" %>
@@ -118,7 +118,11 @@
         <%= link_to user_path(user), class: "text-decoration-none" do%>
           <div class="card-index-wishlist-intems">
             <%# <%= image_tag user.image if user.image.present? %>
-            <%= cl_image_tag @activity.photo.key %>
+            <% if user.photo.attached? %>
+              <%= cl_image_tag user.photo.key %>
+            <% else %>
+                <%= image_tag user.image %>
+            <% end %>
             <div class="card-wishlist-infos">
               <p><strong>Nome: </strong><%= user.name %> </p>
               <p><strong>Nº de Checkins: </strong> <%= Checkin.find_by(activity_id: @activity.id, user_id: user.id).count %></p>
