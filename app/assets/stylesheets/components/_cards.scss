@@ -196,6 +196,14 @@
   border-radius: 5px;
   box-shadow: 0 0 5px rgba(0,0,0,0.2);
   padding: 16px;
+
+  h3 {
+    font-family: 'Poppins';
+    font-weight: 700;
+    font-size: 26px;
+  }
+
+
 }
 
 .review-cards {
@@ -215,6 +223,13 @@
   font-family: 'Poppins';
   font-weight: 300;
   // line-height: 1.0;
+}
+
+.card-review-input {
+  border-radius: 5px;
+  background: white;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  padding: 36px;
 }
 
 // =======================================
@@ -510,6 +525,15 @@
   margin-bottom: 40px;
   background-color: #141312;
   border-radius: 5px;
+
+  h5 {
+    font-family: 'Poppins';
+    font-weight: 400;
+    font-size: 26px;
+    color: #fff;
+  }
+
+
 }
 
 .card-infos-ranking {
