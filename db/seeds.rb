@@ -34,7 +34,7 @@ user1 = User.create!(nickname: "Wagner", email: "teste@teste.com", password: "12
 user1.tags << [u_tag1, u_tag4, u_tag8]
 user1.save
 
-user2 = User.create!(nickname: "Carol", email: "carol@teste.com", password: "123123", name: "Caroline Brum", address: "Rua João Moura, 2370, São Paulo", birth_date: "05/04/1992", image: "carol.jpg", state: "São Paulo")
+user2 = User.create!(nickname: "Carol", email: "carol@teste.com", password: "123123", name: "Caroline Brum", address: "Rua Ipero, 47, São Paulo", birth_date: "05/04/1992", image: "carol.jpg", state: "São Paulo")
 user2.tags << [u_tag2, u_tag4, u_tag8]
 user2.save
 
@@ -49,7 +49,7 @@ a_tag6 = Tag.create!(sub_category: "Bar", tag_name: "Café", tag_type: "activity
 a_tag7 = Tag.create!(sub_category: "Estilo", tag_name: "Amigos", tag_type: "activity")
 a_tag8 = Tag.create!(sub_category: "Estilo", tag_name: "Romântico", tag_type: "activity")
 a_tag9 = Tag.create!(sub_category: "Estilo", tag_name: "Família", tag_type: "activity")
-a_tag10 = Tag.create!(sub_category: "Estilo", tag_name: "Pet-friendly", tag_type: "activity")
+a_tag10 = Tag.create!(sub_category: "Estilo", tag_name: "Pet-Friendly", tag_type: "activity")
 a_tag11 = Tag.create!(sub_category: "Música", tag_name: "Rock", tag_type: "activity")
 a_tag12 = Tag.create!(sub_category: "Música", tag_name: "Sertanejo", tag_type: "activity")
 a_tag13 = Tag.create!(sub_category: "Música", tag_name: "Samba", tag_type: "activity")
