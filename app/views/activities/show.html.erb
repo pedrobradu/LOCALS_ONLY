@@ -75,7 +75,7 @@
         <div class="card-review-input">
             <% if @near.to_a.pluck(:id).include?(@activity.id) %>
               <%= simple_form_for([@activity, @review], data: {turbo: :false}) do |f| %>
-                <%= f.input :content, label: "Sua dica:" %>
+                <%= f.input :content, label: "Deixe aqui sua dica:" %>
                 <%= f.input :rating, collection: (1..5).to_a, label: "Avalie a sua experiência", input_html: {data: {controller: "star-rating"}} %>
                 <%= select_tag :tags, grouped_options_for_select(@tag_hash), multiple: true, class: "form-control", include_blank: true, prompt: "Selecione tags", 'data-controller': 'tomselect'%>
                 <%= f.submit "Submeter Review", class: "btn-black" %>
