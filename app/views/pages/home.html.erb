@@ -2,30 +2,37 @@
   <div class="container my-4">
 
     <div class="row">
+    <%= link_to activities_path(category: "Comer & Beber") do %>
+
       <div class="card-row">
         <%= image_tag "restaurant.jpg" %>
         <div class="home-card-title">
-          <h1><%= link_to "COMER & BEBER", activities_path(category: "Comer & Beber")%></h1>
+          <h1> COMER & BEBER </h1>
         </div>
       </div>
+    <% end %>
     </div>
 
     <div class="row">
+    <%= link_to activities_path(category: "O Que Fazer")  do %>
       <div class="card-row">
         <%= image_tag "bike.jpg" %>
         <div class="home-card-title">
-          <h1><%= link_to "O QUE FAZER", activities_path(category: "O Que Fazer") %></h1>
+          <h1>O QUE FAZER</h1>
         </div>
       </div>
+      <% end %>
     </div>
 
     <div class="row">
+    <%= link_to activities_path(category: "Eventos")  do %>
       <div class="card-row">
         <%= image_tag "event.jpg" %>
         <div class="home-card-title">
-          <h1><%= link_to "EVENTOS", activities_path(category: "Eventos") %></h1>
+          <h1>EVENTOS</h1>
         </div>
       </div>
+    <% end %>
     </div>
   </div>
 </div>
