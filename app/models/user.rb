@@ -4,9 +4,10 @@ class User < ApplicationRecord
   has_many :checkins
   has_many :chat_memberships
   has_many :chatrooms, through: :chat_memberships
+  has_one_attached :photo
 
   include Tagable
-  
+
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
 
