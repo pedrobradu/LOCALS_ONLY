@@ -30,11 +30,11 @@ u_tag9 = Tag.create!(sub_category: "Estilo de Vida", tag_name: "Dono de pet", ta
 
 puts 'Feito!!'
 
-user1 = User.create!(nickname: "Wagner", email: "teste@teste.com", password: "123123", name: "Wagner Nogueira", address: "Rua João Lira, 39, Rio de Janeiro", birth_date: "1993/01/30", image: "wagner.jpg", state: "Rio de Janeiro")
+user1 = User.create!(email: "teste@teste.com", password: "123123", name: "Wagner Nogueira", address: "Rua João Lira, 39, Rio de Janeiro", birth_date: "1993/01/30", image: "wagner.jpg", state: "Rio de Janeiro")
 user1.tags << [u_tag1, u_tag4, u_tag8]
 user1.save
 
-user2 = User.create!(nickname: "Carol", email: "carol@teste.com", password: "123123", name: "Caroline Brum", address: "Rua João Moura, 2370, São Paulo", birth_date: "05/04/1992", image: "carol.jpg", state: "São Paulo")
+user2 = User.create!(email: "carol@teste.com", password: "123123", name: "Caroline Brum", address: "Rua Ipero, 47, São Paulo", birth_date: "05/04/1992", image: "carol.jpg", state: "São Paulo")
 user2.tags << [u_tag2, u_tag4, u_tag8]
 user2.save
 
@@ -49,7 +49,7 @@ a_tag6 = Tag.create!(sub_category: "Bar", tag_name: "Café", tag_type: "activity
 a_tag7 = Tag.create!(sub_category: "Estilo", tag_name: "Amigos", tag_type: "activity")
 a_tag8 = Tag.create!(sub_category: "Estilo", tag_name: "Romântico", tag_type: "activity")
 a_tag9 = Tag.create!(sub_category: "Estilo", tag_name: "Família", tag_type: "activity")
-a_tag10 = Tag.create!(sub_category: "Estilo", tag_name: "Pet-friendly", tag_type: "activity")
+a_tag10 = Tag.create!(sub_category: "Estilo", tag_name: "Pet-Friendly", tag_type: "activity")
 a_tag11 = Tag.create!(sub_category: "Música", tag_name: "Rock", tag_type: "activity")
 a_tag12 = Tag.create!(sub_category: "Música", tag_name: "Sertanejo", tag_type: "activity")
 a_tag13 = Tag.create!(sub_category: "Música", tag_name: "Samba", tag_type: "activity")
@@ -113,8 +113,8 @@ activity5.save
 
 activity6 = Activity.create!(title: "Curso de Barista", description: "Ministrado pelo mestre Juca Esmanhoto.", address: "Rua Girassol, 273, São Paulo", ranking: 4.0, category: "O Que Fazer")
 activity6.photo.attach(
-  io: File.open(Rails.root.join('app/assets/images/cafe.jpg')),
-  filename: 'cafe.jpg',
+  io: File.open(Rails.root.join('app/assets/images/juca.jpg')),
+  filename: 'juca.jpg',
   content_type: 'image/png'
 )
 activity6.tags << [a_tag18, a_tag6]
