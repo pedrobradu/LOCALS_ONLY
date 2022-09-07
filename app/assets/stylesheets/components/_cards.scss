@@ -231,6 +231,10 @@
   background: white;
   box-shadow: 0 0 5px rgba(0,0,0,0.2);
   padding: 36px;
+
+  h3 {
+    font-weight: 300;
+  }
 }
 
 // =======================================
@@ -555,9 +559,9 @@
   background-color: #000;
   border-radius: 5px;
 
-  h5 {
+  h3 {
     font-family: 'Poppins';
-    font-weight: 400;
+    font-weight: 300;
     font-size: 20px;
     color: #fff;
     white-space: nowrap;
