@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_many :wishlists
+  has_many :wishlists, dependent: :destroy
   has_many :reviews
   has_many :checkins
   has_many :chat_memberships

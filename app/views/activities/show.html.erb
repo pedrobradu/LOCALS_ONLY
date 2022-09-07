@@ -73,8 +73,7 @@
 
 <div class="card-review">
         <div class="card-review-input">
-          <% near = Activity.near(current_user, 2) %>
-            <% if near.to_a.pluck(:id).include?(@activity.id) %>
+            <% if @near.to_a.pluck(:id).include?(@activity.id) %>
               <%= simple_form_for([@activity, @review], data: {turbo: :false}) do |f| %>
                 <%= f.input :content, label: "Sua dica:" %>
                 <%= f.input :rating, collection: (1..5).to_a, label: "Avalie a sua experiência", input_html: {data: {controller: "star-rating"}} %>
@@ -118,9 +117,10 @@
       <% @best_users.each do |user| %>
         <%= link_to user_path(user), class: "text-decoration-none" do%>
           <div class="card-index-wishlist-intems">
-            <%= image_tag user.image if user.image.present? %>
+            <%# <%= image_tag user.image if user.image.present? %>
+            <%= cl_image_tag @activity.photo.key %>
             <div class="card-wishlist-infos">
-              <p><strong>Name: </strong><%= user.name %> </p>
+              <p><strong>Nome: </strong><%= user.name %> </p>
               <p><strong>Nº de Checkins: </strong> <%= Checkin.find_by(activity_id: @activity.id, user_id: user.id).count %></p>
               <p><strong>Nº de Reviews: </strong> <%= Review.where(activity_id: @activity.id, user_id: user.id).pluck(:id).count %></p>
               <p>
