@@ -1,4 +1,5 @@
-<div class="container my-4">
+<div class="container my-4" data-controller="confirm-alert">
+
 
          <%# <%= simple_form_for [@activity, @item] do |f| %>
           <%# <%= f.association :wishlist%>
@@ -17,7 +18,7 @@
             <%# <a class="btn-yellow" href="#">Adicionar à Wishlist</a> %>
             <% wishlist_item = WishlistItem.find_by(activity: @activity, wishlist: current_user.wishlists.first)   %>
             <% if wishlist_item.present? %>
-              <%= link_to "Remover da Wishlist",  wishlist_item_path(wishlist_item), class: "btn-orange", data: {turbo_method: :delete, turbo_confirm: "Tem certeza que deseja remover #{@activity.title} da sua wishlist?"} %>
+              <%= link_to "Remover da Wishlist",  wishlist_item_path(wishlist_item), class: "btn-orange", data: {turbo_method: :delete, text: "Tem certeza que deseja remover #{@activity.title} da sua wishlist?", action: "click->confirm-alert#confirm "} %>
             <% else %>
               <%= link_to "Adicionar à Wishlist", activity_wishlist_items_path(@activity), class: "btn-yellow", data: {turbo_method: :post}   %>
             <% end %>
@@ -54,6 +55,7 @@
             <% end %>
           <% end %>
         </div>
+ 
         <%# <div>
           <a class="btn-black" href="#">Escrever review</a>
         </div> %>
