@@ -39,7 +39,7 @@
           <h3><%= "Endereço:" %></h3>
           <p><%= "#{@activity.address}" %></p>
           <h3><%= "Rating:" %></h3>
-          <p><%= @activity.reviews.any? ?  "#{@activity.average}" : "Sem reviews" %></p>
+          <p><%= @activity.reviews.any? ?  "#{@activity.ranking}" : "Sem reviews" %></p>
           <h3><%= "Tipo:" %></h3>
           <p><%= "#{@activity.category}" %></p>
           <h3><%= "Tags Associadas:" %></h3>
