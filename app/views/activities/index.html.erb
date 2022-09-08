@@ -1,15 +1,7 @@
 <div class="index-title mt-4"><h1><strong>Melhores Indicações</strong></h1></div>
-
 <div class="container mt-2 mb-4">
-
-    <%= form_with url: activities_path, method: :get, class: "d-flex" do %>
-
-  <div class="container-field">
-      <%# <%= select_tag :category,
-        options_for_select(["Comer & Beber", "O Que Fazer", "Eventos"]),
-        class: "form-control",
-        prompt: "Seleciona a categoria"
-      %>
+  <%= form_with url: activities_path, method: :get, class: "d-flex" do %>
+    <div class="container-field">
       <div class="field">
         <select name="category" id="id" class="form-control">
           <option value="" disabled selected hidden>Escolha uma categoria:</option>
@@ -18,15 +10,13 @@
           <option value="Eventos">Eventos</option>
         </select>
       </div>
-
       <div class="field">
-      <%= text_field_tag :ranking,
-        params[:ranking],
-        class: "form-control",
-        placeholder: "Indicações acima de:"
-      %>
+        <%= text_field_tag :ranking,
+          params[:ranking],
+          class: "form-control",
+          placeholder: "Indicações acima de:"
+        %>
       </div>
-
       <div class="field">
       <%= select_tag :tags,
         # options_from_collection_for_select(Tag.activity_tags, "id", "tag_name", params[:tags]),
@@ -39,13 +29,11 @@
         'data-controller': 'tomselect'
       %>
       </div>
-
       <div>
       <%= submit_tag "Procurar", class: "btn-black" %>
-    <% end %>
     </div>
-  </div>
-
+  <% end %>
+ </div>
   <div class="container-index">
     <div class="card-master">
     <% @activities.each do |activity| %>
@@ -60,10 +48,6 @@
               <div class="infos-lines">
                 <h2><strong><%= "#{activity.title}" %></strong></h2>
               </div>
-                <%# <h3><strong>= "Descrição:"</strong></h3> %>
-                <%# <p>= "#{activity.description}"</p> %>
-                <%# <h3><%= "Datas:" %>
-                <%# <p><%= "#{activity.open_date}" %>
               <div class="infos-lines">
                 <h3><strong><%= "Endereço:" %></strong></h3>
                 <p><%= "#{activity.address}" %></p>
@@ -78,12 +62,10 @@
               </div>
               <div class="infos-lines">
               <h3><strong><%= "Nota:" %></strong></h3>
-                <p><%= activity.reviews.any? ?  "#{activity.average}" : "Sem reviews" %></p>
+                <p><%= activity.reviews.any? ?  "#{activity.ranking}" : "Sem reviews" %></p>
               </div>
             </div>
-
-              <%= link_to "Ver mais", activity_path(activity), class: "btn-yellow" %>
-
+            <%= link_to "Ver mais", activity_path(activity), class: "btn-yellow" %>
           </div>
         </div>
       <% end %>
