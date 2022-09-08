@@ -15,7 +15,7 @@ User.destroy_all
 
 Chatroom.create(name: "general")
 
-puts 'Criando 9 novas tags de user...'
+puts 'Criando 20 novas tags de user...'
 
 u_tag1 = Tag.create!(sub_category: "Status Civil", tag_name: "Solteiro", tag_type: "user")
 u_tag2 = Tag.create!(sub_category: "Status Civil", tag_name: "Casado", tag_type: "user")
@@ -40,19 +40,42 @@ u_tag20 = Tag.create!(sub_category: "Estilo de Vida", tag_name: "Custo/Benefíci
 
 puts 'Feito!'
 
+puts 'Criando 8 novos users...'
+
 user1 = User.create!(email: "wagner@gmail.com", password: "123123", name: "Wagner Nogueira", address: "Rua João Lira, 39, Rio de Janeiro", birth_date: "1985/01/30", image: "wagner.jpg", state: "Rio de Janeiro")
-user1.tags << [u_tag1, u_tag4, u_tag8]
+user1.tags << [u_tag1, u_tag4, u_tag8, u_tag9, u_tag17, u_tag16]
 user1.save
 
 user2 = User.create!(email: "pedro@gmail.com", password: "123123", name: "Pedro Duarte", address: "Rua Ipero, 47, São Paulo", birth_date: "30/01/1993", image: "pedro.jpg", state: "São Paulo")
-user2.tags << [u_tag2, u_tag4, u_tag8]
+user2.tags << [u_tag1, u_tag4, u_tag8, u_tag10, u_tag17, u_tag16]
 user2.save
 
-# user3 = User.create!(email: "carol@teste.com", password: "123123", name: "Caroline Brum", address: "Rua Ipero, 47, São Paulo", birth_date: "05/04/1992", image: "carol.jpg", state: "São Paulo")
-# user3.tags << [u_tag2, u_tag4, u_tag8]
-# user3.save
+user3 = User.create!(email: "mauricio@gmail.com", password: "123123", name: "Maurício Poças", address: "Rua Ipero, 47, São Paulo", birth_date: "05/04/1992", image: "mauricio.jpg", state: "São Paulo")
+user3.tags << [u_tag2, u_tag4, u_tag7, u_tag15]
+user3.save
 
-puts 'Criando 15 novas tags de activity...'
+user4 = User.create!(email: "eduardo@gmail.com", password: "123123", name: "Eduardo Thomazoni", address: "Rua Ipero, 47, São Paulo", birth_date: "10/03/1990", image: "eduardo.jpg", state: "São Paulo")
+user4.tags << [u_tag2, u_tag3, u_tag8, u_tag14]
+user4.save
+
+user5 = User.create!(email: "lucas@gmail.com", password: "123123", name: "Lucas Turra", address: "Rua Ipero, 47, São Paulo", birth_date: "27/03/1996", image: "lucas.jpg", state: "São Paulo")
+user5.tags << [u_tag2, u_tag10, u_tag5, u_tag18]
+user5.save
+
+user6 = User.create!(email: "marcio@gmail.com", password: "123123", name: "Márcio Pinho", address: "Rua Ipero, 47, São Paulo", birth_date: "27/03/1987", image: "marcio.jpg", state: "São Paulo")
+user6.tags << [u_tag2, u_tag4, u_tag8, u_tag14]
+user6.save
+
+user7 = User.create!(email: "barbara@gmail.com", password: "123123", name: "Bárbara Soares", address: "Rua Ipero, 47, São Paulo", birth_date: "10/09/1990", image: "barbara.jpg", state: "São Paulo")
+user7.tags << [u_tag1, u_tag4, u_tag8, u_tag11]
+user7.save
+
+user8 = User.create!(email: "juliana@gmail.com", password: "123123", name: "Juliana Bonardi", address: "Rua Ipero, 47, São Paulo", birth_date: "28/10/1990", image: "juliana.jpg", state: "São Paulo")
+user8.tags << [u_tag2, u_tag4, u_tag8, u_tag20]
+user8.save
+
+
+puts 'Criando 37 novas tags de activity...'
 
 a_tag1 = Tag.create!(sub_category: "Restaurante", tag_name: "Japonês", tag_type: "activity")
 a_tag2 = Tag.create!(sub_category: "Restaurante", tag_name: "Italiano", tag_type: "activity")
@@ -123,7 +146,7 @@ activity3.photo.attach(
 activity3.tags << [a_tag18]
 activity3.save
 
-activity4 = Activity.create!(title: "Cuscuz da Irina", description: "Comida nordestina e drinks autorais pelas mãos de uma chef também nordestina.", address: "Rua Itapeva, 700, São Paulo", category: "Comer & Beber")
+activity4 = Activity.create!(title: "Cuscuz da Irina", description: "Comida nordestina e drinks autorais pelas mãos de uma chef também nordestina.", address: "Rua Ipero, 47, São Paulo", category: "Comer & Beber")
 activity4.photo.attach(
   io: File.open(Rails.root.join('app/assets/images/cuscuz.jpg')),
   filename: 'cuscuz.jpg',
