@@ -457,6 +457,9 @@
 // =========================================
 
 // Cards de user
+.cards-flex {
+  gap: 50px;
+}
 
 .card-user {
 
@@ -506,7 +509,11 @@
 
   p {
     margin: 0;
-    white-space: nowrap;
+    width: 400px;
+  }
+
+  .btn-yellow {
+    align-self: flex-start;
   }
 }
 
