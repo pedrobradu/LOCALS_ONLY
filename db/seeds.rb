@@ -116,7 +116,7 @@ activity3.photo.attach(
   filename: 'demo.jpg',
   content_type: 'image/png'
 )
-activity3.tags << [a_tag16]
+activity3.tags << [a_tag18]
 activity3.save
 
 activity4 = Activity.create!(title: "Cuscuz da Irina", description: "Comida nordestina e drinks autorais pelas mãos de uma chef também nordestina.", address: "Alameda Ribeirão Preto, 384, Bela Vista, São Paulo", ranking: 4.7, category: "Comer & Beber")
