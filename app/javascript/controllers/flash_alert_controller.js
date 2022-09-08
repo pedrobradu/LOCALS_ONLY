@@ -11,7 +11,7 @@ export default class extends Controller {
     Swal.fire({
       title: this.alertValue,
       icon: 'success',
-      text: 'Projeto apresentado com sucesso! Obrigado Le Wagon, professores, meu time e meus colegas por tudo!!',
+      text: 'Projeto apresentado com sucesso! Obrigado Le Wagon, professores, meu time e colegas por tudo!!',
       confirmButtonText: 'E É ISSO'
     })
   }

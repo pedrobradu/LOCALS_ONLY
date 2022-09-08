@@ -23,13 +23,13 @@ export default class extends Controller {
     e.stopImmediatePropagation();
     e.preventDefault();
     Swal.fire({
-      title: 'Are you sure?',
+      title: 'Confirme',
       text: target.dataset.text,
       icon: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
-      confirmButtonText: 'Yes, delete it!'
+      confirmButtonText: 'Sim, pode deletar!!'
     }).then((result) => {
       if (result.isConfirmed) {
         this.redirect = true;
