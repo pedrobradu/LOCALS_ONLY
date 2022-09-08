@@ -47,7 +47,7 @@ user1.tags << [u_tag1, u_tag4, u_tag8, u_tag9, u_tag17, u_tag16]
 user1.save
 
 user2 = User.create!(email: "pedro@gmail.com", password: "123123", name: "Pedro Duarte", address: "Rua Ipero, 47, São Paulo", birth_date: "30/01/1993", image: "pedro.jpg", state: "São Paulo")
-user2.tags << [u_tag2, u_tag4, u_tag8, u_tag10]
+user2.tags << [u_tag1, u_tag4, u_tag8, u_tag10, u_tag17, u_tag16]
 user2.save
 
 user3 = User.create!(email: "mauricio@gmail.com", password: "123123", name: "Maurício Poças", address: "Rua Ipero, 47, São Paulo", birth_date: "05/04/1992", image: "mauricio.jpg", state: "São Paulo")
