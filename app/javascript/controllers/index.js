@@ -7,6 +7,12 @@ import { application } from "./application"
 import ChatroomSubscriptionController from "./chatroom_subscription_controller"
 application.register("chatroom-subscription", ChatroomSubscriptionController)
 
+import ConfirmAlertController from "./confirm_alert_controller"
+application.register("confirm-alert", ConfirmAlertController)
+
+import FlashAlertController from "./flash_alert_controller"
+application.register("flash-alert", FlashAlertController)
+
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
