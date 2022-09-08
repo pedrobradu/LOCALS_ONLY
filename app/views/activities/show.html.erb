@@ -49,9 +49,9 @@
         <div>
           <% if @near.to_a.pluck(:id).include?(@activity.id) %>
             <% if @checkin.blank? %>
-              <%= link_to "Fazer Check-in", activity_checkins_path(@activity), data: {turbo_method: :post}, class: "btn-orange" %>
+              <%= link_to "Fazer Check-in", activity_checkins_path(@activity), data: {turbo_method: :post, action: "click->confirm-alert#checkin" }, class: "btn-orange" %>
             <% else %>
-              <%= link_to "Fazer Check-in", checkin_path(@checkin), data: {turbo_method: :patch}, class: "btn-orange" %>
+              <%= link_to "Fazer Check-in", checkin_path(@checkin), data: {turbo_method: :patch, action: "click->confirm-alert#checkin" }, class: "btn-orange" %>
             <% end %>
           <% end %>
         </div>

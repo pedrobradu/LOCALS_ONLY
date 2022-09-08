@@ -42,4 +42,22 @@ export default class extends Controller {
       }
     })
   }
+
+  checkin(e) {
+    const target = e.currentTarget
+    if (this.redirect) return;
+    e.stopImmediatePropagation();
+    e.preventDefault();
+    Swal.fire({
+      title: 'Checkin Realizado',
+      icon: 'success',
+      text: 'Projeto apresentado com sucesso! Obrigado Le Wagon, professores, meu time e colegas por tudo!!',
+      confirmButtonText: 'E É ISSO'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.redirect = true;
+        target.click()
+      }
+    })
+  }
 }
