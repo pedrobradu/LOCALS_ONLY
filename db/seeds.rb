@@ -54,7 +54,7 @@ user3 = User.create!(email: "mauricio@gmail.com", password: "123123", name: "Mau
 user3.tags << [u_tag2, u_tag4, u_tag7, u_tag15]
 user3.save
 
-user4 = User.create!(email: "eduardo@gmail.com", password: "123123", name: "Eduardo Thomazoni", address: "Rua Ipero, 47, São Paulo", birth_date: "10/03/1990", image: "eduardo.jpg", state: "São Paulo")
+user4 = User.create!(email: "ronaldinho@gmail.com", password: "123123", name: "Ronaldinho Gaúcho", address: "Rua Ipero, 47, São Paulo", birth_date: "21/03/1980", image: "ronaldinho.jpg", state: "São Paulo")
 user4.tags << [u_tag2, u_tag3, u_tag8, u_tag14]
 user4.save
 
@@ -134,7 +134,7 @@ activity2.photo.attach(
   filename: 'lagunitas.jpg',
   content_type: 'image/png'
 )
-activity2.tags << [a_tag11, a_tag7, a_tag4, a_tag3, a_tag9, a_tag26]
+activity2.tags << [a_tag9, a_tag7, a_tag4, a_tag26]
 activity2.save
 
 activity3 = Activity.create!(title: "Web Development Demo Day", description: "Apresentação dos projetos finais do batch #944/946 da Le Wagon!", address: "Rua Coronel Oscar Porto, 70, São Paulo", category: "O Que Fazer")
