@@ -231,6 +231,10 @@
   background: white;
   box-shadow: 0 0 5px rgba(0,0,0,0.2);
   padding: 36px;
+
+  h3 {
+    font-weight: 300;
+  }
 }
 
 // =======================================
@@ -334,7 +338,6 @@
 
   overflow: hidden;
   margin-right: 0;
-  width: 90%;
   // height: 100%;
   border-radius: 5px;
   box-shadow: 0 0 3px rgba(0,0,0,0.2);
@@ -365,7 +368,8 @@
 
 
 .card-index-wishlist-intems:hover {
-  border: 1px solid rgb(74, 74, 74);
+  // border: 1px solid rgb(74, 74, 74);
+  box-shadow: 0 0 3px rgba(0,0,0,0.8);
 }
 
 
@@ -568,11 +572,10 @@
   text-align: center;
   background-color: #000;
   border-radius: 5px;
-  width: 90%;
 
-  h5 {
+  h3 {
     font-family: 'Poppins';
-    font-weight: 400;
+    font-weight: 300;
     font-size: 20px;
     color: #fff;
     white-space: nowrap;
