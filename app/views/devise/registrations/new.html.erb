@@ -4,7 +4,7 @@
       <h2>Sign up</h2>
     </div>
     <%# <div class = "mt-5 d-flex justify-content-between"> %>
-        
+
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: { turbo: :false }) do |f| %>
         <%= f.error_notification %>
 
@@ -49,7 +49,7 @@
                             required: true,
                             autofocus: true,
                             input_html: { autocomplete: "birth_date" }%>
-                <%= f.input :photo, 
+                <%= f.input :photo,
                             label: "Imagem de perfil",
                             as: :file %>
               </div>
@@ -58,7 +58,7 @@
 
           <div class="col-5">
             <div class="form-wrap p-3">
-              <div class = "mb-5">
+              <div class = "mb-5 text-center">
                 <h2>Monte seu perfil:</h2>
               </div>
                 <div class="new-checkbox">
@@ -70,11 +70,10 @@
               <div class="form-actions mt-5">
                 <%= f.button :submit, "Sign up", class: "btn-black d-inline-block w-100" %>
               </div>
-            </div> 
-          </div>  
+            </div>
+          </div>
         </div>
       <% end %>
     <%# </div>   %>
   </div>
 </div>
-

@@ -28,10 +28,10 @@
 .card-index-infos {
   display: flex;
   flex-direction: column;
-  margin-top: 8px;
+  padding: 8px;
   // justify-content: flex-end;
-  gap: 16px;
   width: 100%;
+  overflow: auto;
 
   .btn-yellow {
     align-self: flex-end;
@@ -231,6 +231,10 @@
   background: white;
   box-shadow: 0 0 5px rgba(0,0,0,0.2);
   padding: 36px;
+
+  h3 {
+    font-weight: 300;
+  }
 }
 
 // =======================================
@@ -334,7 +338,6 @@
 
   overflow: hidden;
   margin-right: 0;
-  width: 90%;
   // height: 100%;
   border-radius: 5px;
   box-shadow: 0 0 3px rgba(0,0,0,0.2);
@@ -363,9 +366,19 @@
   }
 }
 
+.p-box {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  padding-bottom: 8px;
+}
+
 
 .card-index-wishlist-intems:hover {
-  border: 1px solid rgb(74, 74, 74);
+  // border: 1px solid rgb(74, 74, 74);
+  box-shadow: 0 0 3px rgba(0,0,0,0.8);
 }
 
 
@@ -441,22 +454,25 @@
 
 
 .card-title {
-  padding: 10px 10px 10px 10px;
-  margin: 10px 10px 10px 10px; ;
+  padding: 10px;
+  margin: 10px 10px 30px 10px; ;
   text-align: center;
-  margin-bottom: 40px;
   background-color: #FFAD49;
   border-radius: 5px;
 }
 
 .card-title h2 {
   font-family: 'Poppins';
-  font-weight: 600;
+  font-weight: 700;
+  font-size: 24px;
   margin: 0;
 }
 // =========================================
 
 // Cards de user
+.cards-flex {
+  gap: 50px;
+}
 
 .card-user {
 
@@ -492,6 +508,7 @@
     width: 410px;
     height: 273px;
     border-radius: 10px;
+    object-fit: cover;
   }
   // padding-left: 30px;
   // padding-right: 60px;
@@ -506,7 +523,11 @@
 
   p {
     margin: 0;
-    white-space: nowrap;
+    width: 400px;
+  }
+
+  .btn-yellow {
+    align-self: flex-start;
   }
 }
 
@@ -561,11 +582,10 @@
   text-align: center;
   background-color: #000;
   border-radius: 5px;
-  width: 90%;
 
-  h5 {
+  h3 {
     font-family: 'Poppins';
-    font-weight: 400;
+    font-weight: 300;
     font-size: 20px;
     color: #fff;
     white-space: nowrap;
