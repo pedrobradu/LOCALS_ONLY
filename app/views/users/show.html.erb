@@ -26,44 +26,56 @@
       <div class="card-title">
         <h2> <%= "#{@wishlist.title}" %></h2>
       </div>
-      <% @user.wishlists.first.wishlist_items.each  do |item| %>
-        <%= link_to activity_path(item.activity), class: "text-decoration-none" do  %>
-          <div class="card-index-wishlist-intems">
-              <%= cl_image_tag item.activity.photo.key %>
-            <div class="card-wishlist-infos">
-                <p><strong>Título: </strong><%= item.activity.title %> </p>
-                <p><strong>Categoria: </strong><%= item.activity.category %></p>
-                <p><strong>Descrição: </strong><%= item.activity.description%></p>
-                <div>
-                  <% wishlist_item = WishlistItem.find_by(activity: @activity, wishlist: current_user.wishlists.first) %>
-                  <%= link_to  wishlist_item_path(item),
-                  data: {turbo_method: :delete, turbo_confirm: "Tem certeza que você deseja remover #{item.activity.title } da sua wishlist?"} do %>
-                    <i class="fa-regular fa-trash-can"></i>
-                  <% end %>
-                </div>
-                <%# <%= link_to wishlist_path(@festival.wishlists.where(user:current_user).first),method: :delete do %>
-                <%# <i class="animate__animated animate__heartBeat fas fa-heart"></i> %>
+      <% if @user.wishlists.first.wishlist_items.first.nil? %>
+        <div class="card-index-wishlist-intems">
+          <p id="p"><strong>Você não tem atividades salvas</strong></p>
+        </div>
+      <% else %>
+        <% @user.wishlists.first.wishlist_items.each  do |item| %>
+          <%= link_to activity_path(item.activity), class: "text-decoration-none" do  %>
+            <div class="card-index-wishlist-intems">
+                <%= cl_image_tag item.activity.photo.key %>
+              <div class="card-wishlist-infos">
+                  <p><strong>Título: </strong><%= item.activity.title %> </p>
+                  <p><strong>Categoria: </strong><%= item.activity.category %></p>
+                  <p><strong>Descrição: </strong><%= item.activity.description%></p>
+                  <div>
+                    <% wishlist_item = WishlistItem.find_by(activity: @activity, wishlist: current_user.wishlists.first) %>
+                    <%= link_to  wishlist_item_path(item),
+                    data: {turbo_method: :delete, turbo_confirm: "Tem certeza que você deseja remover #{item.activity.title } da sua wishlist?"} do %>
+                      <i class="fa-regular fa-trash-can"></i>
+                    <% end %>
+                  </div>
+                  <%# <%= link_to wishlist_path(@festival.wishlists.where(user:current_user).first),method: :delete do %>
+                  <%# <i class="animate__animated animate__heartBeat fas fa-heart"></i> %>
+              </div>
             </div>
-          </div>
+          <% end %>
         <% end %>
-      <% end %>
+      <% end %>  
     </div>
   </div>
 
   <div class = "col-3">
     <% if @user.id == current_user.id %>
       <div class="card-wishlist py-1">
-          <div class="card-title">
-            <h2>Suas conversas:</h2>
+        <div class="card-title">
+          <h2>Suas conversas:</h2>
+        </div>
+        <% if @chatrooms.first.nil? %>
+          <div class="card-index-wishlist-intems">
+            <p id="p"><strong>Você não possui mensagens</strong></p>
           </div>
+        <% else %>
           <div class="card-index-wishlist-intems">
             <% @chatrooms.each do |chatroom| %>
-              <div class="card-wishlist-infos">
-                <p><strong>Chat: </strong><%= chatroom.name %> </p>
-              </div>
-              <p><%= link_to "Ver mensagens", chatroom_path(chatroom, {user_id: chatroom.users.where.not(id: current_user.id).first.id}), class: "btn-yellow" %></p>
+                <div class="card-wishlist-infos">
+                  <p><strong>Chat: </strong><%= chatroom.name %> </p>
+                </div>
+                <p><%= link_to "Ver mensagens", chatroom_path(chatroom, {user_id: chatroom.users.where.not(id: current_user.id).first.id}), class: "btn-yellow" %></p>
             <% end %>
           </div>
+        <% end %>
       </div>
     <% else %>
       <div>
