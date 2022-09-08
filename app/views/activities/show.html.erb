@@ -55,7 +55,7 @@
             <% end %>
           <% end %>
         </div>
- 
+
         <%# <div>
           <a class="btn-black" href="#">Escrever review</a>
         </div> %>
@@ -122,7 +122,7 @@
       </div>
       <% @best_users.each do |user| %>
         <%= link_to user_path(user), class: "text-decoration-none" do%>
-          <div class="card-index-wishlist-intems">
+          <div class="card-user-ranking">
             <%# <%= image_tag user.image if user.image.present? %>
             <% if user.photo.attached? %>
               <%= cl_image_tag user.photo.key %>
