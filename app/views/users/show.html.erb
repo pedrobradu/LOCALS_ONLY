@@ -39,16 +39,18 @@
               <div class="card-index-wishlist-fav">
                   <%= cl_image_tag item.activity.photo.key %>
                 <div class="card-wishlist-infos-fav">
+                  <div>
                     <p><strong>Título: </strong><%= item.activity.title %> </p>
                     <p><strong>Categoria: </strong><%= item.activity.category %></p>
                     <p><strong>Descrição: </strong><%= item.activity.description%></p>
-                    <div>
-                      <% wishlist_item = WishlistItem.find_by(activity: @activity, wishlist: current_user.wishlists.first) %>
-                      <%= link_to  wishlist_item_path(item),
-                      data: {turbo_method: :delete, turbo_confirm: "Tem certeza que você deseja remover #{item.activity.title } da sua wishlist?"} do %>
-                        <i class="fa-regular fa-trash-can"></i>
-                      <% end %>
-                    </div>
+                  </div>
+                  <div class="trash-can">
+                    <% wishlist_item = WishlistItem.find_by(activity: @activity, wishlist: current_user.wishlists.first) %>
+                    <%= link_to  wishlist_item_path(item),
+                    data: {turbo_method: :delete, turbo_confirm: "Tem certeza que você deseja remover #{item.activity.title } da sua wishlist?"} do %>
+                      <i class="fa-regular fa-trash-can"></i>
+                    <% end %>
+                  </div>
                     <%# <%= link_to wishlist_path(@festival.wishlists.where(user:current_user).first),method: :delete do %>
                     <%# <i class="animate__animated animate__heartBeat fas fa-heart"></i> %>
                 </div>

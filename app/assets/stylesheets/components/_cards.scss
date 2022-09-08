@@ -354,8 +354,12 @@
     width: 150px;
     object-fit: cover;
     border-radius: 5px;
-
   }
+
+  // .trash-can {
+  //   width: 100%;
+  //   align-items: flex-end;
+  // }
 }
 
 .card-index-wishlist-fav:hover {
@@ -365,8 +369,8 @@
 
 .card-wishlist-infos-fav {
   margin-left: 8px;
+  position: relative;
 }
-
 
 .card-index-wishlist-intems {
 
@@ -437,10 +441,10 @@
 }
 
 .card-wishlist i {
- position: absolute;
- color: #7d7d7d;
- margin-bottom: 80px;
- margin-left: 145px;
+  position: absolute;
+  color: #7d7d7d;
+  bottom: 0;
+  right: 0;
 }
 
 
@@ -662,3 +666,39 @@
   justify-content: center;
 
 }
+
+.card-user-ranking {
+
+  overflow: hidden;
+  margin-right: 0;
+  // height: 100%;
+  border-radius: 5px;
+  box-shadow: 0 0 3px rgba(0,0,0,0.2);
+  display: flex;
+  align-self: baseline;
+  padding: 16px 20px;
+  margin: 16px;
+  // margin-bottom: 16px;
+  // margin-top: 20px;
+  // margin-left: 5%;
+  text-decoration: none;
+  align-items: center;
+  gap: 16px;
+
+  img {
+    height: 150px;
+    width: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+
+  }
+
+  &:hover {
+    // border: 1px solid rgb(74, 74, 74);
+    box-shadow: 0 0 3px rgba(0,0,0,0.8);
+  }
+}
+
+// .card-user-ranking-infos {
+//   margin-left: 8px;
+// }
