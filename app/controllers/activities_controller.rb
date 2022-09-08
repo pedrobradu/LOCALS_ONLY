@@ -7,7 +7,7 @@ class ActivitiesController < ApplicationController
     end
 
     if params[:ranking].present?
-      @activities = @activities.where("ranking > ?", params[:ranking])
+      @activities = @activities.where("ranking >= ?", params[:ranking])
     end
 
     if params[:tags].present?
@@ -79,7 +79,7 @@ class ActivitiesController < ApplicationController
     array_sub.each do |sub|
       sub_sym = sub.to_sym
       @tag_hash[sub_sym] = {}
-      tags.activity_tags.each do |tag|
+      tags.activity_tags.sort_by(&:tag_name).each do |tag|
         @tag_hash[sub_sym][tag.tag_name] = tag.id if tag.sub_category == sub
       end
     end
