@@ -333,6 +333,40 @@
 
 }
 
+.card-index-wishlist-fav {
+  overflow: hidden;
+  margin-right: 0;
+  // height: 100%;
+  border-radius: 5px;
+  box-shadow: 0 0 3px rgba(0,0,0,0.2);
+  display: flex;
+  align-self: baseline;
+  padding: 16px 20px;
+  margin: 16px;
+  // margin-bottom: 16px;
+  // margin-top: 20px;
+  // margin-left: 5%;
+  text-decoration: none;
+  // align-items: center;
+
+  img {
+    height: 150px;
+    width: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+
+  }
+}
+
+.card-index-wishlist-fav:hover {
+  // border: 1px solid rgb(74, 74, 74);
+  box-shadow: 0 0 3px rgba(0,0,0,0.8);
+}
+
+.card-wishlist-infos-fav {
+  margin-left: 8px;
+}
+
 
 .card-index-wishlist-intems {
 

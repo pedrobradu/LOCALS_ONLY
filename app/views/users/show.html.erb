@@ -36,9 +36,9 @@
         <% else %>
           <% @user.wishlists.first.wishlist_items.each  do |item| %>
             <%= link_to activity_path(item.activity), class: "text-decoration-none" do  %>
-              <div class="card-index-wishlist-intems">
+              <div class="card-index-wishlist-fav">
                   <%= cl_image_tag item.activity.photo.key %>
-                <div class="card-wishlist-infos">
+                <div class="card-wishlist-infos-fav">
                     <p><strong>Título: </strong><%= item.activity.title %> </p>
                     <p><strong>Categoria: </strong><%= item.activity.category %></p>
                     <p><strong>Descrição: </strong><%= item.activity.description%></p>
