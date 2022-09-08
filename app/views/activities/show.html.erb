@@ -39,7 +39,7 @@
           <h3><%= "Endereço:" %></h3>
           <p><%= "#{@activity.address}" %></p>
           <h3><%= "Rating:" %></h3>
-          <p><%= @activity.reviews.any? ?  "#{@activity.average}" : "Sem reviews" %></p>
+          <p><%= @activity.reviews.any? ?  "#{@activity.ranking}" : "Sem reviews" %></p>
           <h3><%= "Tipo:" %></h3>
           <p><%= "#{@activity.category}" %></p>
           <h3><%= "Tags Associadas:" %></h3>
@@ -81,7 +81,7 @@
                 <%= select_tag :tags, grouped_options_for_select(@tag_hash), multiple: true, class: "form-control", include_blank: true, prompt: "Selecione tags", 'data-controller': 'tomselect'%>
                 <%= f.submit "Submeter Review", class: "btn-black" %>
               <% end %>
-            <% else %>  
+            <% else %>
               <h3 class="text-center"> Comentários indisponíveis para visitantes... FOR LOCALS ONLY! :P</h3>
             <% end %>
          </div>
