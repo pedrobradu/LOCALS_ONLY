@@ -28,10 +28,10 @@
 .card-index-infos {
   display: flex;
   flex-direction: column;
-  margin-top: 8px;
+  padding: 8px;
   // justify-content: flex-end;
-  gap: 16px;
   width: 100%;
+  overflow: auto;
 
   .btn-yellow {
     align-self: flex-end;
@@ -366,6 +366,15 @@
   }
 }
 
+.p-box {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  padding-bottom: 8px;
+}
+
 
 .card-index-wishlist-intems:hover {
   // border: 1px solid rgb(74, 74, 74);
@@ -445,17 +454,17 @@
 
 
 .card-title {
-  padding: 10px 10px 10px 10px;
-  margin: 10px 10px 10px 10px; ;
+  padding: 10px;
+  margin: 10px 10px 30px 10px; ;
   text-align: center;
-  margin-bottom: 40px;
   background-color: #FFAD49;
   border-radius: 5px;
 }
 
 .card-title h2 {
   font-family: 'Poppins';
-  font-weight: 600;
+  font-weight: 700;
+  font-size: 24px;
   margin: 0;
 }
 // =========================================
