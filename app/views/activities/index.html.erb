@@ -69,15 +69,15 @@
                 <p><%= "#{activity.address}" %></p>
               </div>
               <div class="infos-lines">
-                <h3><strong><%= "Tipo:" %></strong></h3>
+                <h3><strong><%= "Categoria:" %></strong></h3>
                 <p><%= "#{activity.category}" %></p>
               </div>
               <div class="infos-lines">
-                <h3><strong><%= "Tags Associadas:" %></strong></h3>
+                <h3><strong><%= "Top Tags Associadas:" %></strong></h3>
                 <p><%= "#{activity.top_tags.map { |tag| tag.tag_name }.join(", ")}" %></p>
               </div>
               <div class="infos-lines">
-              <h3><strong><%= "Rating:" %></strong></h3>
+              <h3><strong><%= "Nota:" %></strong></h3>
                 <p><%= activity.reviews.any? ?  "#{activity.average}" : "Sem reviews" %></p>
               </div>
             </div>
