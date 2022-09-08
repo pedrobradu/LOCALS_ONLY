@@ -29,7 +29,9 @@
         </div>
         <% if @user.wishlists.first.wishlist_items.first.nil? %>
           <div class="card-index-wishlist-intems">
+            <div class="p-box">
             <p id="p">Você ainda não tem atividades salvas</p>
+            </div>
           </div>
         <% else %>
           <% @user.wishlists.first.wishlist_items.each  do |item| %>
@@ -65,7 +67,9 @@
           </div>
           <% if @chatrooms.first.nil? %>
             <div class="card-index-wishlist-intems">
-              <p id="p">Você não possui mensagens</p>
+              <div class="p-box">
+                <p id="p">Você não possui mensagens</p>
+              </div>
             </div>
           <% else %>
             <div class="card-index-wishlist-intems">
