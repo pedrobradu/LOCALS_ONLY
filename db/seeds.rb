@@ -38,15 +38,19 @@ u_tag18 = Tag.create!(sub_category: "Estilo de Vida", tag_name: "Econômico", ta
 u_tag19 = Tag.create!(sub_category: "Estilo de Vida", tag_name: "Luxo", tag_type: "user")
 u_tag20 = Tag.create!(sub_category: "Estilo de Vida", tag_name: "Custo/Benefício", tag_type: "user")
 
-puts 'Feito!!'
+puts 'Feito!'
 
-user1 = User.create!(email: "teste@teste.com", password: "123123", name: "Wagner Nogueira", address: "Rua João Lira, 39, Rio de Janeiro", birth_date: "1993/01/30", image: "wagner.jpg", state: "Rio de Janeiro")
+user1 = User.create!(email: "wagner@gmail.com", password: "123123", name: "Wagner Nogueira", address: "Rua João Lira, 39, Rio de Janeiro", birth_date: "1985/01/30", image: "wagner.jpg", state: "Rio de Janeiro")
 user1.tags << [u_tag1, u_tag4, u_tag8]
 user1.save
 
-user2 = User.create!(email: "carol@teste.com", password: "123123", name: "Caroline Brum", address: "Rua Ipero, 47, São Paulo", birth_date: "05/04/1992", image: "carol.jpg", state: "São Paulo")
+user2 = User.create!(email: "pedro@gmail.com", password: "123123", name: "Pedro Duarte", address: "Rua Ipero, 47, São Paulo", birth_date: "30/01/1993", image: "pedro.jpg", state: "São Paulo")
 user2.tags << [u_tag2, u_tag4, u_tag8]
 user2.save
+
+# user3 = User.create!(email: "carol@teste.com", password: "123123", name: "Caroline Brum", address: "Rua Ipero, 47, São Paulo", birth_date: "05/04/1992", image: "carol.jpg", state: "São Paulo")
+# user3.tags << [u_tag2, u_tag4, u_tag8]
+# user3.save
 
 puts 'Criando 15 novas tags de activity...'
 
@@ -119,7 +123,7 @@ activity3.photo.attach(
 activity3.tags << [a_tag18]
 activity3.save
 
-activity4 = Activity.create!(title: "Cuscuz da Irina", description: "Comida nordestina e drinks autorais pelas mãos de uma chef também nordestina.", address: "Alameda Ribeirão Preto, 384, Bela Vista, São Paulo", category: "Comer & Beber")
+activity4 = Activity.create!(title: "Cuscuz da Irina", description: "Comida nordestina e drinks autorais pelas mãos de uma chef também nordestina.", address: "Rua Itapeva, 700, São Paulo", category: "Comer & Beber")
 activity4.photo.attach(
   io: File.open(Rails.root.join('app/assets/images/cuscuz.jpg')),
   filename: 'cuscuz.jpg',
@@ -128,7 +132,7 @@ activity4.photo.attach(
 activity4.tags << [a_tag5, a_tag19]
 activity4.save
 
-activity5 = Activity.create!(title: "Encontro de Cachorros", description: "Com adestramento gratuito, atividades para os pets e degustação de petiscos.", address: "Avenida Brigadeiro Luís Antônio, 2471, São Paulo", category: "Eventos")
+activity5 = Activity.create!(title: "Encontro de Cachorros", description: "Com adestramento gratuito, atividades para os pets e degustação de petiscos.", address: "Rua Guarará, 108, São Paulo", category: "Eventos")
 activity5.photo.attach(
   io: File.open(Rails.root.join('app/assets/images/pets.jpg')),
   filename: 'pets.jpg',
@@ -182,7 +186,7 @@ activity10.photo.attach(
 activity10.tags << [a_tag20, a_tag7]
 activity10.save
 
-activity11 = Activity.create!(title: "Izakaya San", description: "Petiscos japoneses com drinks autorais.", address: "Rua Guaicuí, 33, São Paulo", category: "O Que Fazer")
+activity11 = Activity.create!(title: "Izakaya San", description: "Petiscos japoneses com drinks autorais.", address: "Rua Guaicuí, 33, São Paulo", category: "Comer & Beber")
 activity11.photo.attach(
   io: File.open(Rails.root.join('app/assets/images/sushi.jpg')),
   filename: 'sushi.jpg',
@@ -191,8 +195,14 @@ activity11.photo.attach(
 activity11.tags << [a_tag1,a_tag5, a_tag30, a_tag37]
 activity11.save
 
-
-
+activity12 = Activity.create!(title: "Trilha na Serra", description: "Trilha leve para iniciantes.", address: "Rua Francisco Leitão, 77, São Paulo", category: "O Que Fazer")
+activity12.photo.attach(
+  io: File.open(Rails.root.join('app/assets/images/trilha.jpg')),
+  filename: 'trilha.jpg',
+  content_type: 'image/png'
+)
+activity12.tags << [a_tag15, a_tag24, a_tag26, a_tag34]
+activity12.save
 
 puts 'Feito!'
 
