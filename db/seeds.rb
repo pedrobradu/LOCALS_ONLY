@@ -71,7 +71,7 @@ user7.tags << [u_tag1, u_tag4, u_tag8, u_tag11]
 user7.save
 
 user8 = User.create!(email: "juliana@gmail.com", password: "123123", name: "Juliana Bonardi", address: "Rua Ipero, 47, São Paulo", birth_date: "28/10/1990", image: "juliana.jpg", state: "São Paulo")
-user8.tags << [u_tag2, u_tag4, u_tag8, u_tag20]
+user8.tags << [u_tag1, u_tag4, u_tag8, u_tag10, u_tag17, u_tag14]
 user8.save
 
 
