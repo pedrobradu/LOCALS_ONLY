@@ -83,10 +83,5 @@ class ActivitiesController < ApplicationController
         @tag_hash[sub_sym][tag.tag_name] = tag.id if tag.sub_category == sub
       end
     end
-
-    # array_sub.each do |sub|
-    #   sub_sym = sub.to_sym
-    #   @tag_hash[sub_sym].sort.to_h
-    # end
   end
 end
